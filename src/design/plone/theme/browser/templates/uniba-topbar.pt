@@ -1,0 +1,31 @@
+<section class="uniba-topbar"
+	tal:define="portal_url context/@@plone_portal_state/portal_url">
+	<nav class="uniba-topbar__nav container">
+  		<div class="uniba-topbar__tornauniba">
+  			<div>
+  				<a href="https://www.uniba.it/">
+  					<img tal:attributes="src string:${portal_url}/++theme++uniba.theme5/images/ateneo.svg" alt="Home uniba">
+  					<img tal:attributes="src string:${portal_url}/++theme++uniba.theme5/images/uniba.it.svg" alt="Torna in uniba">
+  				</a>
+  			</div>
+  		</div>
+  		<span class="uniba-topbar__collapse pull-right">
+			<a role="button" href="#" data-target="#topbar-list" id="uniba-topbar__button" class="out" >
+				<span class="glyphicon glyphicon-chevron-down"></span>
+				<span class="glyphicon glyphicon-chevron-up"></span>
+
+			</a>
+		</span>
+		<ul class="uniba-topbar__list " id="topbar-list">
+			<li><a href="https://www.uniba.it/servizionline">Servizi online</a></li>
+			<li><a href="https://www.uniba.it/esse3">Esse3 - Segreteria online</a></li>
+			<li><a href="https://persone.ict.uniba.it/rubrica">Rubrica</a></li>
+			<li><a href="https://www.uniba.it/webmail">Webmail</a></li>
+			<li><a href="https://www.uniba.it/ateneo/radiouniba">Web Radio</a></li>
+			<li><a href="https://www.uniba.it/english-version">English version</a></li>
+			<li><a href="https://www.uniba.it/search">Cerca in uniba</a></li>
+		</ul>
+
+
+	</nav>
+</section>

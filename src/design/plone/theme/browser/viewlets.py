@@ -17,7 +17,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from six.moves.urllib.parse import quote
 
 import logging
-
+from plone import api
 
 logger = logging.getLogger(__name__)
 
@@ -102,9 +102,10 @@ class LogoViewlet(base.ViewletBase):
         super(LogoViewlet, self).update()
         self.site_title = api.portal.get_registry_record('plone.site_title')
 
-        self.navigation_root_title = self.site_title
+        # self.navigation_root_title = self.site_title
         self.logo_title = self.site_title
         self.img_src = getSiteLogo()
+        self.navigation_root_title = self.portal_state.navigation_root().title
 
 
 class HeaderSocialViewlet(base.ViewletBase):

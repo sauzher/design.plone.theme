@@ -1,11 +1,21 @@
-<a id="portal-logo"
-   title="Home"
-   tal:attributes="href view/navigation_root_url;
-                   title view/navigation_root_title"
-   i18n:domain="plone"
-   i18n:attributes="title">
-    <img src="logo.png" alt=""
-         tal:attributes="alt view/logo_title;
-                         title view/logo_title;
-                         src view/img_src"
-    /><span tal:content="view/navigation_root_title" /></a>
+<div id="portal-logo">
+   <a 
+      title="Home"
+      tal:attributes="href view/navigation_root_url;
+                     title view/navigation_root_title"
+      i18n:domain="plone"
+      i18n:attributes="title"
+      class="main-header_uniba">
+      <img src="++plone++design.plone.theme/unibalogo.svg" alt=""
+            tal:attributes="alt view/site_title;
+                           title view/site_title;"
+      /></a>
+   <a title="Home" class="main-header_tematic"
+         tal:define="portal_url context/@@plone_portal_state/portal_url;
+                     sitelogo view/img_src|nothing;"
+         tal:condition="context/@@site-logo/data|nothing"
+         tal:attributes="href portal_url"><img
+         tal:attributes="src sitelogo;
+                        title view/navigation_root_title;"
+         alt="Portal Logo"></a>
+</div>

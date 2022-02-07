@@ -5,11 +5,21 @@ $img-path: '++theme++design.plone.theme/images/';
 //
 //## Gray and brand colors for use across Bootstrap.
 
+$uniba: #004071;
+$uniba-dark: #013553;
+$uniba-light-1: #eff4f6;
+$uniba-light-2: #d1e1ee;
+$uniba-light-3: #6a8b9c;
+$personaleta-color: #f5a623;
+$docenti-color: #4a90e2;
+$studenti-color: #7ed321;
+$uniba-gray: #f5f5f5;
+
 $gray-darker: #2b2b2b;
 $gray-agid: #303030;
 $gray-dark: #313131;
 $gray: #515151;
-$gray-light: #777;
+$gray-light: $uniba-gray;
 $gray-lighter: #ccc;
 $gray-bg: #eee;
 $gray-row: #e0e0e0;
@@ -18,7 +28,7 @@ $gray-nav: #4a4a4a;
 $gray-border: #4a4a4a;
 $gray-documentByLine: #666;
 
-$brand-primary: #cb1d15;
+$brand-primary: $uniba;
 $brand-success: #5cb85c; // TODO: EDIT THIS
 $brand-info: #5bc0de; // TODO: EDIT THIS
 $brand-warning: #f0ad4e; // TODO: EDIT THIS
@@ -32,7 +42,7 @@ $footer-link-hover: darken($footer-link, 25%);
 $footer-hr: #979797;
 
 $tile-fascia-scura: #333333;
-$social-icon-bg: #cb1d15;
+$social-icon-bg: $brand-primary;
 
 //== Scaffolding
 //

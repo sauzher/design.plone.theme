@@ -236,4 +236,22 @@
     layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
     />
 
+
+ <!-- UniBa Viewlets -->
+  <browser:viewlet
+      name="uniba-topbar"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+      template="templates/uniba-topbar.pt"
+      permission="zope2.Public"
+  />
+    <browser:viewlet
+      name="plone.footer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+      template="templates/portal-main-footer.pt"
+      permission="zope2.Public"
+  />
+
+
 </configure>

@@ -291,12 +291,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #007bb1;
+  color: #004071;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #004665;
+  color: #001525;
   text-decoration: underline;
 }
 a:focus {
@@ -371,7 +371,7 @@ h1 a:focus,
 h2 a:focus,
 h3 a:focus {
   text-decoration: none;
-  border-bottom: 2px #004665 solid;
+  border-bottom: 2px #001525 solid;
 }
 h4,
 h5,
@@ -2260,7 +2260,7 @@ fieldset[disabled] .link-parent.active {
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #007bb1;
+  color: #004071;
   background-color: #fff;
   border: 1px solid #e5e5e5 !important;
   margin-left: -1px;
@@ -2276,7 +2276,7 @@ fieldset[disabled] .link-parent.active {
 }
 .pagination li > a:hover,
 .pagination li > a:focus {
-  color: #004665;
+  color: #001525;
   background-color: #f2f1f1;
   border: 1px solid #e5e5e5 !important;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -2286,8 +2286,8 @@ fieldset[disabled] .link-parent.active {
   z-index: 2;
   font-weight: 400;
   color: #fff;
-  background-color: #007bb1;
-  border: 1px solid #007bb1 !important;
+  background-color: #004071;
+  border: 1px solid #004071 !important;
   cursor: default;
 }
 .pagination li.disabled > span {
@@ -2479,7 +2479,7 @@ fieldset[disabled] .link-parent.active {
 .alert.status a,
 .portalMessage a {
   font-weight: 400;
-  color: #005074;
+  color: #001d34;
 }
 .alert.status > strong:before,
 .portalMessage > strong:before,
@@ -3061,7 +3061,7 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
 }
 .picker__list-item--highlighted:hover,
 .picker--focused .picker__list-item--highlighted {
-  background: #007bb1;
+  background: #004071;
   color: #fff;
 }
 li.picker__list-item {
@@ -3108,7 +3108,7 @@ ul.picker__list {
 }
 .picker__day--highlighted:hover,
 .picker__day--highlighted {
-  background: #007bb1;
+  background: #004071;
   color: #fff;
   font-weight: 600;
 }
@@ -3133,7 +3133,7 @@ ul.picker__list {
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.17);
 }
 .pat-tablesorter th:hover {
-  color: #007bb1;
+  color: #004071;
 }
 .pat-tablesorter .sortdirection {
   font-size: 75%;
@@ -3450,7 +3450,7 @@ a.plone-toolbar-logo {
   overflow: hidden;
 }
 .cal_month {
-  background: #00b0fe;
+  background: #006bbe;
   font-weight: 400;
   display: block;
   color: #fff;
