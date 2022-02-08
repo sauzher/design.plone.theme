@@ -4,14 +4,17 @@
      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
      tal:define="portal_tabs view/portal_tabs"
      tal:condition="portal_tabs"
-     i18n:domain="plone">
+     i18n:domain="plone" replace="nothing"> 
 
   <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
   <nav class="plone-navbar" id="portal-globalnav-wrapper">
     <div class="container">
       <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
         <div class="globalnavClose">
-          <button id="globalnav-close" aria-controls="portal-mainnavigation" aria-label="Esci dalla navigazione" title="Esci dalla navigazione">
+          <button id="globalnav-close" 
+            aria-controls="portal-mainnavigation" 
+            aria-label="Esci dalla navigazione" 
+            title="Esci dalla navigazione">
             <span aria-hidden="true" class="icon" />
             <span class="sr-only">chiudi</span>
           </button>
@@ -32,6 +35,45 @@
                   </a>
               </li>
             </tal:tabs>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</tal:sections>
+
+
+
+<tal:sections
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+
+  <nav class="plone-navbar pat-navigationmarker" id="portal-globalnav-wrapper">
+    <div class="container">
+      <div class="plone-navbar-header">
+        <button type="button" class="plone-navbar-toggle" data-toggle="collapse" data-target="#portal-globalnav-collapse">
+          <span class="sr-only" i18n:translate="toggle_navigation">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
+        <div class="globalnavClose">
+          <button id="globalnav-close"   
+            aria-controls="portal-mainnavigation" 
+            aria-label="Esci dalla navigazione" title="Esci dalla navigazione" class="">
+              <span class="icon" aria-hidden="true"></span>
+              <span class="sr-only">chiudi</span>
+          </button>
+        </div>
+        <ul class="plone-nav plone-navbar-nav" id="portal-globalnav">
+          <navtree tal:replace="structure python:view.render_globalnav()" />
         </ul>
       </div>
     </div>

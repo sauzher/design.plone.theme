@@ -4,7 +4,6 @@ $img-path: '++theme++design.plone.theme/images/';
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
-
 $uniba: #004071;
 $uniba-dark: #013553;
 $uniba-light-1: #eff4f6;
@@ -15,12 +14,14 @@ $docenti-color: #4a90e2;
 $studenti-color: #7ed321;
 $uniba-gray: #f5f5f5;
 
+// OVERRIDES
+$brand-primary: $uniba;
+
 $gray-darker: #2b2b2b;
 $gray-agid: #303030;
 $gray-dark: #313131;
-$gray: #515151;
-$gray-light: $uniba-gray;
-$gray-lighter: #ccc;
+$gray: $uniba-dark;
+$gray-lighter: $uniba-gray;
 $gray-bg: #eee;
 $gray-row: #e0e0e0;
 $gray-desc-border: #c1c1c1;
@@ -28,7 +29,6 @@ $gray-nav: #4a4a4a;
 $gray-border: #4a4a4a;
 $gray-documentByLine: #666;
 
-$brand-primary: $uniba;
 $brand-success: #5cb85c; // TODO: EDIT THIS
 $brand-info: #5bc0de; // TODO: EDIT THIS
 $brand-warning: #f0ad4e; // TODO: EDIT THIS
@@ -57,7 +57,7 @@ $text-color-light: #5a6772;
 //** Global textual link color.
 $link-color: $brand-primary;
 //** Link hover color set via `darken()` function.
-$link-hover-color: darken($brand-primary, 10%);
+$link-hover-color: darken($brand-primary, 15%);
 //** Link hover decoration.
 $link-hover-decoration: none;
 
@@ -74,8 +74,7 @@ $regular: 400;
 $semibold: 600;
 $bold: 700;
 
-$font-family-sans-serif: 'Titillium Web', 'Helvetica Neue', Helvetica, Arial,
-    sans-serif;
+$font-family-sans-serif: 'Titillium Web', Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
 //$font-family-condensed:  "Open Sans Condensed";
 
@@ -143,3 +142,21 @@ $container-lg: $container-large-desktop - $grid-gutter-width;
 
 $animation-speed: 0.3s;
 $mobile-menu-width: $screen-md - 1;
+
+$headings-font-weight: 700;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+$border-radius-base: 0;
+
+$navbar-dark-toggler-border-color: $uniba-dark;
+$navbar-padding-y: 0.5em;
+$plone-sitenav-link-padding: 0.5em;
+$sitenav-link-hover-bg: $link-hover-color;
+$sitenav-bg: $gray;
+$sitenav-height: $line-height-base;
+$sitenav-margin-bottom: 1em;
+$sitenav-padding-horizontal: 1em;
+$sitenav-padding-vertical: 1em;
+
+$grid-main-breakpoint: md !default;
+$nav-main-breakpoint: $grid-main-breakpoint !default;

@@ -319,3 +319,11 @@
      }
 }
 */
+
+#parent-fieldname-text a {
+    border-bottom: 0px none;
+    &:hover {
+        border-bottom: 0px none;
+        text-decoration: underline;
+    }
+}

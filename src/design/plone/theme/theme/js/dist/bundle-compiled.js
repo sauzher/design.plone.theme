@@ -396,6 +396,7 @@ require(['jquery', 'ellipsed'], function($, ellipsed) {
 
     $('#globalnav-close').click(function() {
       $('#portal-mainnavigation').removeClass('open');
+      $('#portal-globalnav-collapse').removeClass('in');
     });
 
     /*

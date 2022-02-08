@@ -3,14 +3,48 @@
 
     .plone-navbar-toggle {
         display: none;
-        background-color: transparent;
         border: 0 none;
         padding: 0;
         margin: 10px 0;
+        z-index: 501; //just in case
+        position: relative;
+        float: right;
+        margin-top: 8px;
+        margin-bottom: 6px;
+        padding: 6px 10px;
+        color: #ddd;
 
-        &:hover,
+        background-color: red;
+        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+        border: 1px solid white;
+        border-radius: $border-radius-base;
+
+        // We remove the `outline` here, but later compensate by attaching `:hover`
+        // styles to `:focus`
         &:focus {
             box-shadow: none;
+            outline: 0;
+        }
+
+        &:hover {
+            background-color: darken($sitenav-link-hover-bg, 15%);
+            border-color: darken($sitenav-link-hover-bg, 25%);
+        }
+
+        .icon-bar::after {
+            content: 'Menu';
+            position: relative;
+            color: white;
+        }
+
+        .icon-bar + .icon-bar::after {
+            content: '';
+        }
+
+        //end menu icon-bar
+
+        @media (max-width: $mobile-menu-width) {
+            display: block;
         }
     }
 
@@ -35,6 +69,27 @@
         > li {
             margin: 0 2%;
 
+            &.has_subtree:hover > ul,
+            &.has_subtree &.has_subtree:hover > ul {
+                opacity: 1;
+                visibility: visible;
+                transition: ease-in 0.35s;
+                display: block;
+            }
+
+            &.has_subtree &.has_subtree ul {
+                position: absolute;
+                z-index: -1;
+                left: 0em;
+                top: 0px;
+            }
+
+            &.has_subtree &.has_subtree:hover > ul {
+                // we only shift the submenus to the right if visible
+                // to prevent horizontal scrollers if not needed
+                left: 16em;
+            }
+
             &:first-child {
                 margin-left: 0;
             }
@@ -57,6 +112,51 @@
             a.closeMenuLink {
                 display: inline-block;
             }
+            .opener {
+                display: none;
+
+                & + label:after {
+                    transform: rotate(0deg);
+                    transition: ease-in 0.35s;
+                }
+
+                @media (max-width: $grid-float-breakpoint) {
+                    &:checked + label:after {
+                        transform: rotate(-180deg);
+                        transition: ease-in 0.35s;
+                    }
+                }
+
+                & ~ ul {
+                    transition: ease-out 0.35s;
+                }
+
+                &:checked ~ ul {
+                    height: auto;
+                    transition: ease-in 0.35s;
+                }
+
+                @media (max-width: $grid-float-breakpoint) {
+                    &:checked ~ ul {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+            // Navigation sublevels
+            ul {
+                padding-left: 0;
+                visibility: hidden;
+                opacity: 0;
+                height: 0;
+
+                li {
+                    a {
+                        font-size: ceil(($font-size-base * 1.1));
+                        background-color: $sitenav-bg;
+                    }
+                }
+            }
         }
     }
 
@@ -70,7 +170,7 @@
 }
 
 @media (max-width: $mobile-menu-width) {
-    #portal-mainnavigation {
+    #portal-globalnav-collapse {
         position: fixed;
         top: 0;
         right: 0;
@@ -81,7 +181,7 @@
         overflow: hidden;
         z-index: 500;
 
-        &.open {
+        &.in {
             width: 500px;
 
             &:before {
@@ -98,7 +198,7 @@
         .container {
             padding: 0;
         }
-        #portal-globalnav-wrapper {
+        #portal-globalnav {
             width: 500px;
             max-width: 75vw;
             height: 100%;
@@ -113,6 +213,10 @@
                 margin: 0;
                 display: block;
                 padding: 0;
+
+                &.has_subtree a {
+                    padding-right: 2.5em;
+                }
 
                 + li {
                     border-top: 1px solid #ddd;
@@ -131,6 +235,8 @@
             width: 100%;
         }
         #globalnav-close {
+            position: fixed;
+            z-index: 502;
             display: block;
             border: 0;
             background: transparent;
@@ -159,36 +265,47 @@
             }
         }
     }
-}
 
-@media (max-width: $screen-xs-max) {
-    #portal-mainnavigation {
-        &.open {
-            width: 280px;
-        }
-        #portal-globalnav-wrapper {
-            width: 280px;
-        }
-        .globalnavClose {
-            height: 50px;
-        }
-        #globalnav-close {
-            padding-top: 0;
-            padding-bottom: 0;
-            height: 50px;
-            font-size: 1em;
-        }
-        ul#portal-globalnav {
-            > li {
-                > a {
-                    font-size: 1.6rem;
+    @media (max-width: $screen-xs-max) {
+        #portal-mainnavigation {
+            &.open {
+                width: 280px;
+            }
+            #portal-globalnav {
+                width: 280px;
+            }
+            .globalnavClose {
+                height: 50px;
+            }
+            #globalnav-close {
+                padding-top: 0;
+                padding-bottom: 0;
+                height: 50px;
+                font-size: 1em;
+            }
+            ul#portal-globalnav {
+                > li {
+                    > a {
+                        font-size: 1.6rem;
+                    }
+                    &.has_subtree {
+                        .has_subtree li {
+                            label {
+                                right: 0.25em;
+
+                                &:after {
+                                    top: 0.5em;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-@media (min-width: $mobile-menu-width + 1px) {
+@media (min-width: calc($mobile-menu-width + 1px)) {
     #portal-mainnavigation {
         background-color: $brand-primary;
         color: #fff;
