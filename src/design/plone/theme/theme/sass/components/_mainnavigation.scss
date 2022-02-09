@@ -75,16 +75,29 @@
 
 #portal-mainnavigation {
     @include antialias;
+    background-color: $uniba;
+    height: $sitenav-height;
 
     .globalnavWrapper {
         @include make-container;
     }
 
+    .plone-nav {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 0; // Override default ul/ol
+        list-style: none;
+        // background-color: $brand-primary;
+        @include clearfix();
+    }
+
     ul#portal-globalnav {
         @extend .list-inline;
+
+        // height: 1rem;
         margin: 0;
         display: flex;
-        padding: 1.2rem 0;
+        padding: 1.2rem 0 0 0;
 
         > li {
             margin: 0 2%;
@@ -119,6 +132,7 @@
             }
 
             > a {
+                color: $uniba-light-2;
                 font-size: 1.95rem;
                 font-weight: $semibold;
                 display: block;
@@ -260,6 +274,7 @@
                     border-top: 1px solid #ddd;
                 }
                 > a {
+                    color: $uniba;
                     display: block;
                     padding: 10px 16px;
                     font-size: 1.8rem;
