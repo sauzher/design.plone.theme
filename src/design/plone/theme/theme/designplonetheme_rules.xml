@@ -62,7 +62,7 @@
           <span class="close-icon"></span>
           <span class="sr-only">SEARCH</span>
         </button>
-        <div class="plone-navbar-header{$hasNavigation}">
+        <!-- <div class="plone-navbar-header{$hasNavigation}">
           <button type="button"
                   class="plone-navbar-toggle"
                   aria-controls="portal-mainnavigation"
@@ -70,7 +70,7 @@
             <span class="sr-only">Toggle navigation</span>
             <i class="fas fa-bars"></i>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </replace>

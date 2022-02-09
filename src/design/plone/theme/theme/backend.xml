@@ -90,9 +90,9 @@
         <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
       </xsl:variable>
       <div class="{$central}">
-        <p class="pull-right visible-xs">
+        <!-- <p class="pull-right visible-xs">
           <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-        </p>
+        </p> -->
         <div class="row">
           <div class="col-xs-12 col-sm-12">
              <xsl:apply-templates css:select="#content" />
@@ -158,7 +158,7 @@
             <span class="icon"></span>
             <span class="sr-only">SEARCH</span>
           </button>
-          <div class="plone-navbar-header">
+          <!-- <div class="plone-navbar-header">
             <button type="button"
                     class="plone-navbar-toggle"
                     aria-controls="portal-globalnav-collapse"
@@ -168,7 +168,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </replace>
