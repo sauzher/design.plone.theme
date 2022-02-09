@@ -255,10 +255,18 @@
         padding: 0;
 
         img {
-            $logo-width: 13vw;
-            width: $logo-width;
-            height: $logo-width;
+            display: none;
+        }
+        a:nth-child(2) img {
+            display: block;
+        }
+
+        a:only-child img {
+            // $logo-width: 13vw;
+            // width: $logo-width;
+            // height: $logo-width;
             margin-right: 1.5rem;
+            display: block;
         }
 
         span {
