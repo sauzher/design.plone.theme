@@ -4,8 +4,8 @@
   		<div class="uniba-topbar__tornauniba">
   			<div>
   				<a href="https://www.uniba.it/">
-  					<img tal:attributes="src string:${portal_url}/++theme++uniba.theme5/images/ateneo.svg" alt="Home uniba">
-  					<img tal:attributes="src string:${portal_url}/++theme++uniba.theme5/images/uniba.it.svg" alt="Torna in uniba">
+  					<img tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/ateneo.svg" alt="Home uniba">
+  					<img tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/uniba.it.svg" alt="Torna in uniba">
   				</a>
   			</div>
   		</div>

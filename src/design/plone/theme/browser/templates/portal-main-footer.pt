@@ -15,17 +15,17 @@
         <ul class="list-inline">
           <li class="socials-item">
             <a href="http://www.facebook.com/pages/Universita-degli-Studi-di-Bari-Aldo-Moro/142796619110027"><img
-              tal:attributes="src string:${portal_url}/++theme++uniba.theme5/images/ico-facebook.svg"></a></li>
+              tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/ico-facebook.svg"></a></li>
           <li class="socials-item">
             <a href="http://www.twitter.com/unibait"><img
-            tal:attributes="src string:${portal_url}/++theme++uniba.theme5/images/ico-twitter.svg"
+            tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/ico-twitter.svg"
             /></a></li>
           <li class="socials-item">
             <a href="https://www.youtube.com/user/unialdomoro"><img
-            tal:attributes="src string:${portal_url}/++theme++uniba.theme5/images/ico-youtube.svg" ></a></li>
+            tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/ico-youtube.svg" ></a></li>
           <li class="socials-item">
             <a href="https://www.uniba.it/notizieuniba/news/RSS"><img
-            tal:attributes="src string:${portal_url}/++theme++uniba.theme5/images/ico-rss.svg" ></a></li>
+            tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/ico-rss.svg" ></a></li>
         </ul>
       </div>
 

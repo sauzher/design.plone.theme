@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="64px" viewBox="0 0 148 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>Centro Servizi Infor</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="22" font-family="TrajanPro-Regular, Trajan Pro" font-weight="normal">
+        <g id="Desktop-HD" transform="translate(-527.000000, -82.000000)" fill="#D1E1EE">
+            <text id="Centro-Servizi-Infor">
+                <tspan x="526" y="99">Centro</tspan>
+                <tspan x="526" y="122">Servizi </tspan>
+                <tspan x="526" y="145">Informatici</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
