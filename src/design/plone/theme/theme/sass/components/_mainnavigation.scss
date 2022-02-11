@@ -1,7 +1,7 @@
 //*// SITE NAV //*//
 
 .plone-navbar {
-    margin-bottom: 0;
+    margin-bottom: -1em;
     padding-left: 0; // Override default ul/ol
     list-style: none;
     background-color: $uniba;
@@ -59,7 +59,7 @@
                 transition: ease-in 0.35s;
             }
 
-            @media (max-width: $grid-float-breakpoint) {
+            @media (max-width: $mobile-menu-width) {
                 &:checked + label:after {
                     transform: rotate(-180deg);
                     transition: ease-in 0.35s;
@@ -75,7 +75,7 @@
                 transition: ease-in 0.35s;
             }
 
-            @media (max-width: $grid-float-breakpoint) {
+            @media (max-width: $mobile-menu-width) {
                 &:checked ~ ul {
                     visibility: visible;
                     opacity: 1;
@@ -109,7 +109,7 @@
         }
     }
 
-    @media (min-width: $grid-float-breakpoint) {
+    @media (min-width: $mobile-menu-width) {
         li {
             label {
                 top: 0em;
@@ -198,7 +198,7 @@
 .plone-navbar-header {
     @include clearfix(); //without extend
 
-    @media (min-width: $grid-float-breakpoint) {
+    @media (min-width: $mobile-menu-width) {
         // float: left;
     }
 }
@@ -218,7 +218,7 @@
         display: block;
     }
 
-    @media (min-width: $grid-float-breakpoint) {
+    @media (min-width: $mobile-menu-width) {
         width: auto;
         border-top: 0;
         box-shadow: none;
@@ -300,7 +300,7 @@
 
     //end menu icon-bar
 
-    @media (min-width: 800px) {
+    @media (min-width: $mobile-menu-width) {
         display: none;
     }
 }
@@ -327,7 +327,7 @@
     }
 
     // Uncollapse the nav
-    @media (min-width: $grid-float-breakpoint) {
+    @media (min-width: $mobile-menu-width) {
         float: left;
 
         > li {
