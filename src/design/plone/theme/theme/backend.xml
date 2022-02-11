@@ -70,7 +70,7 @@
     <after css:theme-children="head" css:content="head script" />
 
     <!-- We don't need global nav -->
-    <drop css:theme="#mainnavigation-wrapper" />
+    <!-- <drop css:theme="#mainnavigation-wrapper" /> -->
 
     <!-- Hero unit on homepage only -->
     <drop css:theme="div.principal" css:if-not-content="body.template-document_view.section-front-page" />

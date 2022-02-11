@@ -76,8 +76,6 @@ define('fa_rt', [], function() {
     /******/ [
       /* 0 */
       /***/ function(module, exports, __webpack_require__) {
-        'use strict';
-
         Object.defineProperty(exports, '__esModule', {
           value: true,
         });
@@ -290,7 +288,6 @@ define('fa_rt', [], function() {
       },
       /* 1 */
       /***/ function(module, __webpack_exports__, __webpack_require__) {
-        'use strict';
         Object.defineProperty(__webpack_exports__, '__esModule', {
           value: true,
         });
@@ -1194,8 +1191,6 @@ define('fa_rt', [], function() {
 
         var perf = { begin: begin, end: end };
 
-        ('use strict');
-
         /**
          * Internal helper to bind a function known to have 4 arguments
          * to a given context.
@@ -1205,8 +1200,6 @@ define('fa_rt', [], function() {
             return func.call(thisContext, a, b, c, d);
           };
         };
-
-        ('use strict');
 
         /**
          * # Reduce
@@ -3213,7 +3206,6 @@ define('fa_rt', [], function() {
     ]
   );
 });
-
 require(['fa_rt'], function(fa_rt) {
   var init = fa_rt.init;
   var timeout = setTimeout(function() {

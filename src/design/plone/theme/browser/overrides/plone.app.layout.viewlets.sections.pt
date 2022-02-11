@@ -64,14 +64,6 @@
       </div>
 
       <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
-        <div class="globalnavClose">
-          <button id="globalnav-close"   
-            aria-controls="portal-mainnavigation" 
-            aria-label="Esci dalla navigazione" title="Esci dalla navigazione" class="">
-              <span class="icon" aria-hidden="true"></span>
-              <span class="sr-only">chiudi</span>
-          </button>
-        </div>
         <ul class="plone-nav plone-navbar-nav" id="portal-globalnav">
           <navtree tal:replace="structure python:view.render_globalnav()" />
         </ul>

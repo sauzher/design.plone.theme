@@ -60,7 +60,7 @@
             </header>
 
             <div id="portal-mainnavigation">
-                <div class="container" tal:content="structure provider:plone.mainnavigation">
+                <div tal:content="structure provider:plone.mainnavigation">
         The main navigation
                 </div>
             </div>
