@@ -210,7 +210,7 @@
         }
     }
 
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: $mobile-menu-width) {
         button.plone-navbar-toggle,
         button#search-toggle {
             padding: 5px 15px 5px 10px;
@@ -233,7 +233,7 @@
         line-height: 1.3;
         white-space: nowrap;
 
-        @media (max-width: $screen-sm-max) {
+        @media (max-width: $mobile-menu-width) {
             border-width: 1px;
             white-space: normal;
         }
@@ -251,7 +251,7 @@
         height: 100%;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $mobile-menu-width) {
         padding: 0;
 
         img {

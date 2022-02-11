@@ -4,6 +4,7 @@
     margin-bottom: -1em;
     padding-left: 0; // Override default ul/ol
     list-style: none;
+    position: relative;
     background-color: $uniba;
     @include clearfix();
 
@@ -193,6 +194,12 @@
 
     // Prevent floats from breaking the navbar
     @include clearfix();
+    @media (max-width: $mobile-menu-width) {
+        position: absolute;
+        top: 9em;
+        right: 0;
+        z-index: 5;
+    }
 }
 
 .plone-navbar-header {
@@ -246,7 +253,7 @@
 }
 
 .plone-navbar-toggle {
-    z-index: 1; //just in case
+    z-index: 2; //just in case
     position: relative;
     float: right;
     margin-top: 8px;
