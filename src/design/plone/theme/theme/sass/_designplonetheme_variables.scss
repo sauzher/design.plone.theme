@@ -13,6 +13,7 @@ $personaleta-color: #f5a623;
 $docenti-color: #4a90e2;
 $studenti-color: #7ed321;
 $uniba-gray: #f5f5f5;
+$uniba-nav-box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.17);
 
 // OVERRIDES
 $brand-primary: $uniba;
@@ -155,8 +156,8 @@ $sitenav-link-hover-bg: $uniba-light-3;
 $sitenav-bg: $gray;
 $sitenav-height: $line-height-base;
 $sitenav-margin-bottom: 0;
-$sitenav-padding-horizontal: 1em;
-$sitenav-padding-vertical: 1em;
+$sitenav-padding-horizontal: 0.5em;
+$sitenav-padding-vertical: 0.5em;
 
 $grid-main-breakpoint: md !default;
 $nav-main-breakpoint: $grid-main-breakpoint !default;
