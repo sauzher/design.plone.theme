@@ -1,4 +1,21 @@
 //*// SITE NAV //*//
+@media (max-width: $mobile-menu-width) {
+    #portal-globalnav-wrapper {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: transparent;
+
+        .container {
+            margin-right: 0;
+            padding-right: 0;
+        }
+    }
+    .plone-toolbar-default {
+        #portal-globalnav-wrapper {
+        }
+    }
+}
 
 .plone-navbar {
     margin-bottom: -1em;
@@ -28,13 +45,16 @@
             font-size: ceil(($font-size-base * 1.15));
             hyphens: auto;
             word-break: break-word;
-            border-radius: $border-radius-base $border-radius-base 0 0;
+            // border-radius: $border-radius-base $border-radius-base 0 0;
+            border-left: 2px solid $uniba;
 
             &:hover,
             &:focus {
                 text-decoration: none;
-                background-color: $uniba-gray;
-                color: $uniba-dark;
+                // background-color: $uniba-gray;
+                // color: $uniba-dark;
+                // border-left: 2px solid $uniba-gray;
+                text-shadow: 1px 1px 2px $uniba-gray;
                 transition: ease-in 0.25s;
             }
         }
@@ -47,16 +67,33 @@
             opacity: 0;
             height: auto;
             column-count: 2;
+            border-right: 3px solid rgba($color: $uniba, $alpha: 0.5);
+            box-shadow: $uniba-nav-box-shadow;
 
             li {
                 border-collapse: collapse;
                 a {
-                    font-size: ceil(($font-size-base * 1.1));
+                    font-size: ceil(($font-size-base * 1));
                     background-color: $sitenav-bg;
+                    border-left: 2px solid $uniba-gray;
+                    border-radius: 0%;
                     &:hover {
-                        border-bottom: 1px solid $uniba;
+                        border-left: 2px solid $uniba;
                     }
                 }
+            }
+            @media (max-width: $mobile-menu-width) {
+                height: 0;
+                background-color: $uniba-gray;
+                li {
+                    a {
+                        color: $uniba-dark;
+                        background-color: $uniba-gray;
+                    }
+                }
+            }
+            @media (max-width: $screen-xs) {
+                column-count: 1;
             }
         }
 
@@ -70,8 +107,9 @@
 
             @media (max-width: $mobile-menu-width) {
                 &:checked + label:after {
-                    transform: rotate(-180deg);
+                    // transform: rotate(-180deg);
                     transition: ease-in 0.35s;
+                    content: '\e014';
                 }
             }
 
@@ -101,15 +139,19 @@
             text-align: center;
 
             &:after {
+                font-family: 'Glyphicons Halflings';
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
                 background: darken($link-color, 7%);
                 border-radius: $input-border-radius;
-                content: '▼';
+                content: '\e114';
                 cursor: pointer;
                 display: inline-block;
                 line-height: 1;
                 width: 1.5em;
                 height: 1.5em;
-                font-size: 1.25em;
+                font-size: 1em;
                 padding: 0.25em;
                 right: 0.5em;
                 top: 0.45em;
@@ -215,7 +257,7 @@
 
 .plone-navbar-header {
     @include clearfix(); //without extend
-
+    margin-right: 0.35em;
     @media (min-width: $mobile-menu-width) {
         // float: left;
     }
@@ -229,7 +271,6 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     @include clearfix();
     -webkit-overflow-scrolling: touch;
-
     display: none;
 
     &.in {
@@ -237,7 +278,7 @@
     }
 
     @media (min-width: $mobile-menu-width) {
-        width: auto;
+        width: 100vm;
         border-top: 0;
         box-shadow: none;
 
@@ -271,7 +312,7 @@
     margin-bottom: 6px;
     padding: 6px 10px;
 
-    background-color: transparent;
+    background-color: $uniba;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     border: 1px solid white;
     border-radius: $border-radius-base;
@@ -279,7 +320,7 @@
     // We remove the `outline` here, but later compensate by attaching `:hover`
     // styles to `:focus`.
     &:focus {
-        outline: 0;
+        // outline: 0;
     }
 
     &:hover {
@@ -324,7 +365,11 @@
 }
 
 .plone-navbar-nav {
-    margin: 0 $sitenav-padding-horizontal * -1 0;
+    margin: 0 $sitenav-padding-horizontal * -1 0 -3.5em;
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
     > li > a {
         padding-top: 10px;
@@ -345,8 +390,13 @@
     }
 
     // Uncollapse the nav
-    @media (min-width: $mobile-menu-width) {
-        float: left;
+    @media (max-width: $mobile-menu-width) {
+        // float: left;
+        width: 100%;
+        padding-left: 0;
+        margin: 0 $sitenav-padding-horizontal * -1 0;
+        flex-direction: column;
+        background-color: $uniba;
 
         > li {
             float: left;
