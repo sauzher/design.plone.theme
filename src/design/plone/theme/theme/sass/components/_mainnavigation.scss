@@ -89,6 +89,8 @@
             height: auto;
             column-count: 2;
             border-right: 3px solid rgba($color: $uniba, $alpha: 0.5);
+            border-left: 1px solid rgba($color: $uniba, $alpha: 0.5);
+
             box-shadow: $uniba-nav-box-shadow;
 
             li {
@@ -264,13 +266,12 @@
     position: relative;
     min-height: $sitenav-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
     margin-bottom: $sitenav-margin-bottom;
-    box-shadow: $uniba-nav-box-shadow;
 
     // Prevent floats from breaking the navbar
     @include clearfix();
     @media (max-width: $mobile-menu-width) {
         position: absolute;
-        top: 9em;
+        top: 12em;
         right: 0;
         z-index: 5;
     }
@@ -290,6 +291,7 @@
     padding-left: $sitenav-padding-horizontal;
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
     @include clearfix();
     -webkit-overflow-scrolling: touch;
     display: none;
@@ -301,13 +303,14 @@
     @media (min-width: $mobile-menu-width) {
         width: 100vm;
         border-top: 0;
-        box-shadow: none;
+        box-shadow: $uniba-nav-box-shadow;
 
         &.plone-collapse {
             display: block !important;
             height: auto !important;
             padding-bottom: 0; // Override default setting
             overflow: visible !important;
+            box-shadow: $uniba-nav-box-shadow;
         }
 
         &.in {
@@ -329,24 +332,38 @@
     z-index: 2; //just in case
     position: relative;
     float: right;
-    margin-top: 8px;
+    margin-top: -2.5em;
     margin-bottom: 6px;
     padding: 6px 10px;
 
-    background-color: $uniba;
+    background-color: transparent;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    border: 1px solid white;
+    border: 1px solid transparent;
     border-radius: $border-radius-base;
 
     // We remove the `outline` here, but later compensate by attaching `:hover`
     // styles to `:focus`.
-    &:focus {
-        // outline: 0;
+    &:focus,
+    &:active {
+        outline: 0;
+        border: 1px solid transparent;
+        background-color: transparent;
+        box-shadow: none;
+        background-image: none;
     }
 
     &:hover {
-        background-color: darken($sitenav-link-hover-bg, 15%);
-        border-color: darken($sitenav-link-hover-bg, 25%);
+        // background-color: darken($sitenav-link-hover-bg, 15%);
+        // border-color: darken($sitenav-link-hover-bg, 25%);
+        outline: 0;
+        border: 1px solid transparent;
+        background-color: transparent;
+        box-shadow: none;
+        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+        .icon-bar {
+            // background-color: lighten($color: $uniba-dark, $amount: 50%);
+            box-shadow: $uniba-nav-box-shadow;
+        }
     }
 
     // Burgerbar (uncomment for a ≡ menu and comment menu just below)
@@ -356,7 +373,7 @@
         width: 22px;
         height: 2px;
         border-radius: 1px;
-        background: white;
+        background: $uniba-dark;
         margin-top: 2px;
     }
     .icon-bar + .icon-bar {
