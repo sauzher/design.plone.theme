@@ -55,7 +55,7 @@
                     display: inherit;
                 }
             }
-            &.in {
+            &.out.collapsed {
                 .glyphicon-chevron-down {
                     display: none !important;
                 }
