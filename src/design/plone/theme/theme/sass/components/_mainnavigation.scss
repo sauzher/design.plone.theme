@@ -10,7 +10,7 @@
             margin-right: 0;
             padding-right: 0;
         }
-        z-index: 5001;
+        // z-index: 5001;
     }
     .plone-toolbar-left-default {
         #portal-globalnav-wrapper {
@@ -43,7 +43,7 @@
     padding-left: 0; // Override default ul/ol
     list-style: none;
     position: relative;
-    background-color: $uniba;
+    background-color: $uniba-gray;
     @include clearfix();
 
     li {
@@ -62,12 +62,12 @@
             position: relative;
             display: block;
             padding: $plone-sitenav-link-padding;
-            color: white;
+            color: $uniba;
             font-size: ceil(($font-size-base * 1.15));
             hyphens: auto;
             word-break: break-word;
             // border-radius: $border-radius-base $border-radius-base 0 0;
-            border-left: 2px solid $uniba;
+            border-left: 2px solid $uniba-gray;
 
             &:hover,
             &:focus {
@@ -75,8 +75,9 @@
                 // background-color: $uniba-gray;
                 // color: $uniba-dark;
                 // border-left: 2px solid $uniba-gray;
-                text-shadow: 1px 1px 2px $uniba-gray;
+                text-shadow: 1px 1px 2px $uniba;
                 transition: ease-in 0.25s;
+                background-color: darken($uniba-gray, 5%);
             }
         }
 
@@ -89,16 +90,15 @@
             height: auto;
             column-count: 2;
             border-right: 3px solid rgba($color: $uniba, $alpha: 0.5);
-            border-left: 1px solid rgba($color: $uniba, $alpha: 0.5);
-
-            box-shadow: $uniba-nav-box-shadow;
+            // border-left: 1px solid rgba($color: $uniba, $alpha: 0.5);
+            // box-shadow: $uniba-nav-box-shadow;
 
             li {
                 border-collapse: collapse;
                 a {
                     font-size: ceil(($font-size-base * 1));
                     background-color: $sitenav-bg;
-                    border-left: 2px solid $uniba-gray;
+                    border-left: 2px solid darken($uniba-gray, 5%);
                     border-radius: 0%;
                     &:hover {
                         border-left: 2px solid $uniba;
@@ -108,6 +108,10 @@
             @media (max-width: $mobile-menu-width) {
                 height: 0;
                 background-color: $uniba-gray;
+                width: 90vw;
+                margin-left: 1em;
+                border-right: none;
+
                 li {
                     a {
                         color: $uniba-dark;
@@ -118,6 +122,12 @@
             @media (max-width: $screen-xs) {
                 column-count: 1;
             }
+        }
+
+        &:nth-child(6) > ul,
+        &:nth-child(7) > ul {
+            left: auto;
+            right: -1px;
         }
 
         .opener {
@@ -138,6 +148,7 @@
 
             & ~ ul {
                 transition: ease-out 0.35s;
+                // width:90vw;
             }
 
             &:checked ~ ul {
@@ -166,7 +177,7 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 1;
-                background: darken($link-color, 7%);
+                // background: darken($link-color, 7%);
                 border-radius: $input-border-radius;
                 content: '\e114';
                 cursor: pointer;
@@ -217,7 +228,7 @@
             }
 
             ul {
-                background-color: $uniba-gray;
+                background-color: darken($uniba-gray, 5%);
                 position: absolute;
                 z-index: 100;
                 padding: 1em;
@@ -225,6 +236,8 @@
                 visibility: hidden;
                 transition: ease-out 0.75s;
                 box-shadow: $uniba-nav-box-shadow;
+                margin-left: 2px;
+                max-width: 50vw;
 
                 li {
                     a {
@@ -235,6 +248,14 @@
                     }
                 }
             }
+        }
+
+        // border-bottom: 4px solid $uniba;
+
+        .has_subtree:hover {
+            transition: ease-in 0.35s;
+            border-bottom-color: $uniba-gray;
+            background-color: darken($uniba-gray, 5%);
         }
 
         .has_subtree:hover > ul,
@@ -261,8 +282,8 @@
 
 .plone-navbar {
     @include clearfix();
-    background-color: $uniba;
-    color: white;
+    background-color: $uniba-gray;
+    color: $uniba;
     position: relative;
     min-height: $sitenav-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
     margin-bottom: $sitenav-margin-bottom;
@@ -289,8 +310,8 @@
     overflow-x: visible;
     padding-right: $sitenav-padding-horizontal;
     padding-left: $sitenav-padding-horizontal;
-    border-top: 1px solid transparent;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    // border-top: 1px solid transparent;
+    // box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
     @include clearfix();
     -webkit-overflow-scrolling: touch;
@@ -302,15 +323,15 @@
 
     @media (min-width: $mobile-menu-width) {
         width: 100vm;
-        border-top: 0;
-        box-shadow: $uniba-nav-box-shadow;
+        // border-top: 0 none white;
+        // box-shadow: $uniba-nav-box-shadow;
 
         &.plone-collapse {
             display: block !important;
             height: auto !important;
             padding-bottom: 0; // Override default setting
             overflow: visible !important;
-            box-shadow: $uniba-nav-box-shadow;
+            // box-shadow: $uniba-nav-box-shadow;
         }
 
         &.in {
@@ -434,7 +455,7 @@
         padding-left: 0;
         margin: 0 $sitenav-padding-horizontal * -1 0;
         flex-direction: column;
-        background-color: $uniba;
+        background-color: $uniba-gray;
 
         > li {
             float: left;
@@ -447,7 +468,6 @@
                 padding-top: $sitenav-padding-vertical;
                 padding-bottom: $sitenav-padding-vertical;
             }
-
             label {
                 font-size: 1em;
                 background: transparent;
