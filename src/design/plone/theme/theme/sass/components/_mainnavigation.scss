@@ -10,9 +10,30 @@
             margin-right: 0;
             padding-right: 0;
         }
+        z-index: 5001;
     }
-    .plone-toolbar-default {
+    .plone-toolbar-left-default {
         #portal-globalnav-wrapper {
+            .container {
+                padding-left: 60px;
+            }
+        }
+    }
+    .plone-toolbar-left-expanded {
+        #portal-globalnav-wrapper {
+            .container {
+                padding-left: 120px;
+            }
+        }
+    }
+}
+@media (max-width: $screen-xs) {
+    .plone-toolbar-left-default,
+    .plone-toolbar-left-expanded {
+        #portal-globalnav-wrapper {
+            .container {
+                padding-left: 0px;
+            }
         }
     }
 }
