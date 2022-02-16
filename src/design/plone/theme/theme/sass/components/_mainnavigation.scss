@@ -125,10 +125,7 @@
         }
 
         /* i sottomenu' dal 6 in poi li orientiamo verso sinistra per non sfondare il viewport */
-        &:nth-child(6) > ul,
-        &:nth-child(7) > ul,
-        &:nth-child(8) > ul,
-        &:nth-child(9) > ul {
+        &:nth-last-child(-n + 3) > ul {
             left: auto;
             right: -1px;
         }

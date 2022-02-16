@@ -39,39 +39,7 @@
    </property>
    <property name="visible">False</property>
   </object>
-  <object name="aree-tematiche" meta_type="CMF Action">
-   <property name="title">Servizi</property>
-   <property name="description"></property>
-   <property
-      name="url_expr">string:${globals_view/navigationRootUrl}/#</property>
-   <property name="link_target"></property>
-   <property name="icon_expr"></property>
-   <property name="available_expr"></property>
-   <property name="permissions"/>
-   <property name="visible">True</property>
-  </object>
-  <object name="amministrazione" meta_type="CMF Action">
-   <property name="title">L'Amministrazione</property>
-   <property name="description"></property>
-   <property
-      name="url_expr">string:${globals_view/navigationRootUrl}/#</property>
-   <property name="link_target"></property>
-   <property name="icon_expr"></property>
-   <property name="available_expr"></property>
-   <property name="permissions"/>
-   <property name="visible">True</property>
-  </object>
-  <object name="vivere" meta_type="CMF Action">
-   <property name="title">Vivere il Comune</property>
-   <property name="description"></property>
-   <property
-      name="url_expr">string:${globals_view/navigationRootUrl}/#</property>
-   <property name="link_target"></property>
-   <property name="icon_expr"></property>
-   <property name="available_expr"></property>
-   <property name="permissions"/>
-   <property name="visible">True</property>
-  </object>
+  
  </object>
 
 </object>

@@ -8,7 +8,8 @@
       class="main-header_uniba">
       <img src="++plone++design.plone.theme/unibalogo.svg" alt=""
             tal:attributes="alt view/site_title;
-                           title view/site_title;"
+                           title view/site_title;
+                           src string:${view/navigation_root_url}/++plone++design.plone.theme/unibalogo.svg"
       /></a>
    <a title="Home" class="main-header_tematic"
          tal:define="portal_url context/@@plone_portal_state/portal_url;
