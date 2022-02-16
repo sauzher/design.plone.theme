@@ -140,9 +140,9 @@
 
             @media (max-width: $mobile-menu-width) {
                 &:checked + label:after {
-                    // transform: rotate(-180deg);
+                    transform: rotate(-180deg) translateY(10px);
                     transition: ease-in 0.35s;
-                    content: '\e014';
+                    //content: '\e014';
                 }
             }
 
@@ -173,22 +173,21 @@
             text-align: center;
 
             &:after {
-                font-family: 'Glyphicons Halflings';
+                // font-family: 'Glyphicons Halflings';
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 800;
                 line-height: 1;
                 // background: darken($link-color, 7%);
                 border-radius: $input-border-radius;
-                content: '\e114';
+                content: '\e228';
                 cursor: pointer;
                 display: inline-block;
                 line-height: 1;
                 width: 1.5em;
                 height: 1.5em;
                 font-size: 1em;
-                padding: 0.25em;
                 right: 0.5em;
-                top: 0.45em;
+                top: 1em;
                 position: absolute;
             }
         }
