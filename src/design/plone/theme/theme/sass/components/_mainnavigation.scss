@@ -129,6 +129,9 @@
             left: auto;
             right: -1px;
         }
+        &:first-child() > ul {
+            left: 0;
+        }
 
         .opener {
             display: none;

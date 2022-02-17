@@ -1,7 +1,9 @@
-<div id="portal-logo">
+<div id="portal-logo"  
+   tal:define="portal_url context/@@plone_portal_state/portal_url;
+               sitelogo view/img_src|nothing;">
    <a 
       title="Home"
-      tal:attributes="href view/navigation_root_url;
+      tal:attributes="href portal_url;
                      title view/navigation_root_title"
       i18n:domain="plone"
       i18n:attributes="title"
@@ -12,10 +14,9 @@
                            src string:${view/navigation_root_url}/++plone++design.plone.theme/unibalogo.svg"
       /></a>
    <a title="Home" class="main-header_tematic"
-         tal:define="portal_url context/@@plone_portal_state/portal_url;
-                     sitelogo view/img_src|nothing;"
-         tal:condition="context/@@site-logo/data|nothing"
-         tal:attributes="href portal_url"><img
+        
+         tal:condition="context/cazzlogo|context/@@site-logo/data|nothing"
+         tal:attributes="href view/navigation_root_url"><img
          tal:attributes="src sitelogo;
                         title view/navigation_root_title;"
          alt="Portal Logo"></a>
