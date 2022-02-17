@@ -333,15 +333,16 @@
     background-color: transparent;
 }
 
-nav ul.navTree li {
-    a svg {
+nav ul.navTree li a {
+    svg {
         opacity: 0;
         visibility: hidden;
         //    display: none;
         transition: ease-out 0.35s;
     }
+
     &:hover {
-        a svg {
+        svg {
             transition: ease-in 0.35s;
             opacity: 1;
             visibility: visible;
