@@ -16,7 +16,8 @@
    <a title="Home" class="main-header_tematic"
         
          tal:condition="context/cazzlogo|context/@@site-logo/data|nothing"
-         tal:attributes="href view/navigation_root_url"><img
+         tal:attributes="href view/navigation_root_url">
+         <img
          tal:attributes="src sitelogo;
                         title view/navigation_root_title;"
          alt="Portal Logo"></a>

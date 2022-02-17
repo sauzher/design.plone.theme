@@ -111,6 +111,7 @@
     @include make-container;
     display: flex;
     justify-content: space-between;
+    height: 116px;
 
     button#search-toggle,
     button.plone-navbar-toggle {
