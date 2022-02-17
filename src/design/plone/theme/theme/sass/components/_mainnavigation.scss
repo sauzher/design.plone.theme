@@ -75,7 +75,8 @@
                 // background-color: $uniba-gray;
                 // color: $uniba-dark;
                 // border-left: 2px solid $uniba-gray;
-                text-shadow: 1px 1px 2px $uniba;
+                // text-shadow: 1px 1px 2px $uniba; // a dezio non piace
+
                 transition: ease-in 0.25s;
                 background-color: darken($uniba-gray, 5%);
             }
