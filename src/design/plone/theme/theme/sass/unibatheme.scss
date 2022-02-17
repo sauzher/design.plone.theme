@@ -50,18 +50,18 @@
 
             &.out {
                 .glyphicon-chevron-up {
-                    display: none;
+                    display: inherit;
                 }
                 .glyphicon-chevron-down {
-                    display: inherit;
+                    display: none;
                 }
             }
             &.out.collapsed {
                 .glyphicon-chevron-down {
-                    display: none !important;
+                    display: inherit !important;
                 }
                 .glyphicon-chevron-up {
-                    display: inherit !important;
+                    display: none !important;
                 }
             }
         }
@@ -331,4 +331,21 @@
 
 #portal-breadcrumbs {
     background-color: transparent;
+}
+
+nav ul.navTree li {
+    a svg {
+        opacity: 0;
+        visibility: hidden;
+        //    display: none;
+        transition: ease-out 0.35s;
+    }
+    &:hover {
+        a svg {
+            transition: ease-in 0.35s;
+            opacity: 1;
+            visibility: visible;
+            // display: inline-block;
+        }
+    }
 }
