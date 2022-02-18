@@ -5,6 +5,7 @@
         // padding: 0;
         width: 100%;
         background-color: transparent;
+        z-index: 11;
 
         .container {
             margin-right: 0;
@@ -109,9 +110,10 @@
             @media (max-width: $mobile-menu-width) {
                 height: 0;
                 background-color: $uniba-gray;
-                width: 90vw;
+                // width: 90vw;
                 margin-left: 1em;
                 border-right: none;
+                overflow: hidden;
 
                 li {
                     a {
@@ -158,6 +160,7 @@
             &:checked ~ ul {
                 height: auto;
                 transition: ease-in 0.35s;
+                padding-bottom: 1em;
             }
 
             @media (max-width: $mobile-menu-width) {
@@ -319,6 +322,8 @@
     @include clearfix();
     -webkit-overflow-scrolling: touch;
     display: none;
+    z-index: 11;
+    position: sticky;
 
     &.in {
         display: block;
