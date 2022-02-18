@@ -130,6 +130,7 @@
         }
         &:first-child() > ul {
             left: 0;
+            right: auto;
         }
 
         .opener {

@@ -9,12 +9,15 @@
 }
 
 #header-banner {
-    background-color: $gray-agid;
+    background-color: transparent;
     color: #fff;
     font-weight: $semibold;
-    padding: 1.3rem 0;
+    padding: 0;
     z-index: 500;
     @include antialias;
+    position: absolute;
+    top: 0;
+    right: 0;
 
     .header-banner-inner {
         @include make-container;
@@ -57,14 +60,16 @@
             text-transform: uppercase;
             border: 0;
             padding: 0;
+            margin-top: 0.5rem;
 
             svg {
+                display: none;
                 margin-left: 0.5rem;
             }
         }
 
         ul.dropdown-menu {
-            background-color: $gray-agid;
+            background-color: $uniba-dark;
             font-size: 1em;
             left: auto;
             right: 0;
