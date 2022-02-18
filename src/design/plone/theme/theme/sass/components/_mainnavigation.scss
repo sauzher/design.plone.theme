@@ -14,17 +14,13 @@
         // z-index: 5001;
     }
     .plone-toolbar-left-default {
-        #portal-globalnav-wrapper {
-            .container {
-                padding-left: 60px;
-            }
+        #portal-globalnav.plone-nav {
+            margin-left: 60px !important;
         }
     }
     .plone-toolbar-left-expanded {
-        #portal-globalnav-wrapper {
-            .container {
-                padding-left: 120px;
-            }
+        #portal-globalnav.plone-nav {
+            margin-left: 120px !important;
         }
     }
 }
@@ -323,7 +319,7 @@
     -webkit-overflow-scrolling: touch;
     display: none;
     z-index: 11;
-    position: sticky;
+    // position: sticky;
 
     &.in {
         display: block;
@@ -369,25 +365,18 @@
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     border: 1px solid transparent;
     border-radius: $border-radius-base;
+    transition: ease-in 0.25s;
 
     // We remove the `outline` here, but later compensate by attaching `:hover`
     // styles to `:focus`.
     &:focus,
-    &:active {
-        outline: 0;
-        border: 1px solid transparent;
-        background-color: transparent;
-        box-shadow: none;
-        background-image: none;
-    }
-
+    &:active,
     &:hover {
-        // background-color: darken($sitenav-link-hover-bg, 15%);
-        // border-color: darken($sitenav-link-hover-bg, 25%);
         outline: 0;
-        border: 1px solid transparent;
-        background-color: transparent;
         box-shadow: none;
+        // margin-right: 10px;
+        border: 1px solid transparent;
+        background-color: #eee;
         background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
         .icon-bar {
             // background-color: lighten($color: $uniba-dark, $amount: 50%);
@@ -461,9 +450,14 @@
         // float: left;
         width: 100%;
         padding-left: 0;
-        margin: 0 $sitenav-padding-horizontal * -1 0;
+        margin: 0; // $sitenav-padding-horizontal * -1 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 1em;
         flex-direction: column;
         background-color: $uniba-gray;
+        border: 2px solid #eee;
 
         > li {
             float: left;
