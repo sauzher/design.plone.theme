@@ -103,6 +103,14 @@
            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
      <value key="js">++theme++design.plone.theme/js/dist/bundle-compiled.js</value>
   </records>
+  <records prefix="plone.resources/uniba-rubrica-js"
+           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++theme++design.plone.theme/js/dist/uniba.rubrica.js</value>
+  </records>
+  <records prefix="plone.resources/handlebars-js"
+           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+     <value key="js">++theme++design.plone.theme/js/dist/handlebars.min.js</value>
+  </records>
   <records prefix="plone.resources/design-plone-theme-icons"
            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
      <value key="js">++theme++design.plone.theme/js/dist/rt-icons.js</value>
@@ -123,8 +131,9 @@
   <records prefix="plone.bundles/design-plone-theme-js-bundle"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="enabled">True</value>
-    <value key="resources" purge="false">
+    <value key="resources" purge="true">
       <element>design-plone-theme-js</element>
+      <element>uniba-rubrica-js</element>
     </value>
     <value key="jscompilation">++theme++design.plone.theme/js/dist/design-plone-theme-bundle-compiled.min.js</value>
     <value key="last_compilation">2018-04-02 00:00:00</value>

@@ -128,6 +128,7 @@ module.exports = function(grunt) {
         files: {
           'js/dist/design-plone-theme-bundle-compiled.min.js': [
             'js/dist/bundle-compiled.js',
+            'js/dist/uniba.rubrica.js',
           ],
         },
       },
