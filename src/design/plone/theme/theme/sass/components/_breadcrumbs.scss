@@ -18,6 +18,7 @@
 #portal-breadcrumbs {
     background: $gray-bg;
     padding: 0;
+    margin-top: -0.5em;
 
     ol {
         @extend .list-unstyled, .list-inline;

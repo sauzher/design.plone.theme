@@ -8,19 +8,21 @@
         z-index: 11;
 
         .container {
-            margin-right: 0;
-            padding-right: 0;
+            // margin-right: 0;
+            // padding-right: 0;
         }
         // z-index: 5001;
     }
     .plone-toolbar-left-default {
         #portal-globalnav.plone-nav {
-            margin-left: 60px !important;
+            // margin-left: 60px !important;
+            // overflow-x: scroll;
         }
     }
     .plone-toolbar-left-expanded {
         #portal-globalnav.plone-nav {
-            margin-left: 120px !important;
+            // margin-left: 120px !important;
+            // overflow-x: scroll;
         }
     }
 }
@@ -29,7 +31,8 @@
     .plone-toolbar-left-expanded {
         #portal-globalnav-wrapper {
             .container {
-                padding-left: 0px;
+                // padding-left: 0px;
+                // margin-left:0;
             }
         }
     }
@@ -240,7 +243,7 @@
 
             ul {
                 background-color: darken($uniba-gray, 5%);
-                position: absolute;
+                position: relative;
                 z-index: 100;
                 padding: 1em;
                 opacity: 0;
@@ -249,6 +252,7 @@
                 box-shadow: $uniba-nav-box-shadow;
                 margin-left: 2px;
                 max-width: 50vw;
+                top: 45px;
 
                 &:before {
                     content: '';
@@ -319,8 +323,8 @@
     // Prevent floats from breaking the navbar
     @include clearfix();
     @media (max-width: $mobile-menu-width) {
-        position: absolute;
-        top: 12em;
+        // position: absolute;
+        top: 2em;
         right: 0;
         z-index: 5;
     }
@@ -383,32 +387,45 @@
     z-index: 2; //just in case
     position: relative;
     float: right;
-    margin-top: -1.5em;
-    margin-bottom: 6px;
+    margin-top: -2em;
+    margin-bottom: 0x;
     padding: 6px 10px;
 
     background-color: transparent;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    border: 1px solid transparent;
-    border-radius: $border-radius-base;
-    transition: ease-in 0.25s;
+    border: none;
+    border-radius: none;
+    // transition: ease-in 0.25s;
 
     // We remove the `outline` here, but later compensate by attaching `:hover`
     // styles to `:focus`.
+    &:hover,
+    &:focus,
+    &:active {
+        // Override default button  hover behavior
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
+        .icon-bar {
+            box-shadow: $uniba-nav-box-shadow;
+        }
+    }
+    /*
     &:focus,
     &:active,
     &:hover {
         outline: 0;
         box-shadow: none;
         // margin-right: 10px;
-        border: 1px solid transparent;
-        background-color: #eee;
+        border: 2px solid #eee;
+        background-color: $uniba-gray;
         background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+        border-bottom-color: transparent;
         .icon-bar {
             // background-color: lighten($color: $uniba-dark, $amount: 50%);
-            box-shadow: $uniba-nav-box-shadow;
         }
     }
+    */
 
     // Burgerbar (uncomment for a ≡ menu and comment menu just below)
 
@@ -480,7 +497,7 @@
         left: 0;
         right: 0;
         position: absolute;
-        top: 1em;
+        top: 0em;
         flex-direction: column;
         background-color: $uniba-gray;
         border: 2px solid #eee;
