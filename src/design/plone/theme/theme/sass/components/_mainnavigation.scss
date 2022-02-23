@@ -75,7 +75,7 @@
                 // text-shadow: 1px 1px 2px $uniba; // a dezio non piace
 
                 transition: ease-in 0.25s;
-                background-color: darken($uniba-gray, 5%);
+                // background-color: darken($uniba-gray, 5%);
             }
         }
 
@@ -127,10 +127,18 @@
         &:nth-last-child(-n + 3) > ul {
             left: auto;
             right: -1px;
+            &:before {
+                right: 24px;
+                left: auto;
+            }
         }
         &:first-child() > ul {
             left: 0;
             right: auto;
+            &:before {
+                left: 24px;
+                right: auto;
+            }
         }
 
         .opener {
@@ -242,6 +250,23 @@
                 margin-left: 2px;
                 max-width: 50vw;
 
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -5px;
+                    bottom: -12px;
+                    left: 24px;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 4px;
+                    background-color: darken($uniba-gray, 5%);
+                    transform: rotate(45deg);
+                    opacity: 1;
+                    display: block;
+                    transition: opacity 0.15s
+                        cubic-bezier(0.1, 0.57, 0.36, 0.99);
+                }
+
                 li {
                     a {
                         color: $uniba;
@@ -258,7 +283,7 @@
         .has_subtree:hover {
             transition: ease-in 0.35s;
             border-bottom-color: $uniba-gray;
-            background-color: darken($uniba-gray, 5%);
+            // background-color: darken($uniba-gray, 5%);
         }
 
         .has_subtree:hover > ul,
