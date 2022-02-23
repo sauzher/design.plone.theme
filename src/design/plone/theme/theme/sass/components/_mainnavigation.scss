@@ -65,7 +65,7 @@
             color: $uniba;
             font-size: ceil(($font-size-base * 1.15));
             hyphens: auto;
-            word-break: break-word;
+            // word-break: break-word;
             // border-radius: $border-radius-base $border-radius-base 0 0;
             border-left: 2px solid $uniba-gray;
 
@@ -356,7 +356,7 @@
     }
 
     @media (min-width: $mobile-menu-width) {
-        width: 100vm;
+        // width: 100v;
         // border-top: 0 none white;
         // box-shadow: $uniba-nav-box-shadow;
 
@@ -469,7 +469,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 47px;
+    // height: 47px;
 
     > li > a {
         padding-top: 10px;
