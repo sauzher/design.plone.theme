@@ -180,6 +180,49 @@
         z-index: 9990;
         height: auto;
     }
+
+    #servizionline-toggle {
+        &:after {
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: 100;
+            line-height: 1;
+            border-radius: 4px;
+            content: '\e114';
+            cursor: pointer;
+            display: inline-block;
+            line-height: 1;
+            width: 1.5em;
+            height: 1.5em;
+            font-size: 0.7em;
+            margin-left: 0.5em;
+            transition: ease-in 0.15s;
+        }
+    }
+
+    .open {
+        #servizionline_collapse {
+            background-color: #013553;
+            padding: 1em;
+            position: absolute;
+            z-index: 4000;
+            right: auto;
+            width: 40em;
+            margin: 0;
+            top: 38px;
+            left: auto;
+
+            & > div {
+                display: flex;
+                flex-flow: column nowrap;
+            }
+        }
+        #servizionline-toggle {
+            &:after {
+                transform: translateY(6px);
+            }
+        }
+    }
 }
 /*  end Main header */
 
