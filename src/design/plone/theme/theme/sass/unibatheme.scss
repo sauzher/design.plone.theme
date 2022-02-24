@@ -226,10 +226,13 @@
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                ul li {
-                    display: list-item;
-                    a {
-                        padding: 0;
+                ul {
+                    list-style: none;
+                    li {
+                        display: list-item;
+                        a {
+                            padding: 0;
+                        }
                     }
                 }
             }
