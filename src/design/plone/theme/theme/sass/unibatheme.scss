@@ -207,14 +207,31 @@
             position: absolute;
             z-index: 4000;
             right: auto;
-            width: 40em;
+            width: auto;
             margin: 0;
             top: 38px;
             left: auto;
 
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            h7 {
+                color: $uniba-gray;
+            }
+
             & > div {
                 display: flex;
-                flex-flow: column nowrap;
+                flex-direction: row;
+                flex-wrap: wrap;
+                ul li {
+                    display: list-item;
+                    a {
+                        padding: 0;
+                    }
+                }
             }
         }
         #servizionline-toggle {
