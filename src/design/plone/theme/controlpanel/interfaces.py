@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
+from doctest import debug_script
 from design.plone.theme import _
 from plone.supermodel import model
 from zope import schema
-
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
+from plone.autoform import directives as form
+from plone.app.z3cform.widget import RelatedItemsWidget
+from plone.app.vocabularies.catalog import CatalogSource
 
 class IDesignPloneThemeSettings(model.Schema):
 
@@ -91,4 +95,45 @@ class IDesignPloneThemeSettings(model.Schema):
                 default=u'Show login button'),
         default=False,
         required=False
+    )
+
+
+
+
+
+
+class IUnibaPloneThemeSettings(model.Schema):
+    """ configurazione Tema UniBa
+    """
+
+    servizi_online_uniba = schema.Bool(
+        title=_(u'servizi_online_uniba',
+                default=u'Usa il menu\' definito sul portale UniBa.it'),
+        default=True,
+        required=False
+    )
+
+    servizi_online_uniba_url = schema.URI(
+        title=_(u'servizi_online_uniba_url',
+                default=u'URL da cui recuperare i servizi online'),
+        description=_(u'servizi_online_uniba_url_desc',
+                      default=u'Inserire l\'url completo dei servizi online con cui '
+                      'popolare il menu\''),
+        default="https://www.uniba.it/@@uniba.servizi_online",
+        required=False
+    )
+
+    servizi_online_content = schema.ASCIILine(
+        title=_(u'menu_servizi_online_topbar', default="Menu' servizi online della topbar uniba"),
+        required=False,
+        description=_('description_servizi_online_topbar', 'Documento da referenziare contenente il menu\''),
+    )
+    form.widget(
+        'servizi_online_content', RelatedItemsWidget,
+        pattern_options={
+            "closeOnSelect": False,
+            "selectableTypes":  ["Document"],
+            "mode": "search",
+            "rootPath": "/",
+        }
     )

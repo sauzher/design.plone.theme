@@ -89,6 +89,7 @@
   </record>
 
   <records interface="design.plone.theme.controlpanel.interfaces.IDesignPloneThemeSettings" />
+  <records interface="design.plone.theme.controlpanel.interfaces.IUnibaPloneThemeSettings" />
 
   <!-- RESOURCES -->
   <records prefix="plone.resources/design-plone-theme-css"

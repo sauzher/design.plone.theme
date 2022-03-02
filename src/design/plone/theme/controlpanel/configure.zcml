@@ -11,5 +11,13 @@
         permission="design.plone.theme.permissions.EditAgidthemeSettings"
         layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
         />
+        
+    <browser:page
+        name="uniba-plone-theme-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".view.UnibaPloneThemeSettingsControlPanel"
+        permission="design.plone.theme.permissions.EditAgidthemeSettings"
+        layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+        />
 
 </configure>

@@ -254,4 +254,13 @@
   />
 
 
+    <!-- Uniba Views -->
+    <browser:page
+      name="uniba.servizi_online"
+      layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+      class=".views.ServiziOnline"
+      attribute="getContents"
+      permission="zope2.Public"
+  />
+
 </configure>

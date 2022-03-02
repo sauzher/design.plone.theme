@@ -27,18 +27,18 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Tema: Italia Design Plone Theme"
+      title="UniBa Tema: Italia Design Plone Theme"
       directory="profiles/default"
-      description="Installa il tema basato sulle linee guida italiane per le PA."
+      description="Installa il tema UniBa basato sulle linee guida italiane per le PA."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.post_install"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="Disinstalla: Tema: Italia Design Plone Theme"
+      title="Disinstalla: UniBa Tema: Italia Design Plone Theme"
       directory="profiles/uninstall"
-      description="Disinstalla il tema basato sulle linee guida italiane per le PA."
+      description="Disinstalla il tema UniBa basato sulle linee guida italiane per le PA."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.uninstall"
       />

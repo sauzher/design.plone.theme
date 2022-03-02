@@ -18,109 +18,12 @@
 		</span>
 		<ul class="uniba-topbar__list " id="topbar-list">
 			<li><a id="servizionline-toggle" href="https://www.uniba.it/servizionline"
-			class="pat-toggle"
-			data-toggle="dropdown">Servizi online
-			</a>
-			<div id="servizionline_collapse" class="dropdown-menu">
-				<div xmlns="http://www.w3.org/1999/xhtml" >
-					<div class="">
-						<h3>Studenti</h3>
-						<ul>
-							<li>
-								<a title="" href="https://www.uniba.it/studenti/segreterie-studenti/amministrative/certificazioni" target="_self">Autocertificazioni</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/come-fare-per.." target="_self">Come fare per...</a>
-							</li>
-							<li>
-								<a title="Concorsi numero programmato" href="https://www.uniba.it/didattica/numero-programmato" target="_self">Concorsi numero programmato</a>
-							</li>
-							<li>
-								<a class="external-link" href="https://csi.ict.uniba.it/guide-e-configurazioni/guide-e-configurazioni" target="_self" title="Manuali online">Manuali online</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/studenti/segreterie-studenti/procedure" target="_self">Immatricolazioni e iscrizioni</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/studenti/modulistica" target="_self">Modulistica</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/studenti/servizi-informatici/mav-on-line" target="_self">Pagamento tasse - PagoPA</a>
-							</li>
-							<li>
-								<a class="external-link" href="http://www.studenti.ict.uniba.it/esse3/ListaAppelliOfferta.do?menu_opened_cod=navbox_didattica_Esami" target="_self" title="Prenotazione esami">Prenotazione esami</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/rassegna-stampa" target="_self">Rassegna stampa</a>
-							</li>
-							<li>
-								<a class="external-link" href="https://www.studenti.ict.uniba.it/esse3/Anagrafica/PasswordDimenticata.do" target="_self" title="Recupero password">Recupero password</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/sensusaccess" target="_self">SensusAccess</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/bibliotechecentri" target="_self">Servizi bibliotecari</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/studenti/servizi-informatici/posta-elettronica-e-servizi-associati" target="_self">Webmail studenti UniBA</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/studenti/servizi-informatici/wi-fi" target="_self">Wifi</a>
-							</li>
-						</ul>
-					</div>
-					<div class="">
-						<h3>Personale</h3>
-						<ul>
-							<li>
-								<a class="external-link" href="https://documenti.ict.uniba.it/" target="_self" title="Cedolini stipendi - CUD">Cedolini stipendi - CUD</a>
-							</li>
-							<li>
-								<a class="external-link" href="http://epta2.ict.uniba.it/moodle/" target="_self" title="Formazione a distanza">Formazione a distanza</a>
-							</li>
-							<li>
-								<a class="external-link" href="https://reclutamento.ict.uniba.it/login" target="_self" title="Gestione bandi di lavoro">Gestione bandi di lavoro</a>
-							</li>
-							<li>
-								<a class="external-link" href="https://persone.ict.uniba.it/login" target="_self" title="Gestione rubrica">Gestione Rubrica</a>
-							</li>
-							<li>
-								<a class="external-link" href="https://csi.ict.uniba.it/servizi/richiesta-assegnazione-liste-di-distribuzione" target="_self" title="Liste di distribuzione">Liste di distribuzione</a>
-							</li>
-							<li>
-								<a class="external-link" href="https://csi.ict.uniba.it/faq/office-365" target="_self" title="">Microsoft Office 365</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/modulistica" target="_self">Modulistica</a>
-							</li>
-							<li>
-								<a class="external-link" href="http://www.presenze.uniba.it/" target="_self" title="Presenze UniBA">Presenze UniBA</a>
-							</li>
-							<li>
-								<a class="external-link" href="https://titulus.uniba.it/xway/application/xdocway/engine/xdocway.jsp" target="_self" title="Protocollo informatico">Protocollo informatico (Titulus)</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/rassegna-stampa" target="_self">Rassegna stampa</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/sensusaccess" target="_self">SensusAccess</a>
-							</li>
-							<li>
-								<a class="external-link" href="http://mondo.ict.uniba.it/sistema-identita-visiva" target="_blank" title="">Sistema identità visiva</a>
-							</li>
-							<li>
-								<a class="external-link" href="https://webmail.uniba.it/" target="_self" title="">
-									<span class="external-link">Webmail UniBA</span>
-								</a>
-							</li>
-							<li>
-								<a title="" href="https://www.uniba.it/studenti/servizi-informatici/wi-fi" target="_self">Wifi</a>
-							</li>
-						</ul>
-					</div>
+				class="pat-toggle"
+				data-toggle="dropdown">Servizi online
+				</a>
+				<div id="servizionline_collapse" class="dropdown-menu">
+					<tal:servizi replace="structure context/uniba4/@@uniba.servizi_online"/>
 				</div>
-			</div>
 			</li>
 		
 			<li><a href="https://www.uniba.it/esse3">Esse3 - Segreteria online</a></li>
