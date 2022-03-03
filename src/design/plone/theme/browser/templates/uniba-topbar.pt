@@ -1,5 +1,6 @@
 <section class="uniba-topbar"
-	tal:define="portal_url context/@@plone_portal_state/portal_url">
+	tal:define="portal_url context/@@plone_portal_state/portal_url;
+	           portal context/@@plone_portal_state/portal">      
 	<nav class="uniba-topbar__nav container">
   		<div class="uniba-topbar__tornauniba">
   			<div>
@@ -22,7 +23,7 @@
 				data-toggle="dropdown">Servizi online
 				</a>
 				<div id="servizionline_collapse" class="dropdown-menu">
-					<tal:servizi replace="structure context/uniba4/@@uniba.servizi_online"/>
+					<tal:servizi replace="structure portal/@@uniba.servizi_online"/>
 				</div>
 			</li>
 		
