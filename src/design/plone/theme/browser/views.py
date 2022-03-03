@@ -5,30 +5,23 @@ from lxml import etree
 from lxml import objectify
 from plone import api
 
-
 try:
     from plone.app.multilingual.interfaces import ITranslationManager
-    NO_MULTILINGUA=False
+    NO_MULTILINGUA = False
 except:
-    NO_MULTILINGUA=True
-    
+    NO_MULTILINGUA = True
+
 from plone.memoize import ram
 from plone.memoize.view import memoize
 from plone.protect.interfaces import IDisableCSRFProtection
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from six.moves import StringIO
-from six.moves import urllib
 from time import time
-from zope.component import getMultiAdapter
-from zope.interface import implementer
 
+import requests
 
-ProxyHandler = urllib.request.ProxyHandler
-URLError = urllib.error.URLError
-build_opener =  urllib.request.build_opener
-install_opener = urllib.request.install_opener
-urlopen = urllib.request.urlopen
+urlparse = requests.utils.urlparse
 
 
 def safe_transalte(obj):
@@ -39,9 +32,8 @@ def safe_transalte(obj):
     if current_language in obj_translations.get_translations():
         return obj_translations.get_translation(current_language)
 
-    # fallback sull'unica traduzione disponibile    
+    # fallback sull'unica traduzione disponibile
     return obj
-        
 
 
 class ServiziOnline(BrowserView):
@@ -51,13 +43,12 @@ class ServiziOnline(BrowserView):
 
     @memoize
     def getContents(self):
-        context = self.context
         servizi_online_uniba = api.portal.get_registry_record(
             name='design.plone.theme.controlpanel.interfaces.IUnibaPloneThemeSettings.servizi_online_uniba')
-        
+
         if servizi_online_uniba:
             # recuperiamo i servizi online dal portale uniba
-           return self.getUniBaITAccessoRapido()
+            return self.getUniBaITAccessoRapido()
         else:
             # usiamo la definizione locale
             content_uid = api.portal.get_registry_record(
@@ -76,15 +67,18 @@ class ServiziOnline(BrowserView):
         """
         info = """<a href="http://www.uniba.it/servizionline"
         >al momento l'informazione non pu&ograve; essere recuperata</a>"""
-        URL = "https://www.uniba.it"
+
         url = servizi_online_uniba = api.portal.get_registry_record(
             name='design.plone.theme.controlpanel.interfaces.IUnibaPloneThemeSettings.servizi_online_uniba_url')
-        
+
+        parsed = urlparse(url)
+        url = '{}://{}{}'.format(parsed.scheme, parsed.hostname, parsed.path)
+
         # debug
-        #URL = api.portal.get().absolute_url()
-        #URL = URL.replace('8080', '8081').replace('https','http')
-      
-        response = self.safeRetrive(url)
+        # URL = api.portal.get().absolute_url()
+        # URL = URL.replace('8080', '8081').replace('https','http')
+
+        response = self.safeRetrive(url, parsed.username, parsed.password)
         try:
             obj = objectify.parse(response)
             root = obj.getroot()
@@ -95,34 +89,39 @@ class ServiziOnline(BrowserView):
 
         return info
 
-    def safeRetrive(self, url):
+    def safeRetrive(self, url, username=None, password=None):
         result = None
         try:
             logger.info('apro url {}'.format(url))
-            response = urlopen(url, timeout=5)
+            auth = None
+            if username and password:
+                auth = requests.auth.HTTPBasicAuth(username, password)
+
+            response = requests.get(url,
+                                    auth=auth)
             logger.info(response)
-            assert response.code == 200
-            stream = response.read()
+            assert response.status_code == 200
+            stream = response.text
             del response
-            return StringIO(stream.decode())
+            return StringIO(stream)
         except Exception as e:
             logger.debug(e)
             result = None
 
         try:
-            proxy = ProxyHandler(
-                {
-                    "http": "proxy.ict.uniba.it:8080",
-                    "https": "proxy.ict.uniba.it:8080",
-                }
-            )
-            opener = build_opener(proxy)
-            install_opener(opener)
-            response = urlopen(url, timeout=5)
-            assert response.code == 200
-            stream = response.read()
+            proxy = {
+                "http": "proxy.ict.uniba.it:8080",
+                "https": "proxy.ict.uniba.it:8080",
+            }
+
+            response = requests.get(url,
+                                    auth=auth,
+                                    proxies=proxy,
+                                    timeout=5)
+            assert response.status_code == 200
+            stream = response.text
             del response
-            return StringIO(stream.decode())
+            return StringIO(stream)
         except Exception as e:
             logger.debug(e)
             result = None
