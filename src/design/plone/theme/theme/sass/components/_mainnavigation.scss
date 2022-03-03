@@ -91,6 +91,7 @@
             height: auto;
             column-count: 2;
             border-right: 3px solid rgba($color: $uniba, $alpha: 0.5);
+            // border-radius: 5px;
             // border-left: 1px solid rgba($color: $uniba, $alpha: 0.5);
             // box-shadow: $uniba-nav-box-shadow;
 
@@ -149,13 +150,13 @@
 
             & + label:after {
                 transform: rotate(0deg);
-                transition: ease-in 0.35s;
+                transition: ease-in 0.25s;
             }
 
             @media (max-width: $mobile-menu-width) {
                 &:checked + label:after {
-                    transform: rotate(-180deg) translateY(10px);
-                    transition: ease-in 0.35s;
+                    transform: translateY(10px);
+                    transition: ease-in 0.25s;
                     //content: '\e014';
                 }
             }
@@ -177,6 +178,10 @@
                     opacity: 1;
                 }
             }
+        }
+        // plone-navbar-nav li.cartella-1.has_subtree.inPath.current label
+        .current label:after {
+            color: $uniba-gray;
         }
 
         label {
@@ -480,13 +485,19 @@
     // use selected for the last item in the structure
 
     .current > a,
-    .selected > a {
+    .selected > a,
+    .inPath > a {
         &,
         &:hover,
         &:focus {
-            color: white;
+            color: $uniba-gray;
             background-color: darken($uniba, 10%);
         }
+    }
+
+    .inPath > label,
+    .current > label {
+        color: $uniba-gray;
     }
 
     // Uncollapse the nav
@@ -503,6 +514,7 @@
         background-color: $uniba-gray;
         border: 2px solid #eee;
         height: auto;
+        box-shadow: 0 10px 20px gray;
 
         > li {
             float: left;
@@ -521,7 +533,7 @@
             }
 
             li.has_subtree label:after {
-                transform: rotate(-90deg);
+                transform: translateY(-5px);
             }
         }
 
