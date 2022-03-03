@@ -92,14 +92,14 @@ class ServiziOnline(BrowserView):
     def safeRetrive(self, url, username=None, password=None):
         result = None
         try:
-            logger.info('apro url {}'.format(url))
+            logger.debug('apro url {}'.format(url))
             auth = None
             if username and password:
                 auth = requests.auth.HTTPBasicAuth(username, password)
 
             response = requests.get(url,
                                     auth=auth)
-            logger.info(response)
+            logger.debug(response)
             assert response.status_code == 200
             stream = response.text
             del response
