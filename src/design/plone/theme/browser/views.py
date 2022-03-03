@@ -82,10 +82,11 @@ class ServiziOnline(BrowserView):
         try:
             obj = objectify.parse(response)
             root = obj.getroot()
-            result = etree.tostring(root.body.div)
+            result = etree.tostring(root.body)
             return result
         except Exception as e:
-            return info
+            logger.error("impossibile parserizzare i servizi online {}".format(e))
+            pass
 
         return info
 
