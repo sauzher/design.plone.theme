@@ -192,10 +192,10 @@
   <drop css:content=".portal-footer .rerPortletAdvancedStatic.valuta-sito" />
 
   <!-- sposto portalMessage sotto le breadcrumbs -->
-  <!-- before css:content="#content" css:if-content="#content .portalMessage">
+  <before css:content="#content" css:if-content="#content .portalMessage">
     <xsl:copy-of css:select="#content .portalMessage" />
-  </before>
-  <drop css:content="#content .portalMessage" / -->
+  </before> 
+  <drop css:content="#content .portalMessage" /> 
 
   <replace content="//*[@class[contains(., 'portalMessage')]]">
     <xsl:variable name="status">
@@ -204,7 +204,8 @@
       <xsl:if test="@class[contains(., 'warning')]">alert</xsl:if>
       <xsl:if test="@class[contains(., 'error')]">alert</xsl:if>
     </xsl:variable>
-    <div role="{$status}"><xsl:copy-of select="attribute::*" />
+    <div role="{$status}">
+      <xsl:copy-of select="attribute::*" />
       <xsl:apply-templates select="./node()" />
     </div>
   </replace>
