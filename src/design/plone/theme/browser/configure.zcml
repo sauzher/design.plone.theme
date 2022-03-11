@@ -129,6 +129,15 @@
       layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
       template="templates/news_big_photo_renderer.pt"
       />
+  <!--<zcml:condition product="installed Products.PloneFormGen">-->
+    <browser:page
+        name="widget_likert.pt"
+        permission="zope2.View"
+        for="*"
+        layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+        template="templates/widget_likert.pt"
+        />
+  <!--</zcml:condition>-->
 
   <browser:page
       name="news_area_tematica_renderer"
