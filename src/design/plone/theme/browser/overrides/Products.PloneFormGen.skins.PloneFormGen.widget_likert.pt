@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+<body>
+
+    <metal:define define-macro="view">
+    </metal:define>
+
+  <metal:define define-macro="edit">
+    <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+      <div metal:fill-slot="widget_body" class="table-responsive">
+         <table class="likert listing Table Table--withBorder js-TableResponsive tablesaw tablesaw-swipe"
+               tal:define="questions field/getQuestionSet;
+                           answers field/getAnswerSet;
+                           fid field/getName;
+                           responses python:request.form.get(fid, {});">
+          <tr>
+            <th class="tablesaw-swipe-cellpersist">&nbsp;</th>
+            <th tal:repeat="answer answers" tal:content="answer" />
+          </tr>
+          <tal:block tal:repeat="question questions">
+              <tr tal:define="row repeat/question/number;
+                              response python:responses.get(str(row), None)"
+                  tal:attributes="class python:repeat['question'].even() and 'even' or'odd'">
+                <td class="tablesaw-swipe-cellpersist" 
+                    tal:content="question" />
+                <td tal:repeat="answer answers">
+                  <input type="radio" tal:define="col repeat/answer/number"
+                         tal:attributes="id string:${fid}_${row}_${col};
+                                         name string:${fid}.${row}:record;
+                                         value answer;
+                                         checked python:response==answer and 'CHECKED' or None;"
+                                         />
+                </td>
+              </tr>
+          </tal:block>
+        </table>
+      </div>
+    </metal:use>
+  </metal:define>
+</body>
+</html>
