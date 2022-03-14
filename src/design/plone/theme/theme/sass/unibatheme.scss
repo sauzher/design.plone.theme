@@ -54,18 +54,18 @@
             z-index: 9999;
 
             &.out {
-                .glyphicon-chevron-up {
+                .Icon-collapse {
                     display: inherit;
                 }
-                .glyphicon-chevron-down {
+                .Icon-expand {
                     display: none;
                 }
             }
             &.out.collapsed {
-                .glyphicon-chevron-down {
+                .Icon-expand {
                     display: inherit !important;
                 }
-                .glyphicon-chevron-up {
+                .Icon-collapse {
                     display: none !important;
                 }
             }
@@ -183,12 +183,12 @@
 
     #servizionline-toggle {
         &:after {
-            font-family: 'Glyphicons Halflings';
+            font-family: 'ita';
             font-style: normal;
             font-weight: 100;
             line-height: 1;
             border-radius: 4px;
-            content: '\e114';
+            content: '\23f6';
             cursor: pointer;
             display: inline-block;
             line-height: 1;

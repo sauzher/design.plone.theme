@@ -81,6 +81,7 @@
               Help
             </span>
         </label>
+        <script type="text/javascript" src="++resource++mockup/select2/pattern.js" />
         <select multiple="multiple"
                 class="blurrable pat-select2"
                 tal:attributes="name string:${fieldName}:list;

@@ -193,13 +193,13 @@
             text-align: center;
 
             &:after {
-                font-family: 'Glyphicons Halflings';
+                font-family: 'ita';
                 font-style: normal;
                 font-weight: 400;
                 line-height: 1;
                 // background: darken($link-color, 7%);
                 border-radius: $input-border-radius;
-                content: '\e114';
+                content: '\23f6';
                 cursor: pointer;
                 display: inline-block;
                 line-height: 1;
