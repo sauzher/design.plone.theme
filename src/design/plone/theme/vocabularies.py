@@ -57,3 +57,22 @@ class SocialsVocabulary(object):
 
 
 SocialsVocabularyFactory = SocialsVocabulary()
+
+
+
+   
+    
+from plone.app.vocabularies.terms import safe_simplevocabulary_from_values
+from plone import api
+
+
+@implementer(IVocabularyFactory)
+class getIndexes(object):
+    def __call__(self, context):
+        
+        pg = api.portal.get().portal_catalog
+        indici = pg.getIndexObjects();
+        indici = sorted(indici, key=lambda x:x.getId().lower());   
+        return safe_simplevocabulary_from_values([x.getId() for x in indici])
+    
+getIndexesFactory = getIndexes()

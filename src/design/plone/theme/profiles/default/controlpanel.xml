@@ -16,7 +16,7 @@
             <permission>design.plone.theme.permissions.EditAgidthemeSettings</permission>
     </configlet>
     <configlet
-        title="Configurazione tema agid UniBa"
+        title="UniBa - Configurazione tema agid "
         action_id="uniba-plone-theme-controlpanel"
         appId="design.plone.theme"
         category="Products"
@@ -26,6 +26,18 @@
         visible="True"
         i18n:attributes="title">
             <permission>design.plone.theme.permissions.EditAgidthemeSettings</permission>
+    </configlet>
+    <configlet
+        title="UniBa - Reindicizzazione UID "
+        action_id="uniba-reindex-uid-controlpanel"
+        appId="design.plone.theme"
+        category="Products"
+        condition_expr=""
+        icon_expr=""
+        url_expr="string:${portal_url}/@@uniba-reindex-uid-controlpanel"
+        visible="True"
+        i18n:attributes="title">
+            <permission>cmf.ManagePortal</permission>
     </configlet>
 
 </object>

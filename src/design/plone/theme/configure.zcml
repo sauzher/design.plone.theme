@@ -52,5 +52,10 @@
     component=".vocabularies.SocialsVocabularyFactory"
     name="design.plone.theme.vocabularies.SocialsVocabulary"
     />
+    
+  <utility
+    component=".vocabularies.getIndexesFactory"
+    name="plone.catalog.indexes"
+    />
 
 </configure>

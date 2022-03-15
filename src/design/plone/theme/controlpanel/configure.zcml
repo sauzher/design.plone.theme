@@ -19,5 +19,13 @@
         permission="design.plone.theme.permissions.EditAgidthemeSettings"
         layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
         />
+        
+    <browser:page
+        name="uniba-reindex-uid-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".view.UnibaUIDReindexControlPanel"
+        permission="cmf.ManagePortal"
+        layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+        />
 
 </configure>

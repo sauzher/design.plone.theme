@@ -137,3 +137,25 @@ class IUnibaPloneThemeSettings(model.Schema):
             "rootPath": "/",
         }
     )
+    
+    
+class IUnibaReindexUid(model.Schema):
+    """ definizione for per la reindicizzazione di un elenco di uid
+    """
+    uids = schema.List(title=_("reindex_uid_title", 
+                               default="Lista uid da reindicizzare"),
+                       description=_("reindex_uid_description", 
+                                     default="elencare gli UID senza apici e senza separeatori; "
+                                     "uno per riga",),
+                       value_type=schema.ASCIILine()
+                       )
+    
+    indici = schema.Tuple(
+        title=_("reindex_indici_title", 
+                default="Selezionare gli indici"),
+        description=_("reindex_indici_desc", 
+                      default="una seleziona vuota comportera' la reindicizzazione completa"),
+        required=False,
+        value_type=schema.Choice(
+            vocabulary='plone.catalog.indexes',)
+    )
