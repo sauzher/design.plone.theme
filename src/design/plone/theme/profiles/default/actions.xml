@@ -39,7 +39,20 @@
    </property>
    <property name="visible">False</property>
   </object>
-  
  </object>
-
+ 
+ <object name="object_buttons" meta_type="CMF Action Category">
+  <object name="localreindex" meta_type="CMF Action" i18n:domain="plone">
+   <property name="title">Local reindex</property>
+   <property name="description" i18n:translate="">Reindicizza TUTTO il sottoalbero</property>
+   <property name="url_expr">string:${object_url}/@@localReindex</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions">
+    <element value="Manage portal"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+ </object>
 </object>

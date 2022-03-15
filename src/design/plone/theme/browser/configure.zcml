@@ -262,4 +262,21 @@
       permission="zope2.Public"
   />
 
+
+    <!--UniBa Utilities-->
+    <browser:page
+      for="*"
+      name="manage_madovesono"
+      class=".utility.UnibaUtils"
+      attribute="whichInstance"
+      permission="zope.Public"
+      />
+    <browser:page
+      for="*"
+      name="localReindex"
+      class=".utility.UnibaUtils"
+      attribute="localReindex"
+      permission="cmf.ManagePortal"
+      />
+      
 </configure>

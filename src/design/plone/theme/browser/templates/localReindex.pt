@@ -1,0 +1,18 @@
+<p>Questo sottoalbero contiene piu' di 1000 oggetti... sei sicuro?<br\>
+<a href="" tal:attributes="href string:${context/absolute_url}/@@localReindex?force:int=1">S&igrave;</a>
+</p>
+<form action=""
+      tal:attributes="action string:${context/absolute_url}/@@localReindex">
+      <label for="idxs">Potresti ridurre l'indicizzazione solo al seguente indice</label>
+      <input name="idxs:list" placeholder="es. Title"/>
+      <select name="idxs">
+        <option value="">Seleziona...</option>
+        <option tal:define="indici context/portal_catalog/getIndexObjects;
+                            indici python:sorted(indici, lambda x,y:cmp(x.getId().lower(), y.getId().lower()));"
+                tal:repeat="index indici"
+                tal:attributes="value index/getId"
+                tal:content="index/getId">Title...</option>
+      </select>
+      <input type="hidden" name="force:int" value="1"/>
+      <input type="submit" name="submit" value="indicizza"/>
+</form>
