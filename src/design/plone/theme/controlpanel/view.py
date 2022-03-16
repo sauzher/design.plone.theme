@@ -53,7 +53,7 @@ class UnibaUIDReindexForm(form.Form):
     def reindicizza(self, action):
         data, errors = self.extractData()
         if errors:
-            self.status="error"
+            self.status="E' occorso un errore"
             return
         indici = data.get('indici')
         
@@ -70,10 +70,6 @@ class UnibaUIDReindexForm(form.Form):
                 
         self.status="Reindicizzazi {} oggetti".format(i)
         
-        
-        
-        
-
 
 class UnibaUIDReindexControlPanel(controlpanel.ControlPanelFormWrapper):  # noqa
     """ uniba settings control panel.
