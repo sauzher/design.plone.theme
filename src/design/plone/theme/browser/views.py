@@ -1,25 +1,24 @@
 # -*- coding: utf-8 -*-
+from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from design.plone.theme import logger
 from logging import getLogger
 from lxml import etree
 from lxml import objectify
 from plone import api
+from plone.memoize import ram
+from plone.memoize.view import memoize
+from plone.protect.interfaces import IDisableCSRFProtection
+from six.moves import StringIO
+from time import time
+import requests
+
 
 try:
     from plone.app.multilingual.interfaces import ITranslationManager
     NO_MULTILINGUA = False
 except:
     NO_MULTILINGUA = True
-
-from plone.memoize import ram
-from plone.memoize.view import memoize
-from plone.protect.interfaces import IDisableCSRFProtection
-from Products.Five.browser import BrowserView
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from six.moves import StringIO
-from time import time
-
-import requests
 
 urlparse = requests.utils.urlparse
 
