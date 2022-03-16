@@ -3,10 +3,9 @@ from doctest import debug_script
 from design.plone.theme import _
 from plone.supermodel import model
 from zope import schema
-from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.autoform import directives as form
 from plone.app.z3cform.widget import RelatedItemsWidget
-from plone.app.vocabularies.catalog import CatalogSource
+
 
 class IDesignPloneThemeSettings(model.Schema):
 
@@ -96,10 +95,6 @@ class IDesignPloneThemeSettings(model.Schema):
         default=False,
         required=False
     )
-
-
-
-
 
 
 class IUnibaPloneThemeSettings(model.Schema):
