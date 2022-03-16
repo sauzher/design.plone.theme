@@ -8,7 +8,7 @@
       <select name="idxs">
         <option value="">Seleziona...</option>
         <option tal:define="indici context/portal_catalog/getIndexObjects;
-                            indici python:sorted(indici, lambda x,y:cmp(x.getId().lower(), y.getId().lower()));"
+                            indici python:sorted(indici, key=lambda x:x.getId().lower());"
                 tal:repeat="index indici"
                 tal:attributes="value index/getId"
                 tal:content="index/getId">Title...</option>
