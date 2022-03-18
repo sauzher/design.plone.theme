@@ -12,7 +12,7 @@
 
 #portal-column-one,
 #portal-column-two {
-    @include make-sm-column(3);
+    @include make-sm-column(2);
     padding: 0;
 }
 // in plone control panel o add content...
@@ -28,11 +28,11 @@
     }
 
     .with-column-one & {
-        @include make-sm-column-pull(9);
+        @include make-sm-column-pull(10);
     }
 
     .with-column-one.with-column-two & {
-        @include make-sm-column-pull(6);
+        @include make-sm-column-pull(8);
     }
 }
 
@@ -49,10 +49,10 @@
 
     .with-column-one &,
     .with-column-two & {
-        @include make-sm-column(9);
+        @include make-sm-column(10);
     }
     .with-column-one & {
-        @include make-sm-column-push(3);
+        @include make-sm-column-push(2);
 
         @media (min-width: $screen-xs-max) {
             padding-left: 6%;
@@ -68,7 +68,7 @@
     }
 
     .with-column-one.with-column-two & {
-        @include make-sm-column(6);
+        @include make-sm-column(8);
 
         @media (min-width: $screen-xs-max) {
             padding: 0 40px;
