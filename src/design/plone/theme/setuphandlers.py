@@ -49,6 +49,7 @@ def add_advancedstatic_styles(context):
     NEW_STYLES = (
         u'portletStaticNavigation|stile menu di navigazione',
         u'PagesTileStatic|stile landing page aree tematiche',
+        u'PagesTileNoTitle|stile senza Titolo',
     )
 
     STYLES = api.portal.get_registry_record(

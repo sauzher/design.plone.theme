@@ -162,6 +162,8 @@
     <value purge="false">
       <element>portletStaticNavigation|stile menu di navigazione</element>
       <element>PagesTileStatic|stile landing page aree tematiche</element>
+      <element>PagesTileNoTitle|stile senza Titolo</element>
+    </value>
     </value>
   </record>
 

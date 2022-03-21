@@ -101,6 +101,13 @@
             }
         }
     }
+    &.PagesTileNoTitle {
+        h2.tileTitle {
+            display: none;
+            visibility: hidden;
+            background-color: red;
+        }
+    }
 }
 
 .PagesTileStatic,

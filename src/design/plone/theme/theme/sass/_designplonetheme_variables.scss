@@ -116,7 +116,9 @@ $screen-sm: 768px;
 $screen-md: 992px;
 
 // Large screen / wide desktop
-$screen-lg: 1300px;
+$screen-lg: 1500px;
+
+$screen-lg-narrow: 1155px;
 
 // NAV COLLAPSE
 //$screen-nav-collapse: 1045px;
@@ -137,7 +139,7 @@ $container-desktop: (auto);
 $container-md: $container-desktop;
 
 // Large screen / wide desktop
-$container-large-desktop: (auto); //(1270px + $grid-gutter-width);
+$container-large-desktop: (1470px + $grid-gutter-width); //(auto);
 //** For `$screen-lg-min` and up.
 $container-lg: $container-large-desktop - $grid-gutter-width;
 
