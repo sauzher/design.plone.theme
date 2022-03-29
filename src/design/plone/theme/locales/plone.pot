@@ -20,3 +20,50 @@ msgstr ""
 msgid "There were errors"
 msgstr ""
 
+
+msgid "Please, upload an image"
+msgstr "Carica una immagine"
+
+msgid "Select an existing content"
+msgstr "Seleziona un contenuto esistente"
+
+msgid "Show content title"
+msgstr "Mostra il titolo del contenuto"
+
+msgid "Show content text"
+msgstr ""
+
+msgid "Show content image (if available)"
+msgstr ""
+
+
+msgid "Image scale"
+msgstr ""
+
+msgid "Tile additional styles"
+msgstr ""
+
+msgid "Display mode"
+msgstr ""
+
+msgid "Insert a list of additional CSS classes that will be added to the tile"
+msgstr ""
+
+msgid "Show content description"
+msgstr ""
+
+msgid "Paste a URL here to embed external multimedia content. Supported sites can be found at http://noembed.com/#supported-sites"
+msgstr ""
+
+msgid "A tile which displays the context title"
+msgstr ""
+
+msgid "A tile which displays the context description"
+msgstr ""
+
+msgid "Existing content"
+msgstr ""
+
+msgid "A tile which displays a content object"
+msgstr ""
+

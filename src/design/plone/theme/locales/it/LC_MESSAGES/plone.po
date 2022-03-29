@@ -14,5 +14,50 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+msgid "A tile which displays a content object"
+msgstr "Una Tile che mostra un contenuto esistente"
+
+msgid "A tile which displays the context description"
+msgstr "Una tile che mostra la descrizione di questo contesto"
+
+msgid "A tile which displays the context title"
+msgstr "Una Tile che mostra il titolo di questo contesto"
+
+msgid "Display mode"
+msgstr "Modalita' di visualizzazione"
+
+msgid "Existing content"
+msgstr "Contenuto esistente"
+
+msgid "Image scale"
+msgstr "Scala dell'immagine"
+
+msgid "Insert a list of additional CSS classes that will be added to the tile"
+msgstr "Inserirsi una lista classi CSS addizionali che saranno aggiunte alla Tile"
+
+msgid "Paste a URL here to embed external multimedia content. Supported sites can be found at http://noembed.com/#supported-sites"
+msgstr "Incolla qui un URL per incorporare (embed) un contenuto multimediale esterno. I siti supportati possono essere trovati qui: http://noembed.com/#supported-sites"
+
+msgid "Please, upload an image"
+msgstr "Carica una immagine"
+
+msgid "Select an existing content"
+msgstr "Seleziona un contenuto esistente"
+
+msgid "Show content description"
+msgstr "Mostra la descrizione del contenuto"
+
+msgid "Show content image (if available)"
+msgstr "Mostra l'immagine del contenuto (se disponibile)"
+
+msgid "Show content text"
+msgstr "Mostra il testo del contenuto"
+
+msgid "Show content title"
+msgstr "Mostra il titolo del contenuto"
+
 msgid "There were errors"
 msgstr "Sono presenti degli errori, si prega di ricontrollare i dati inseriti"
+
+msgid "Tile additional styles"
+msgstr "Stili addizionali disponibili"

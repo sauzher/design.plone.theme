@@ -181,7 +181,7 @@
         height: auto;
     }
 
-    #servizionline-toggle {
+    .unibaheader-toggle {
         &:after {
             font-family: 'ita';
             font-style: normal;
@@ -201,7 +201,7 @@
     }
 
     .open {
-        #servizionline_collapse {
+        .unibaheader_collapse {
             background-color: #013553;
             padding: 1em;
             position: absolute;
@@ -237,7 +237,7 @@
                 }
             }
         }
-        #servizionline-toggle {
+        .unibaheader-toggle {
             &:after {
                 transform: translateY(6px);
             }

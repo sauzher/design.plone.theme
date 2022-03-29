@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-24 09:53+0000\n"
+"POT-Creation-Date: 2022-03-29 16:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,66 +19,102 @@ msgid "Configurazione tema agid"
 msgstr ""
 
 #: ../configure.zcml:44
-msgid "Disinstalla il tema basato sulle linee guida italiane per le PA."
+msgid "Disinstalla il tema UniBa basato sulle linee guida italiane per le PA."
 msgstr ""
 
 #: ../configure.zcml:44
-msgid "Disinstalla: Tema: Italia Design Plone Theme"
+msgid "Disinstalla: UniBa Tema: Italia Design Plone Theme"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:142
+#: ../browser/templates/uniba-topbar.pt:65
+msgid "Enti e Imprese"
+msgstr ""
+
+#: ../browser/templates/uniba-topbar.pt:45
+msgid "Futuri studenti"
+msgstr ""
+
+#: ../browser/tile_collection_renderers.py:154
 msgid "Gallery layout"
 msgstr "Layout gallery"
 
 #: ../configure.zcml:35
-msgid "Installa il tema basato sulle linee guida italiane per le PA."
+msgid "Installa il tema UniBa basato sulle linee guida italiane per le PA."
+msgstr ""
+
+#: ../browser/templates/uniba-topbar.pt:53
+msgid "Laureati"
 msgstr ""
 
 #: ../behaviors/behavior.py:25
 msgid "Layout"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:152
+#: ../browser/tile_collection_renderers.py:164
 msgid "Layout servizi online"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:147
+#: ../browser/tile_collection_renderers.py:159
 msgid "Link aree tematiche"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:103
+#: ../browser/tile_collection_renderers.py:115
 msgid "News highlight"
 msgstr "News in evidenza"
 
-#: ../browser/tile_collection_renderers.py:119
+#: ../browser/tile_collection_renderers.py:131
 msgid "News in area tematica"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:132
+#: ../browser/tile_collection_renderers.py:144
 msgid "News layout with image"
 msgstr "Layout news con immagine"
 
-#: ../browser/tile_collection_renderers.py:111
+#: ../browser/tile_collection_renderers.py:123
 msgid "News with big photo"
 msgstr "News in primo piano con foto grande"
 
-#: ../browser/tile_collection_renderers.py:127
+#: ../browser/templates/uniba-topbar.pt:61
+msgid "Personale"
+msgstr ""
+
+#: ../controlpanel/view.py:52
+msgid "Reindicizza"
+msgstr ""
+
+#: ../browser/tile_collection_renderers.py:139
 msgid "Servizi in area tematica"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:94
+#: ../browser/tile_collection_renderers.py:106
 msgid "Sights layout"
 msgstr "Layout siti d'interesse"
 
-#: ../configure.zcml:35
-msgid "Tema: Italia Design Plone Theme"
+#: ../browser/templates/uniba-topbar.pt:57
+msgid "Studenti internazionali"
 msgstr ""
 
-#: ../browser/configure.zcml:39
+#: ../browser/templates/uniba-topbar.pt:49
+msgid "Studenti iscritti"
+msgstr ""
+
+#: ../browser/configure.zcml:49
 msgid "Tiles page view"
 msgstr "Vista tiles schermo intero"
 
-#: ../browser/tile_collection_renderers.py:137
+#: ../profiles/default/controlpanel.xml
+msgid "UniBa - Configurazione tema agid"
+msgstr ""
+
+#: ../profiles/default/controlpanel.xml
+msgid "UniBa - Reindicizzazione UID"
+msgstr ""
+
+#: ../configure.zcml:35
+msgid "UniBa Tema: Italia Design Plone Theme"
+msgstr ""
+
+#: ../browser/tile_collection_renderers.py:149
 msgid "Video layout"
 msgstr "Layout video con modale"
 
@@ -87,19 +123,24 @@ msgid "We want to add a field Class for objects"
 msgstr ""
 
 #. Default: "published on"
-#: ../browser/templates/document_by_line.pt:35
+#: ../browser/templates/document_by_line.pt:30
 msgid "box_published_on"
 msgstr "pubblicato il"
 
 #. Default: "List of content-types that can be enable for social sharing."
-#: ../controlpanel/interfaces.py:12
+#: ../controlpanel/interfaces.py:15
 msgid "description_available_portaltypes"
 msgstr "Una lista di content-type che sono abilitati alla condivisione sui social."
 
 #. Default: "List of social networks enabled for sharing."
-#: ../controlpanel/interfaces.py:26
+#: ../controlpanel/interfaces.py:29
 msgid "description_available_socials"
 msgstr "Una lista di social network abilitati per la condivisione."
+
+#. Default: "Documento da referenziare contenente il menu'"
+#: ../controlpanel/interfaces.py:124
+msgid "description_servizi_online_topbar"
+msgstr ""
 
 #: ../behaviors/configure.zcml:13
 msgid "design.plone.theme: Class on View behavior"
@@ -110,63 +151,79 @@ msgstr ""
 msgid "follow_us"
 msgstr "Seguici su"
 
-#. Default: "List of links to external social networks. These links are showed in the header.\nIf there isn't a related icon in the theme, the link will not appear properly.\nAvailable icons are: facebook, twitter, youtube, medium, linkedin, storify, rss, newsletter.\nInsert a list of values (one per row) in the following form: social_id|url where social_id is one of the social with available icons."
-#: ../controlpanel/interfaces.py:39
+#. Default: "List of links to external social networks. These links are showed in the header.\nIf there isn't a related icon in the theme, the link will not appear properly.\nAvailable icons are: facebook, twitter, youtube, medium, linkedin, storify, rss, newsletter and instagram.\nInsert a list of values (one per row) in the following form: social_id|url where social_id is one of the social with available icons."
+#: ../controlpanel/interfaces.py:42
+#, fuzzy
 msgid "follow_us_links_description"
 msgstr "Una lista di link a social network. Questi link vengono mostrati nella testata del sito. Se non è presente la relativa classe css nel tema, l'icona non può essere mostrata. Le icone possibili sono: facebook, twitter, youtube, medium, linkedin, storify, rss, newsletter. Inserisci una lista di valori (uno per riga) nella seguente forma: social_id|url dove social_id è uno dei possibili social con un'icona disponibile."
 
 #. Default: "Follow us links"
-#: ../controlpanel/interfaces.py:37
+#: ../controlpanel/interfaces.py:40
 msgid "follow_us_links_label"
 msgstr "Link Seguici su"
 
+#. Default: "Cerca in uniba"
+#: ../browser/templates/uniba-topbar.pt:70
+msgid "header_cercauniba"
+msgstr ""
+
+#. Default: "Info per"
+#: ../browser/templates/uniba-topbar.pt:39
+msgid "header_infofor"
+msgstr ""
+
 #. Default: "Header link label"
-#: ../controlpanel/interfaces.py:57
+#: ../controlpanel/interfaces.py:60
 msgid "header_link_label"
 msgstr "Testo del link in testata"
 
 #. Default: "Label for the link in the header of the site"
-#: ../controlpanel/interfaces.py:59
+#: ../controlpanel/interfaces.py:62
 msgid "header_link_label_desc"
 msgstr "Testo per il link che si trova in cima alla testata del sito"
 
 #. Default: "Header link url"
-#: ../controlpanel/interfaces.py:65
+#: ../controlpanel/interfaces.py:68
 msgid "header_link_url"
 msgstr "URL del link in testata"
 
 #. Default: "URL of the link in the header"
-#: ../controlpanel/interfaces.py:67
+#: ../controlpanel/interfaces.py:70
 msgid "header_link_url_desc"
 msgstr "URL per il link che si trova in cima alla testata del sito"
 
+#. Default: "Rubrica"
+#: ../browser/templates/uniba-topbar.pt:34
+msgid "header_rubrica"
+msgstr ""
+
 #. Default: "Header second link label"
-#: ../controlpanel/interfaces.py:73
+#: ../controlpanel/interfaces.py:76
 msgid "header_second_link_label"
 msgstr "Link in testata secondario"
 
 #. Default: "Label for the link in the header of                              the site at right"
-#: ../controlpanel/interfaces.py:75
+#: ../controlpanel/interfaces.py:78
 msgid "header_second_link_label_desc"
 msgstr "Label per il link secondario in testata"
 
 #. Default: "Header second link url"
-#: ../controlpanel/interfaces.py:82
+#: ../controlpanel/interfaces.py:85
 msgid "header_second_link_url"
 msgstr "Link secondario in testata"
 
 #. Default: "URL of the link in the header at right"
-#: ../controlpanel/interfaces.py:84
+#: ../controlpanel/interfaces.py:87
 msgid "header_second_link_url_desc"
 msgstr "Url per il link secondario in testata"
 
 #. Default: "Shareable content types"
-#: ../controlpanel/interfaces.py:10
+#: ../controlpanel/interfaces.py:13
 msgid "heading_available_portaltypes"
 msgstr "Tipi di contenuto da condividere sui social"
 
 #. Default: "Enabled social networks"
-#: ../controlpanel/interfaces.py:24
+#: ../controlpanel/interfaces.py:27
 msgid "heading_available_socials"
 msgstr "Social network disponibili"
 
@@ -174,6 +231,11 @@ msgstr "Social network disponibili"
 #: ../behaviors/behavior.py:17
 msgid "help_class_on_view"
 msgstr "Classe CSS"
+
+#. Default: "https://www.uniba.it/ateneo/le-app-uniba"
+#: ../browser/templates/uniba-topbar.pt:37
+msgid "href_appuniba"
+msgstr ""
 
 #. Default: "Keep reading"
 #: ../browser/templates/news_big_photo_renderer.pt:55
@@ -201,7 +263,7 @@ msgid "login"
 msgstr "Accedi"
 
 #. Default: "Show login button"
-#: ../controlpanel/interfaces.py:90
+#: ../controlpanel/interfaces.py:93
 msgid "login_button_bisible"
 msgstr "Mostra il bottone per il login"
 
@@ -210,11 +272,56 @@ msgstr "Mostra il bottone per il login"
 msgid "logout"
 msgstr "Esci"
 
+#. Default: "Menu' servizi online della topbar uniba"
+#: ../controlpanel/interfaces.py:122
+msgid "menu_servizi_online_topbar"
+msgstr ""
+
 #. Default: "More…"
-#: ../browser/templates/sights_renderer.pt:52
+#: ../browser/templates/sights_renderer.pt:55
 #: ../browser/templates/video_renderer.pt:80
 msgid "more_url"
 msgstr "Altro..."
+
+#. Default: "una seleziona vuota comportera' la reindicizzazione completa"
+#: ../controlpanel/interfaces.py:151
+msgid "reindex_indici_desc"
+msgstr ""
+
+#. Default: "Selezionare gli indici"
+#: ../controlpanel/interfaces.py:149
+msgid "reindex_indici_title"
+msgstr ""
+
+#. Default: "elencare gli UID senza apici e senza separeatori; uno per riga"
+#: ../controlpanel/interfaces.py:142
+msgid "reindex_uid_description"
+msgstr ""
+
+#. Default: "Lista uid da reindicizzare"
+#: ../controlpanel/interfaces.py:140
+msgid "reindex_uid_title"
+msgstr ""
+
+#. Default: "Servizi online"
+#: ../browser/templates/uniba-topbar.pt:22
+msgid "servizi_online"
+msgstr ""
+
+#. Default: "Usa il menu' definito sul portale UniBa.it"
+#: ../controlpanel/interfaces.py:105
+msgid "servizi_online_uniba"
+msgstr ""
+
+#. Default: "URL da cui recuperare i servizi online"
+#: ../controlpanel/interfaces.py:112
+msgid "servizi_online_uniba_url"
+msgstr ""
+
+#. Default: "Inserire l'url completo dei servizi online con cui popolare il menu'"
+#: ../controlpanel/interfaces.py:114
+msgid "servizi_online_uniba_url_desc"
+msgstr ""
 
 #. Default: "Share"
 #: ../browser/templates/social_viewlet.pt:11
@@ -229,6 +336,6 @@ msgid "tiles_collection_noresults"
 msgstr "Nessun risultato trovato"
 
 #. Default: "Toggle share"
-#: ../browser/templates/social_viewlet.pt:35
+#: ../browser/templates/social_viewlet.pt:38
 msgid "toggle_share"
 msgstr "Attiva condividi"

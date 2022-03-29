@@ -31,11 +31,11 @@ msgstr ""
 
 #: ../browser/templates/uniba-topbar.pt:65
 msgid "Enti e Imprese"
-msgstr ""
+msgstr "Institutions and Companies"
 
 #: ../browser/templates/uniba-topbar.pt:45
 msgid "Futuri studenti"
-msgstr ""
+msgstr "Prospective students"
 
 #: ../browser/tile_collection_renderers.py:154
 msgid "Gallery layout"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../browser/templates/uniba-topbar.pt:53
 msgid "Laureati"
-msgstr ""
+msgstr "Graduates"
 
 #: ../behaviors/behavior.py:25
 msgid "Layout"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: ../browser/templates/uniba-topbar.pt:61
 msgid "Personale"
-msgstr ""
+msgstr "Staff"
 
 #: ../controlpanel/view.py:52
 msgid "Reindicizza"
@@ -128,7 +128,7 @@ msgstr ""
 #. Default: "published on"
 #: ../browser/templates/document_by_line.pt:30
 msgid "box_published_on"
-msgstr ""
+msgstr "Pubblicato il"
 
 #. Default: "List of content-types that can be enable for social sharing."
 #: ../controlpanel/interfaces.py:15
@@ -167,12 +167,12 @@ msgstr ""
 #. Default: "Cerca in uniba"
 #: ../browser/templates/uniba-topbar.pt:70
 msgid "header_cercauniba"
-msgstr ""
+msgstr "Search in Uniba"
 
 #. Default: "Info per"
 #: ../browser/templates/uniba-topbar.pt:39
 msgid "header_infofor"
-msgstr ""
+msgstr "Info for"
 
 #. Default: "Header link label"
 #: ../controlpanel/interfaces.py:60
@@ -197,7 +197,7 @@ msgstr ""
 #. Default: "Rubrica"
 #: ../browser/templates/uniba-topbar.pt:34
 msgid "header_rubrica"
-msgstr ""
+msgstr "People"
 
 #. Default: "Header second link label"
 #: ../controlpanel/interfaces.py:76
@@ -308,7 +308,7 @@ msgstr ""
 #. Default: "Servizi online"
 #: ../browser/templates/uniba-topbar.pt:22
 msgid "servizi_online"
-msgstr ""
+msgstr "Online services"
 
 #. Default: "Usa il menu' definito sul portale UniBa.it"
 #: ../controlpanel/interfaces.py:105

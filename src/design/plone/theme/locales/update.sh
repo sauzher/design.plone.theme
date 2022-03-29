@@ -11,7 +11,7 @@ pkg_domain=design.plone.theme
 
 i18ndude rebuild-pot --pot $pkg_domain.pot --create $pkg_domain --merge manual.pot ../
 
-declare -a domains=( design.plone.theme plone z3c.form collective.z3cform.wizard)
+declare -a domains=( design.plone.theme plone z3c.form collective.z3cform.wizard collective.tiles.collection)
 for domain in "${domains[@]}"
 do
     i18ndude sync --pot $domain.pot */LC_MESSAGES/$domain.po

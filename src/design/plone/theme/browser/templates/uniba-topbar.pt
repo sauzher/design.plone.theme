@@ -1,6 +1,7 @@
 <section class="uniba-topbar"
 	tal:define="portal_url context/@@plone_portal_state/portal_url;
-	           portal context/@@plone_portal_state/portal">      
+	           portal context/@@plone_portal_state/portal"
+	i18n:domain="design.plone.theme">      
 	<nav class="uniba-topbar__nav container">
   		<div class="uniba-topbar__tornauniba">
   			<div>
@@ -18,21 +19,56 @@
 			</a>
 		</span>
 		<ul class="uniba-topbar__list " id="topbar-list">
-			<li><a id="servizionline-toggle" href="https://www.uniba.it/servizionline"
-				class="pat-toggle"
-				data-toggle="dropdown">Servizi online
+			<li><a
+				href="https://www.uniba.it/servizionline"
+				class="pat-toggle unibaheader-toggle" 
+				data-toggle="dropdown"
+				i18n:translate="servizi_online">Servizi online
 				</a>
-				<div id="servizionline_collapse" class="dropdown-menu">
+				<div class="dropdown-menu unibaheader_collapse">
 					<tal:servizi replace="structure portal/@@uniba.servizi_online"/>
 				</div>
 			</li>
 		
-			<li><a href="https://www.uniba.it/esse3">Esse3 - Segreteria online</a></li>
-			<li><a href="https://persone.ict.uniba.it/rubrica">Rubrica</a></li>
+			<li><a href="https://www.uniba.it/esse3">Esse3</a></li>
+			<li><a href="https://persone.ict.uniba.it/rubrica" 
+				   i18n:translate="header_rubrica">Rubrica</a></li>
 			<li><a href="https://www.uniba.it/webmail">Webmail</a></li>
-			<li><a href="https://www.uniba.it/ateneo/radiouniba">Web Radio</a></li>
-			<li><a href="https://www.uniba.it/english-version">English version</a></li>
-			<li><a href="https://www.uniba.it/search">Cerca in uniba</a></li>
+			<li><a href="https://www.uniba.it/ateneo/le-app-uniba"
+			       i18n:attributes="href href_appuniba">App Uniba</a></li>
+			<li><a href="https://www.uniba.it/info-for" 
+			     class="pat-toggle unibaheader-toggle" 
+				 data-toggle="dropdown" 
+				 i18n:translate="header_infofor">Info per</a>
+				 	<ul class="dropdown-menu unibaheader_collapse">
+						<li >
+						<a i18n:translate=""
+							href="https://www.uniba.it/studenti/Profili/profilo-futuri-studenti"
+							>Futuri studenti</a></li>
+						<li >
+						<a i18n:translate=""
+							href="https://www.uniba.it/studenti/Profili/profilo-futuri-studenti"
+							>Studenti iscritti</a></li>
+						<li >
+						<a i18n:translate="" 
+							href="https://www.uniba.it/studenti/Profili/profilo-laureati"
+							>Laureati </a></li>
+						<li >
+						<a i18n:translate=""
+							href="https://www.uniba.it/studenti/segreterie-studenti/studenti-stranieri"
+							>Studenti internazionali</a></li>
+						<li >
+						<a i18n:translate="" 
+							href="https://www.uniba.it/personale/profili/"
+							>Personale</a></li>
+						<li >
+						<a i18n:translate="" 
+							href="https://www.uniba.it/enti-imprese" 
+							>Enti e Imprese </a></li>
+					 </ul>
+				</li>
+			<li><a href="https://www.uniba.it/search" 
+					i18n:translate="header_cercauniba">Cerca in uniba</a></li>
 		</ul>
 			
 	</nav>
