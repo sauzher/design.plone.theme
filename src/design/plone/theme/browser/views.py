@@ -127,3 +127,59 @@ class ServiziOnline(BrowserView):
             result = None
 
         return result
+
+
+class Footer(ServiziOnline):
+
+    def __call__(self, **kwargs):
+        """prendiamo il contenuto fatto di list-item gia' impaginati
+        """
+        contents = self.getContents()
+        return contents
+        
+    @memoize
+    def getContents(self):
+        footer_uniba = api.portal.get_registry_record(
+            name='design.plone.theme.controlpanel.interfaces.IUnibaPloneThemeSettings.footer_uniba')
+
+        if footer_uniba:
+            # recuperiamo i servizi online dal portale uniba
+            return self.getUniBaITFooter()
+        else:
+            # usiamo la definizione locale
+            content_uid = api.portal.get_registry_record(
+                name="design.plone.theme.controlpanel.interfaces.IUnibaPloneThemeSettings.footer_content")
+            obj = api.content.get(UID=content_uid)
+
+            obj = safe_transalte(obj)
+            return obj.text.output
+
+    @ram.cache(lambda *args: time() // (60 * 60))
+    def getUniBaITFooter(self,):
+        """
+        tenta la connessione a uniba.it per il recupero delle informazioni
+        """
+        info = """<a href="http://www.uniba.it/servizionline"
+        >al momento l'informazione non pu&ograve; essere recuperata</a>"""
+
+        url = footer_uniba = api.portal.get_registry_record(
+            name='design.plone.theme.controlpanel.interfaces.IUnibaPloneThemeSettings.footer_uniba_url')
+
+        parsed = urlparse(url)
+        url = '{}://{}{}'.format(parsed.scheme, parsed.hostname, parsed.path)
+
+        # debug
+        # URL = api.portal.get().absolute_url()
+        # URL = URL.replace('8080', '8081').replace('https','http')
+
+        response = self.safeRetrive(url, parsed.username, parsed.password)
+        try:
+            obj = objectify.parse(response)
+            root = obj.getroot()
+            result = etree.tostring(root.body)
+            return result
+        except Exception as e:
+            logger.error("impossibile parserizzare il footer {}".format(e))
+            pass
+
+        return info

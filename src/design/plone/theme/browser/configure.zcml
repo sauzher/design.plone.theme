@@ -244,7 +244,8 @@
       template="templates/uniba-topbar.pt"
       permission="zope2.Public"
   />
-    <browser:viewlet
+  
+  <browser:viewlet
       name="plone.footer"
       manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
       layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
@@ -258,6 +259,13 @@
       name="uniba.servizi_online"
       layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
       class=".views.ServiziOnline"
+      attribute="getContents"
+      permission="zope2.Public"
+  />
+  <browser:page
+      name="uniba.footer"
+      layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+      class=".views.Footer"
       attribute="getContents"
       permission="zope2.Public"
   />

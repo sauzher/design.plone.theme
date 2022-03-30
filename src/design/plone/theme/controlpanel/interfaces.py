@@ -132,6 +132,37 @@ class IUnibaPloneThemeSettings(model.Schema):
             "rootPath": "/",
         }
     )
+
+    footer_uniba = schema.Bool(
+        title=_(u'footer_uniba',
+                default=u'Usa il footer definito sul portale UniBa.it'),
+        default=True,
+        required=False
+    )
+
+    footer_uniba_url = schema.URI(
+        title=_(u'footer_uniba_url',
+                default=u'URL da cui recuperare il footer'),
+        description=_(u'footer_uniba_url_desc',
+                      default=u'Inserire l\'url completo del footer'),
+        default="https://www.uniba.it/@@uniba.footer",
+        required=False
+    )
+
+    footer_content = schema.ASCIILine(
+        title=_(u'menu_footer_topbar', default="Contenuto per il footer uniba"),
+        required=False,
+        description=_('description_footer_topbar', 'Documento da referenziare contenente il footer\''),
+    )
+    form.widget(
+        'footer_content', RelatedItemsWidget,
+        pattern_options={
+            "closeOnSelect": False,
+            "selectableTypes":  ["Document"],
+            "mode": "search",
+            "rootPath": "/",
+        }
+    )
     
     
 class IUnibaReindexUid(model.Schema):

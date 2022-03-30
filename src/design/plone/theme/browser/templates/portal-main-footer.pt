@@ -24,55 +24,17 @@
             <a href="https://www.youtube.com/user/unialdomoro"><img
             tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/ico-youtube.svg" ></a></li>
           <li class="socials-item">
-            <a href="https://www.uniba.it/notizieuniba/news/RSS"><img
-            tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/ico-rss.svg" ></a></li>
+            <a href="https://www.linkedin.com/school/universit-degli-studi-di-bari"><img
+            tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/ico-linkedin.svg" ></a></li>
         </ul>
       </div>
-
     </div>
-    <div class="col-sm-4 col-md-3">
-      <div class="text-xs-center">
-        <ul class="list-unstyled">
-        <li><a title="Disabilita' e DSA" href="https://www.uniba.it/studenti/servizi-per-disabili">Disabilità e DSA</a></li>
-        <li><a title="Redazione web" href="https://www.uniba.it/organizzazione/amm-centrale/dai/sezione-servizi-istituzionali/uo-urp-e-redazione-web/redazione-web">Redazione web</a></li>
-        <li><a title="Ufficio stampa" href="https://www.uniba.it/ateneo/rettorato/ufficio-stampa">Ufficio stampa</a></li>
-        <li><a title="Centro Servizi Informatici'" href="https://csi.ict.uniba.it">Centro Servizi Informatici</a></li>
-        <li><a title="Comitato Unico di Garanzia" href="https://www.uniba.it/ateneo/pari-opportunita">Comitato Unico di Garanzia</a></li>
-        <li><a title="Protocollo generale" href="https://www.uniba.it/organizzazione/dafg/areaprotocollo">Protocollo generale</a></li>
-        <li><a title="Servizio Civile Nazionale" href="https://www.uniba.it/studenti/servizio-civile-nazionale">Servizio Civile Nazionale</a></li>
-        <li><a title="E-learning" href="https://www.uniba.it/studenti/e-learning">E-learning</a></li></ul>
-      </div>
-
-    </div>
-    <div class="col-sm-4 col-md-3">
-      <div class="text-xs-center">
-        <ul class="list-unstyled">
-        <li><a title="Alumni" href="https://www.uniba.it/ateneo/alumni-uniba">Alumni</a></li>
-        <li><a title="Credits" href="https://www.uniba.it/crediti">Credits</a></li>
-        <li><a title="Mappa del sito" href="https://www.uniba.it/sitemap">Mappa del sito</a>
-        e <a title="Accessibilità" href="https://www.uniba.it/accessibility-info">Accessibilità</a></li>
-        <li><a title="Note legali" href="https://www.uniba.it/note-legali">Note legali</a>
-        e <a href="https://www.uniba.it/informativaprivacy">Privacy</a></li>
-        <li><a title="Fatturazione elettronica" href="https://www.uniba.it/ateneo/fattura-elettronica">Fatturazione elettronica</a></li>
-        <li><a title="Posta elettronica certificata" href="https://www.uniba.it/ateneo/contatti/pec-posta-elettronica-certificata">Posta elettronica certificata</a></li>
-        <li><a title="Suggerimenti e reclami" href="https://www.uniba.it/organizzazione/urp/segnalazioni">Suggerimenti e reclami</a></li>
-        <li><a title="Elenco siti tematici" href="https://www.uniba.it/siti">Elenco siti tematici</a></li></ul>
-      </div>
-
-    </div>
-    <div class="col-sm-4 col-md-3">
-      <div class="text-xs-center">
-        <ul class="list-unstyled">
-        <li><a title="Amministrazione trasparente" href="https://www.uniba.it/amministrazione-trasparente">Amministrazione trasparente</a></li>
-        <li><a title="Albo Pretorio online" href="https://www.uniba.it/ateneo/albo-pretorio">Albo online</a></li>
-        <li><a title="Atti di notifica" href="https://www.uniba.it/amministrazione-trasparente/altri-contenuti/dati-uteriori/atti-notifica">Atti di notifica</a></li>
-        <li><a title="Bollettino ufficiale" href="https://www.uniba.it/ateneo/amministrazione/servizio-editoriale-universitario/bollettino-ufficiale">Bollettino ufficiale</a></li>
-        <li><a title="Bandi e gare" href="https://www.uniba.it/bandi-gare">Bandi e gare</a></li>
-        <li><a title="Concorsi e selezioni" href="https://www.uniba.it/personale/reclutamento-e-concorsi">Concorsi e selezioni</a></li>
-        <li><a title="Dati di monitoraggio" href="https://www.uniba.it/dati-di-monitoraggio">Dati di monitoraggio</a></li>
-        <li><a title="Presidio della Qualità" href="https://www.uniba.it/ateneo/presidio-qualita">Presidio della Qualità</a></li></ul>
-      </div>
-
+    <div class="col-sm-4 col-md-3"
+        tal:define="contents context/@@uniba.footer"
+         tal:replace="structure contents">
+         <!-- 
+           sezione che verra' popolata con il contenuto del documento che fa da footer
+         -->
     </div>
     </div><!--/.row-->
     <div class="row">
