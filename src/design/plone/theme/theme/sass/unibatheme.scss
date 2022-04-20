@@ -424,3 +424,8 @@ nav ul.navTree li a {
 body {
     word-wrap: break-word;
 }
+
+/*fix altezza immagine testata*/
+.named-image-widget img {
+    height: auto;
+}

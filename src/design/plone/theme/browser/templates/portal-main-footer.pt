@@ -32,7 +32,7 @@
     <div class="col-sm-4 col-md-3"
         tal:define="contents context/@@uniba.footer"
          tal:replace="structure contents">
-         <!-- 
+         <!--
            sezione che verra' popolata con il contenuto del documento che fa da footer
          -->
     </div>

@@ -63,5 +63,8 @@
       "yarn prettier-all",
       "git add"
     ]
+  },
+  "dependencies": {
+    "yarn": "^1.22.18"
   }
 }
