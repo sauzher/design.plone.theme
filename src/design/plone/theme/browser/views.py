@@ -100,7 +100,8 @@ class ServiziOnline(BrowserView):
             response = requests.get(url,
                                     auth=auth)
             logger.debug(response)
-            assert response.status_code == 200
+            if response.status_code != 200:
+                raise Exception('errore nel recuperare la sorgente remota')
             stream = response.text
             del response
             return StringIO(stream)
@@ -118,7 +119,8 @@ class ServiziOnline(BrowserView):
                                     auth=auth,
                                     proxies=proxy,
                                     timeout=5)
-            assert response.status_code == 200
+            if response.status_code != 200:
+                raise Exception('errore nel recuperare la sorgente remota')
             stream = response.text
             del response
             return StringIO(stream)
@@ -136,7 +138,7 @@ class Footer(ServiziOnline):
         """
         contents = self.getContents()
         return contents
-        
+
     @memoize
     def getContents(self):
         footer_uniba = api.portal.get_registry_record(
