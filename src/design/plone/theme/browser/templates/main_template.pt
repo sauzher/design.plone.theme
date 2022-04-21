@@ -71,7 +71,9 @@
                 </div>
             </aside>
 
-            <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
+            <div id="viewlet-above-content" 
+                 class="container"
+                 tal:content="structure provider:plone.abovecontent" />
 
             <article id="portal-column-content">
 
