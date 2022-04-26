@@ -31,4 +31,15 @@
   <hidden manager="plone.abovecontenttitle" skinname="Plone Default">
     <viewlet name="contentleadimage" />
   </hidden>
+  
+  <hidden manager="plone.portaltop" skinname="Plone Default">
+    <viewlet name="contentwellportlets.inheaderportlets" />
+  </hidden>
+  
+  <hidden manager="plone.portalfooter" skinname="Plone Default">
+    <viewlet name="contentwellportlets.footerportlets" />
+  </hidden>
+  
+  
+  
 </object>
