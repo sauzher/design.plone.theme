@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../browser/tile_collection_renderers.py:106
 msgid "Sights layout"
-msgstr "Layout siti d'interesse"
+msgstr "Layout (slideshow) siti d'interesse "
 
 #: ../browser/templates/uniba-topbar.pt:57
 msgid "Studenti internazionali"
