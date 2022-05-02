@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 from collective.tiles.collection.interfaces import ICollectionTileRenderer
+from collective.tiles.collection.interfaces import ICollectionTileData
 from design.plone.theme import _
+from collective.tiles.collection import _ as _c
 from plone import api
 from plone.api.exc import InvalidParameterError
 from plone.app.discussion.interfaces import IConversation
 from Products.Five.browser import BrowserView
 from ZODB.POSException import POSKeyError
 from zope.interface import implementer
+from zope import schema
 
 import logging
 
@@ -19,7 +22,7 @@ class HelpersView(BrowserView):
     A set of helper functions for tile collection views.
     """
 
-    def get_image_tag(self, item, scale='thumb', direction='keep', loading='lazy'):
+    def get_image_tag(self, item, scale='large', direction='keep', loading='lazy'):
         try:
             scale_view = api.content.get_view(
                 name='images',
@@ -96,6 +99,9 @@ class HelpersView(BrowserView):
 
         return False
 
+    def getSlidesToShow(self,):
+        return self.data.slidesToShow()
+        
 
 @implementer(ICollectionTileRenderer)
 class SightsView(BrowserView):
@@ -162,3 +168,34 @@ class AreeTematicheView(BrowserView):
 @implementer(ICollectionTileRenderer)
 class OnlineServicesView(BrowserView):
     display_name = _('Layout servizi online')
+
+
+
+class ICollectionTileDataSlide(ICollectionTileData):
+    slidesToShow = schema.Choice(
+        title=_("num_slides_to_show", u"Numero slide da mostrare (1-4)"), 
+        required=False,
+        default=4,
+        values= [1,2,4]
+    )
+    
+    renderer = schema.Choice(
+        title=_c("collection_tile_renderer", u"Renderer"),
+        description=_c(
+            "collection_tile_renderer_help",
+            u"Select one of the available possible layouts for this tile.",
+        ),
+        vocabulary="collective.tiles.collection.vocabulary.renderers",
+        required=True,
+        default="sights_renderer",
+    )    
+    
+    css_class = schema.TextLine(
+        title=_c("collection_tile_css_class", u"CSS class"),
+        description=_c(
+            "collection_tile_css_class_help",
+            u"Insert a list of additional css classes for this tile.",
+        ),
+        required=False,
+        default=u"carousel",
+    )    

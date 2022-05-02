@@ -111,7 +111,7 @@
       layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
       template="templates/sights_renderer.pt"
       />
-
+       
   <browser:page
       name="news_highlight_renderer"
       permission="zope2.View"
@@ -286,5 +286,23 @@
       attribute="localReindex"
       permission="cmf.ManagePortal"
       />
+
+
+<!--Custom tiles-->
+
+
+  <plone:tile
+      name="collective.tiles.collection2"
+      title="Tile Collezione per slideshow"
+      schema=".tile_collection_renderers.ICollectionTileDataSlide"
+      class="collective.tiles.collection.collection.CollectionTile"
+      template="templates/collection_tile.pt"
+      permission="zope2.View"
+      add_permission="cmf.ModifyPortalContent"
+      layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+      for="*"
+      />
       
 </configure>
+
+
