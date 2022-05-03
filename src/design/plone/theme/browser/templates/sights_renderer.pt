@@ -44,7 +44,8 @@
                       tal:condition="image_tag" 
                       tal:content="structure image_tag" />
                   </div>
-                  <div class="collectionItemText">
+                  <div class="collectionItemText"
+                       tal:condition="not:obj/exclude_from_nav|python:False">
                     <h3>${title}</h3>
                   </div>
                 </a>
