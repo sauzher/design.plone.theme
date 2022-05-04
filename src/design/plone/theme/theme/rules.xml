@@ -13,11 +13,12 @@
    </rules>
 
    <rules css:if-content="body.viewpermission-view, body.viewpermission-none">
+   
      <theme href="index.html" />
      <xi:include href="designplonetheme_rules.xml" />
    </rules>
 
    <!-- Include the backend theme -->
-   <xi:include href="backend.xml" />
+    <xi:include href="backend.xml" />
 
 </rules>

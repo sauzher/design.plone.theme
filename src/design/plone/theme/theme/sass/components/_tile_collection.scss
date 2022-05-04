@@ -9,6 +9,55 @@
         div[class^='carousel-wrapper'] {
             position: relative;
         }
+        .collectionItemText {
+            display: block;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            z-index: 1000;
+            padding: 0;
+            padding-bottom: 10px;
+            background: transparent;
+            background: -moz-linear-gradient(
+                top,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.3) 75%
+            );
+            background: -webkit-linear-gradient(
+                top,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.3) 75%
+            );
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.3) 75%
+            );
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#33000000',GradientType=0 );
+            h3 {
+                background-color: rgba(0, 64, 113, 0.7);
+                padding: 10px;
+                color: #dbe8f1 !important;
+                text-decoration: none;
+                border-bottom: none !important;
+                font-size: 22px;
+                line-height: 37px;
+                font-weight: 400;
+                width: fit-content;
+                margin-bottom: 8px;
+            }
+        }
+
+        @media (max-width: $screen-sm-max) {
+            margin: 0 -15px -20px;
+            overflow: hidden;
+            li.collectionItem {
+                margin-right: 0;
+                margin-left: 0;
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
 
         .slick-list {
             width: 93%;
@@ -33,6 +82,10 @@
             flex-flow: row wrap;
             justify-content: center;
 
+            @media (max-width: $screen-sm-max) {
+                margin-right: 10px;
+            }
+
             li {
                 padding: 0 5px;
 
@@ -48,7 +101,7 @@
 
                 &.slick-active {
                     button {
-                        background-color: rgba(0, 0, 0, 0.67);
+                        background-color: rgba($uniba, 0.67);
                     }
                 }
             }
@@ -806,4 +859,39 @@ h2.tileTitle,
 .tileTitle h3,
 .tileTitle h2 {
     margin: 0;
+}
+
+/* fix slick dots nelle colonne portlet*/
+
+.portletWrapper .carousel ul.slick-dots {
+    position: absolute;
+    right: 15px;
+    backrgound: transparent;
+    justify-content: right;
+    bottom: 1.5em;
+}
+
+@media (min-width: $screen-sm-max) {
+    #column-wrapper aside .carousel .collectionItemText h3 {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 200;
+        padding: 5px;
+        margin-bottom: 2px;
+    }
+    #column-wrapper aside ul.slick-dots {
+        bottom: 0;
+        right: 0;
+        justify-content: center;
+
+        li {
+            padding-left: 1px;
+            padding-right: 1px;
+            margin-right: 1px;
+            button {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
 }

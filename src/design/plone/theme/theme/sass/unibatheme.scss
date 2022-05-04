@@ -432,4 +432,18 @@ body {
 
 #sidebar img {
     max-width: 100%;
+    /*min-height: 0;*/
+    /*min-width: 0;*/
+}
+
+#sidebar .pat-slider {
+    display: none;
+    max-width: 100%;
+    min-height: 0;
+    min-width: 0;
+    content: 'Slider mockup';
+}
+
+#sidebar .collectionTile.carousel {
+    content: 'Slider mockup';
 }
