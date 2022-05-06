@@ -14,11 +14,10 @@
                            src string:${view/navigation_root_url}/++plone++design.plone.theme/unibalogo.svg"
       /></a>
    <a title="Home" class="main-header_tematic"
-        
-         tal:condition="context/cazzlogo|context/@@site-logo/data|nothing"
-         tal:attributes="href view/navigation_root_url">
-         <img
-         tal:attributes="src sitelogo;
+      tal:condition="view/getZonaImage|context/@@site-logo/data|nothing"
+      tal:attributes="href view/navigation_root_url">
+         <img class="logotipo_zona"
+              tal:attributes="src sitelogo;
                         title view/navigation_root_title;"
          alt="Portal Logo"></a>
 </div>

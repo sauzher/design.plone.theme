@@ -1,23 +1,21 @@
 # -*- coding: utf-8 -*-
-from design.plone.theme.controlpanel.interfaces import (
-    IDesignPloneThemeSettings,
-)
+from Products.CMFPlone.utils import getSiteLogo
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from design.plone.theme.controlpanel.interfaces import IDesignPloneThemeSettings
 from design.plone.theme.vocabularies import SHARES
+from plone import api
 from plone import api
 from plone.api.exc import InvalidParameterError
 from plone.app.layout.viewlets import common as base
 from plone.app.layout.viewlets.common import SearchBoxViewlet
-from plone.app.layout.viewlets.content import (
-    ContentRelatedItems as BaseContentRelatedItems,
-)
+from plone.app.layout.viewlets.content import ContentRelatedItems as BaseContentRelatedItems
 from plone.app.layout.viewlets.content import DocumentBylineViewlet
 from plone.app.multilingual.browser.selector import LanguageSelectorViewlet
-from Products.CMFPlone.utils import getSiteLogo
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone.memoize.view import memoize
 from six.moves.urllib.parse import quote
-
+from zope.component import getMultiAdapter
 import logging
-from plone import api
+
 
 logger = logging.getLogger(__name__)
 
@@ -97,14 +95,31 @@ class SocialViewlet(base.ViewletBase):
 class LogoViewlet(base.ViewletBase):
     index = ViewPageTemplateFile('templates/logo.pt')
 
+    @memoize
+    def getZonaImage(self,):
+        nav_root = api.portal.get_navigation_root(self.context)
+        portal = api.portal.get()
+        if portal == nav_root:
+            return
+        
+        if nav_root.portal_type != 'Zona':
+            return
+
+        src = nav_root.absolute_url()+'/@@images/logo'
+        return src
+            
     def update(self):
 
-        super(LogoViewlet, self).update()
+        self.portal_state = getMultiAdapter(
+            (self.context, self.request), name=u"plone_portal_state"
+        )
+        self.site_url = self.portal_state.portal_url()
+        self.navigation_root_url = self.portal_state.navigation_root_url()
         self.site_title = api.portal.get_registry_record('plone.site_title')
 
-        # self.navigation_root_title = self.site_title
+        zona_src = self.getZonaImage()
         self.logo_title = self.site_title
-        self.img_src = getSiteLogo()
+        self.img_src = zona_src or getSiteLogo()
         self.navigation_root_title = self.portal_state.navigation_root().title
 
 
@@ -172,7 +187,8 @@ class HeaderBannerViewlet(LanguageSelectorViewlet):
         return value
 
     def update(self):
-        super(HeaderBannerViewlet, self).update()
+        self.tool = api.portal.getToolByName(self.context, 'portal_languages', None)
+
 
         self.header_link_label = self.get_value_from_registry(
             'header_link_label'
