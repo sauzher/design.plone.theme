@@ -1,3 +1,10 @@
+.sidebar-offcanvas aside {
+    &#portal-column-one,
+    &#portal-column-two {
+        width: 100%;
+    }
+}
+
 .portletAssignments {
     padding: 2rem 0 0;
 
@@ -37,6 +44,7 @@
 
     .managedPortletActions {
         display: flex;
+        font-size: x-small;
     }
 
     .blockedPortlet .managedPortletActions {
