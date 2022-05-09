@@ -72,6 +72,43 @@ class UnibaUtils(BrowserView):
             return context.unrestrictedTraverse(css)(context, request)
         else:
             return ""
+        
+    def solrReindexUIDs(self,):
+        alsoProvides(self.request, IDisableCSRFProtection)
+        host = api.portal.get_registry_record(name="collective.solr.host")
+        port = api.portal.get_registry_record(name="collective.solr.port")
+        base = api.portal.get_registry_record(name="collective.solr.base")
+        query = "select?fl=UID%2C%20modified&indent=true&q.op=OR&q=*%3A*&rows=50000&sort=path_depth%20asc&wt=json"
+        url = "http://{host}:{port}{base}/{query}".format(host=host,
+                                                         port=port,
+                                                         base=base,
+                                                         query=query)
+        import json
+        from urllib.request import urlopen
+        
+        def get(url, object_hook=None):
+            with urlopen(url) as resource:  # 'with' is important to close the resource after use
+                return json.load(resource, object_hook=object_hook)
+        
+        data = get(url)
+        
+        done = 0
+        # prendiamo solo i documenti senza 'modified'
+        docs = [doc for doc in data['response']['docs'] if 'modified' not in doc]
+        n_docs = len(docs)
+        logger.info('da reindicizzare {} elementi '.format(n_docs))
+        for i, doc in enumerate(docs):
+            uid = doc.get('UID')
+            obj = api.content.get(UID=uid)
+            if obj is not None:
+                obj.reindexObject()
+                done += 1
+            if i and not i%100:
+                logger.info('reindicizzati {} elementi ({:.2f})'.format(i, float(i)/n_docs*100))
+                commit()
+        msg = "reindicizzati {} elementi".format(done)
+        logger.info(msg)
+        return msg
 
     def localReindex(self, idxs=[], recursive=True, context=None, force=False):
         """

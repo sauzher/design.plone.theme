@@ -286,6 +286,14 @@
       attribute="localReindex"
       permission="cmf.ManagePortal"
       />
+      
+    <browser:page
+      for="*"
+      name="manage_solrReindexUID"
+      class=".utility.UnibaUtils"
+      attribute="solrReindexUIDs"
+      permission="cmf.ManagePortal"
+      />
 
 
 <!--Custom tiles-->
