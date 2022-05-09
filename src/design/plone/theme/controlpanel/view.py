@@ -8,7 +8,10 @@ from z3c.form import form
 from z3c.form import field
 from z3c.form import button
 from plone import api
+from logging import getLogger
+from transaction import commit
 
+logger = getLogger(__name__)
 
 
 class DesignPloneThemeEditForm(controlpanel.RegistryEditForm):
@@ -57,6 +60,9 @@ class UnibaUIDReindexForm(form.Form):
             return
         indici = data.get('indici')
         
+        n_elem = len(data.get('uids'))
+        
+        logger.info('reindicizzo {} elementi'.format(n_elem))
         for i, uid in enumerate(data.get('uids')):
             uid = uid.strip()
             uid = uid.replace('"','')
@@ -67,7 +73,11 @@ class UnibaUIDReindexForm(form.Form):
             obj = api.content.get(UID=uid)
             if obj is not None:
                 obj.reindexObject(idxs=indici)
-                
+            
+            if i and not i%100:
+                commit()
+                logger.info('reindicizzati {} elementi ({:.2f}%)'.format(i, float(i)/n_elem * 100))
+                                
         self.status="Reindicizzazi {} oggetti".format(i)
         
 
