@@ -147,6 +147,12 @@
 
     @media (max-width: $mobile-menu-width) {
         position: relative;
+        padding-left: 0;
+        margin-left: 0;
+
+        // .main-header_tematic{
+        //     margin-left:0.5em;
+        // }
 
         .search-social-wrapper {
             display: inline-flex;
@@ -255,16 +261,23 @@
     img {
         margin-right: 2rem;
         height: 100%;
+        &.logotipo_zona {
+            width: 100%;
+        }
     }
 
     @media (max-width: $mobile-menu-width) {
         padding: 0;
 
+        a:first-child {
+            display: none;
+        }
         img {
             display: none;
         }
         a:nth-child(2) img {
             display: block;
+            margin-left: 30px;
         }
 
         a:only-child img {
