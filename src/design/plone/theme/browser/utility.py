@@ -105,7 +105,9 @@ class UnibaUtils(BrowserView):
                 done += 1
             if i and not i%100:
                 logger.info('reindicizzati {} elementi ({:.2f})'.format(i, float(i)/n_docs*100))
+                logger.info("last UID: {}".format(uid))
                 commit()
+                
         msg = "reindicizzati {} elementi".format(done)
         logger.info(msg)
         return msg

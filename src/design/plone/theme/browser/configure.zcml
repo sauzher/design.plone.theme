@@ -310,6 +310,20 @@
       layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
       for="*"
       />
+
+    <browser:pages
+      for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
+      class="plone.app.contenttypes.browser.collection.CollectionView"
+      permission="zope2.View">
+    
+        <browser:page
+            name="block_view"
+            template="templates/block_view.pt"
+            menu="plone_displayviews"
+            title="block view"
+            />
+  </browser:pages>
+
       
 </configure>
 

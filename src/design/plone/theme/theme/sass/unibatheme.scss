@@ -447,3 +447,44 @@ body {
 #sidebar .collectionTile.carousel {
     content: 'Slider mockup';
 }
+
+.template-block_view #content-core {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    column-count: 2;
+    .photoAlbumEntry {
+        /*width: 48%;*/
+        flex-grow: 1;
+        border-top: 2px solid $uniba;
+        margin-bottom: 1em;
+        flex-basis: 49%;
+        .boxnotizia-dettagli {
+            border-bottom: 1px solid #ccc;
+            color: $uniba;
+            font-size: 85%;
+            margin-bottom: 0.5em;
+            margin-top: 0.5em;
+            text-transform: uppercase;
+        }
+        .boxnotizia-corpo {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            gap: 0.5em;
+            padding-left: 0.5em;
+            a img {
+                width: 128px;
+            }
+        }
+        .boxnotizia-testo {
+            width: 50%;
+            flex-grow: 1;
+            h4.h4 {
+                margin: 0;
+            }
+        }
+    }
+}
