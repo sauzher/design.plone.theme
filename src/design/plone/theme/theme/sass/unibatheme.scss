@@ -475,8 +475,12 @@ body {
             flex-wrap: nowrap;
             gap: 0.5em;
             padding-left: 0.5em;
-            a img {
-                width: 128px;
+            a {
+                width: 81px;
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
             }
         }
         .boxnotizia-testo {

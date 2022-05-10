@@ -1,6 +1,7 @@
 nav.pagination {
     display: block;
     margin: 20px 0 0;
+    width: 100%;
 
     ul {
         @extend .list-unstyled, .list-inline;

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-03-29 16:13+0000\n"
+"POT-Creation-Date: 2022-05-10 12:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Futuri studenti"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:154
+#: ../browser/tile_collection_renderers.py:160
 msgid "Gallery layout"
 msgstr "Layout gallery"
 
@@ -50,27 +50,27 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:164
+#: ../browser/tile_collection_renderers.py:170
 msgid "Layout servizi online"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:159
+#: ../browser/tile_collection_renderers.py:165
 msgid "Link aree tematiche"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:115
+#: ../browser/tile_collection_renderers.py:121
 msgid "News highlight"
 msgstr "News in evidenza"
 
-#: ../browser/tile_collection_renderers.py:131
+#: ../browser/tile_collection_renderers.py:137
 msgid "News in area tematica"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:144
+#: ../browser/tile_collection_renderers.py:150
 msgid "News layout with image"
 msgstr "Layout news con immagine"
 
-#: ../browser/tile_collection_renderers.py:123
+#: ../browser/tile_collection_renderers.py:129
 msgid "News with big photo"
 msgstr "News in primo piano con foto grande"
 
@@ -78,15 +78,15 @@ msgstr "News in primo piano con foto grande"
 msgid "Personale"
 msgstr ""
 
-#: ../controlpanel/view.py:52
+#: ../controlpanel/view.py:55
 msgid "Reindicizza"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:139
+#: ../browser/tile_collection_renderers.py:145
 msgid "Servizi in area tematica"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:106
+#: ../browser/tile_collection_renderers.py:112
 msgid "Sights layout"
 msgstr "Layout (slideshow) siti d'interesse "
 
@@ -96,6 +96,10 @@ msgstr ""
 
 #: ../browser/templates/uniba-topbar.pt:49
 msgid "Studenti iscritti"
+msgstr ""
+
+#: ../browser/configure.zcml:312
+msgid "Tile Collezione per slideshow"
 msgstr ""
 
 #: ../browser/configure.zcml:49
@@ -114,13 +118,17 @@ msgstr ""
 msgid "UniBa Tema: Italia Design Plone Theme"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:149
+#: ../browser/tile_collection_renderers.py:155
 msgid "Video layout"
 msgstr "Layout video con modale"
 
 #: ../behaviors/configure.zcml:13
 msgid "We want to add a field Class for objects"
 msgstr ""
+
+#: ../browser/configure.zcml:324
+msgid "block view"
+msgstr "Vista a blocchi"
 
 #. Default: "published on"
 #: ../browser/templates/document_by_line.pt:30
@@ -136,6 +144,11 @@ msgstr "Una lista di content-type che sono abilitati alla condivisione sui socia
 #: ../controlpanel/interfaces.py:29
 msgid "description_available_socials"
 msgstr "Una lista di social network abilitati per la condivisione."
+
+#. Default: "Documento da referenziare contenente il footer'"
+#: ../controlpanel/interfaces.py:155
+msgid "description_footer_topbar"
+msgstr ""
 
 #. Default: "Documento da referenziare contenente il menu'"
 #: ../controlpanel/interfaces.py:124
@@ -161,6 +174,21 @@ msgstr "Una lista di link a social network. Questi link vengono mostrati nella t
 #: ../controlpanel/interfaces.py:40
 msgid "follow_us_links_label"
 msgstr "Link Seguici su"
+
+#. Default: "Usa il footer definito sul portale UniBa.it"
+#: ../controlpanel/interfaces.py:137
+msgid "footer_uniba"
+msgstr ""
+
+#. Default: "URL da cui recuperare il footer"
+#: ../controlpanel/interfaces.py:144
+msgid "footer_uniba_url"
+msgstr ""
+
+#. Default: "Inserire l'url completo del footer"
+#: ../controlpanel/interfaces.py:146
+msgid "footer_uniba_url_desc"
+msgstr ""
 
 #. Default: "Cerca in uniba"
 #: ../browser/templates/uniba-topbar.pt:70
@@ -272,34 +300,44 @@ msgstr "Mostra il bottone per il login"
 msgid "logout"
 msgstr "Esci"
 
+#. Default: "Contenuto per il footer uniba"
+#: ../controlpanel/interfaces.py:153
+msgid "menu_footer_topbar"
+msgstr ""
+
 #. Default: "Menu' servizi online della topbar uniba"
 #: ../controlpanel/interfaces.py:122
 msgid "menu_servizi_online_topbar"
 msgstr ""
 
 #. Default: "More…"
-#: ../browser/templates/sights_renderer.pt:55
+#: ../browser/templates/sights_renderer.pt:59
 #: ../browser/templates/video_renderer.pt:80
 msgid "more_url"
 msgstr "Altro..."
 
+#. Default: "Numero slide da mostrare (1-4)"
+#: ../browser/tile_collection_renderers.py:176
+msgid "num_slides_to_show"
+msgstr ""
+
 #. Default: "una seleziona vuota comportera' la reindicizzazione completa"
-#: ../controlpanel/interfaces.py:151
+#: ../controlpanel/interfaces.py:182
 msgid "reindex_indici_desc"
 msgstr ""
 
 #. Default: "Selezionare gli indici"
-#: ../controlpanel/interfaces.py:149
+#: ../controlpanel/interfaces.py:180
 msgid "reindex_indici_title"
 msgstr ""
 
 #. Default: "elencare gli UID senza apici e senza separeatori; uno per riga"
-#: ../controlpanel/interfaces.py:142
+#: ../controlpanel/interfaces.py:173
 msgid "reindex_uid_description"
 msgstr ""
 
 #. Default: "Lista uid da reindicizzare"
-#: ../controlpanel/interfaces.py:140
+#: ../controlpanel/interfaces.py:171
 msgid "reindex_uid_title"
 msgstr ""
 
@@ -331,7 +369,7 @@ msgstr "Condividi"
 #. Default: "No results found"
 #: ../browser/templates/news_big_photo_renderer.pt:21
 #: ../browser/templates/news_highlight_renderer.pt:17
-#: ../browser/templates/sights_renderer.pt:19
+#: ../browser/templates/sights_renderer.pt:20
 msgid "tiles_collection_noresults"
 msgstr "Nessun risultato trovato"
 

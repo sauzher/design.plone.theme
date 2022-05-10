@@ -9,7 +9,7 @@
 
 <metal:content-core fill-slot="content-core">
 <metal:main_macro define-macro="content-core"
-    tal:define="images view/results">
+    tal:define="batch view/results">
   <div metal:define-macro="text-field-view"
       id="parent-fieldname-text" class="stx"
       tal:define="text view/text"
@@ -21,17 +21,20 @@
       tal:define="portal context/@@plone_portal_state/portal;
                   image_scale portal/@@image_scale">
  
-    <tal:images tal:repeat="image images">
+    <tal:images tal:repeat="image batch">
       <div class="photoAlbumEntry"
            tal:define="scale python:image_scale.tag(image, 'image', scale='thumb', direction='down')">
         <div class="boxnotizia-dettagli">
-          <span class="boxnotizia-data pat-moment" data-pat-moment="format:MMMM Do YYYY">${image/effective}</span>
+          <span class="boxnotizia-data pat-moment" data-pat-moment="format:LL">${image/effective}</span>
         </div>
         <div class="boxnotizia-corpo">
           <a tal:attributes="href string:${image/getURL}/view;
                              title image/Description">
             <span class="photoAlbumEntryWrapper">
-              <img condition="scale" tal:replace="structure scale" />
+              <img tal:condition="scale" tal:replace="structure scale" />
+              <img tal:condition="not: scale" 
+                   src="" 
+                   tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/boxnotizia-segnaposto.png"/>
             </span>
           </a>
           <div class="boxnotizia-testo">
@@ -56,7 +59,7 @@
 
   <metal:empty metal:define-slot="no_items_in_listing">
     <p class="discreet"
-        tal:condition="python: not images and not albums"
+        tal:condition="python: not batch"
         tal:content="view/no_items_message">
       There are currently no items in this folder.
     </p>
