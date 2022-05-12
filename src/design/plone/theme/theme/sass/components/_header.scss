@@ -280,12 +280,15 @@
             margin-left: 30px;
         }
 
-        a:only-child img {
+        a:only-child {
             // $logo-width: 13vw;
             // width: $logo-width;
             // height: $logo-width;
             margin-right: 1.5rem;
             display: block;
+            img {
+                display: block;
+            }
         }
 
         span {
