@@ -66,3 +66,13 @@ $aree-tematiche-gutter: 50px;
         }
     }
 }
+
+/*rende responsiva la doppia colonna di tiles*/
+.template-tiles_page_view,
+.template-tiles_view {
+    .tilesList .tileWrapper.half-width {
+        @media (max-width: $mobile-menu-width) {
+            width: 100%;
+        }
+    }
+}
