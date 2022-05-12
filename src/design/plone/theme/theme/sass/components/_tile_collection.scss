@@ -317,8 +317,8 @@
         padding-left: 0;
         display: flex;
         flex-flow: row wrap;
-        margin-left: -10px;
-        margin-right: -10px;
+        /*margin-left: -10px;*/
+        /*margin-right: -10px;*/
     }
 
     li.collectionItem {
@@ -881,7 +881,7 @@ h2.tileTitle,
         @media (max-width: $screen-sm-max) {
             justify-content: center;
             right: 0;
-            width: 100%;
+            width: 95%;
         }
     }
 }
