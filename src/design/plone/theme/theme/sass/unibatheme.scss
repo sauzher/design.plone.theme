@@ -503,20 +503,18 @@ span.linkSitoUniba {
     font-size: 14px;
     // border-bottom: 1px solid $uniba;
     display: flex;
-}
-.contentwellportlets.row div {
-    span.linkSitoUniba {
-        display: block;
-        width: 165px;
-    }
+    border-radius: 0.4em;
+    margin-bottom: 10px;
+    max-width: 180px;
+    padding: 0.6em;
 }
 
-.linkSitoUniba.globalnav {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 1em;
-    position: relative;
-}
+// .linkSitoUniba.globalnav {
+//     display: block;
+//     margin-top: 0;
+//     margin-bottom: 1em;
+//     position: relative;
+// }
 div.spazietto {
     font-size: 10%;
 }
