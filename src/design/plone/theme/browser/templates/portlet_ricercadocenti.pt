@@ -19,7 +19,7 @@
                 tal:attributes="action string:${portal/absolute_url}/@@search">
             <div style="text-align: left">
               <label class="hiddenStructure"
-                    i18n:domain="plone.desing.theme"
+                    i18n:domain="design.plone.theme"
                     i18n:translate="portlet_ricerca_docenti_label"
                       for="searchGadget">Ricerca docente per cognome</label>
               <input id="searchGadget" style="width:80%"
