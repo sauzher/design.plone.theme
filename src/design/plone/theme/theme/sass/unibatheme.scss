@@ -499,15 +499,16 @@ body {
 /*-- stilizzazione del "torna al portale Uniba.it" presente nelle Zone --*/
 span.linkSitoUniba {
     background-color: $uniba-light-2;
-    // position: absolute;
     padding: 5px;
     font-size: 14px;
-    // padding-left: 1.5em;
-    // padding-right: 0.8em;
-    // margin-left: -1.5em;
-    // margin-top: -2.5em;
-    border-bottom: 1px solid $uniba;
-    // border-left: 1px solid #a1a8b7;
+    // border-bottom: 1px solid $uniba;
+    display: flex;
+}
+.contentwellportlets.row div {
+    span.linkSitoUniba {
+        display: block;
+        width: 165px;
+    }
 }
 
 .linkSitoUniba.globalnav {
