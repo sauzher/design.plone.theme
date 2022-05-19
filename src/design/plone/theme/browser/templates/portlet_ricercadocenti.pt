@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag=""
+      i18n:domain="plone">
+
+  <div metal:define-macro="portlet"
+       class="card portlet portletSearch"
+       i18n:domain="plone">
+    <div class="card-body portlet-classic-ricerca-docenti"
+             tal:define="path context/getPhysicalPath;
+                         root string:docenti;
+                         pos_root python:path.index(root)+1 if root in path else 0;
+                         path python:path[:pos_root];
+                         path_search python:'/'.join(path);
+                         portal context/@@plone_portal_state/portal;">
+        <div id="portal-search-docenti">
+          <form id="livesearch0" 
+                tal:attributes="action string:${portal/absolute_url}/@@search">
+            <div style="text-align: left">
+              <label class="hiddenStructure"
+                    i18n:domain="plone.desing.theme"
+                    i18n:translate="portlet_ricerca_docenti_label"
+                      for="searchGadget">Ricerca docente per cognome</label>
+              <input id="searchGadget" style="width:80%"
+                    class="inputLabel inputLabelActive" 
+                    type="text" accesskey="4" 
+                    title="Ricerca docente per cognome"
+                    size="20" 
+                    name="SearchableText" 
+                    autocomplete="off" />
+              <input type="hidden" id="searchbox_currentfolder_only" 
+                    name="path"
+                    tal:attributes="value path_search"
+                    value="/uniba4/it/docenti" />
+                    
+              <input class="searchButton" 
+                  type="submit" 
+                  value="Search"
+                  i18n:attributes="value label_search;"
+                  />
+              <div class="searchSection">
+               <input 
+                      class="noborder" 
+                      type="hidden" 
+                      value="Folder" 
+                      name="portal_type:list" />
+              <input  class="noborder" 
+                        type="hidden" 
+                        value=""
+                        name="Subject_usage:ignore_empty" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</html>
