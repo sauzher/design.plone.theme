@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- Set up all the new portlet managers we need above and below the content well -->
+<portlets>
+
+    <!-- Deregistriamo il footer portlet manager inutile in questo tema-->
+    <portletmanager remove="true"
+         name="plone.footerportlets"
+    />
+</portlets>

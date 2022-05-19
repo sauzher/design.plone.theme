@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="design.plone.theme">
+    
+    
+        
+    <browser:page
+        name="portlet_ricercadocenti"
+        for="*"
+        template="templates/portlet_ricercadocenti.pt"
+        permission="zope.Public"
+        />
+        
+    <browser:page
+        name="portlet_ricercaregolamenti"
+        for="*"
+        template="templates/portlet_ricercaregolamenti.pt"
+        permission="zope.Public"
+        />
+</configure>
