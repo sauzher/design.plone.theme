@@ -7,11 +7,18 @@
     i18n_domain="design.plone.theme">
     
     
-    
-<browser:page
-    name="portlet_ricercadocenti"
-    for="*"
-    template="templates/portlet_ricercadocenti.pt"
-    permission="zope.Public"
-    />
+        
+    <browser:page
+        name="portlet_ricercadocenti"
+        for="*"
+        template="templates/portlet_ricercadocenti.pt"
+        permission="zope.Public"
+        />
+        
+    <browser:page
+        name="portlet_ricercaregolamenti"
+        for="*"
+        template="templates/portlet_ricercaregolamenti.pt"
+        permission="zope.Public"
+        />
 </configure>
