@@ -26,7 +26,14 @@
             tal:attributes="class classID">
           <ul class="${resultsClass}"
             tal:condition="results"
-            data-pat-slider='{ "autoplaySpeed": 6000, "autoplay": true, "initialSlide": 0, "slidesToShow": ${slidesToShow}, "slidesToScroll": 1, "appendArrows": ".${classID}", "responsive": [{ "breakpoint": 768, "settings": { "slidesToShow": 1, "slidesToScroll": 1 } }] }'>
+            data-pat-slider='{ "autoplaySpeed": 6000, 
+            "arrows":false, 
+            "autoplay": true, 
+            "initialSlide": 0, 
+            "slidesToShow": ${slidesToShow}, 
+            "slidesToScroll": 1, 
+            "appendArrows": ".${classID}", 
+            "responsive": [{ "breakpoint": 768, "settings": { "slidesToShow": 1, "slidesToScroll": 1 } }] }'>
           <tal:result repeat="brain results">
             <!-- if obj is None, it will break calling getObject() on it, but if the collection is empty this won't be rendered by collective.tiles.collection -->
             <li class="collectionItem colonna-1-di-4"
