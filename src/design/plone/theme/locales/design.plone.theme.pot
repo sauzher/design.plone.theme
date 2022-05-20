@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-10 12:59+0000\n"
+"POT-Creation-Date: 2022-05-19 12:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,11 +101,11 @@ msgstr ""
 msgid "Studenti iscritti"
 msgstr ""
 
-#: ../browser/configure.zcml:312
+#: ../browser/configure.zcml:314
 msgid "Tile Collezione per slideshow"
 msgstr ""
 
-#: ../browser/configure.zcml:49
+#: ../browser/configure.zcml:51
 msgid "Tiles page view"
 msgstr ""
 
@@ -129,7 +129,7 @@ msgstr ""
 msgid "We want to add a field Class for objects"
 msgstr ""
 
-#: ../browser/configure.zcml:324
+#: ../browser/configure.zcml:326
 msgid "block view"
 msgstr ""
 
@@ -323,6 +323,11 @@ msgstr ""
 msgid "num_slides_to_show"
 msgstr ""
 
+#. Default: "Ricerca docente per cognome"
+#: ../browser/templates/portlet_ricercadocenti.pt:21
+msgid "portlet_ricerca_docenti_label"
+msgstr ""
+
 #. Default: "una seleziona vuota comportera' la reindicizzazione completa"
 #: ../controlpanel/interfaces.py:182
 msgid "reindex_indici_desc"
@@ -341,6 +346,11 @@ msgstr ""
 #. Default: "Lista uid da reindicizzare"
 #: ../controlpanel/interfaces.py:171
 msgid "reindex_uid_title"
+msgstr ""
+
+#. Default: "Ricerca nei regolamenti"
+#: ../browser/templates/portlet_ricercaregolamenti.pt:32
+msgid "ricerca_regolamenti_help"
 msgstr ""
 
 #. Default: "Servizi online"
