@@ -550,10 +550,22 @@ span.linkSitoUniba {
 #hpDipartimentoText {
 }
 #hpDipartimentoEvidenza {
-    width: auto;
-    margin-left: 0.7em;
-    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0 1em 0;
+    padding: 0;
+    align-items: stretch;
 }
+#hpDipartimentoEvidenza div.evidenza {
+    // display: flex;
+    flex: 1;
+    flex-basis: 50%;
+}
+#hpDipartimentoEvidenza span.ev-date {
+    font-size: -0.8em;
+}
+
 #hpDipartimentoEvidenza.conTesto {
     width: 21em;
 }
