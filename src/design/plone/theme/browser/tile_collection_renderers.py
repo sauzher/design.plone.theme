@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from collective.tiles.collection.interfaces import ICollectionTileRenderer
 from collective.tiles.collection.interfaces import ICollectionTileData
+from datetime import datetime
+from DateTime import DateTime
 from design.plone.theme import _
 from collective.tiles.collection import _ as _c
 from plone import api
@@ -47,11 +49,18 @@ class HelpersView(BrowserView):
             # The object doesn't have an image field
             return ''
 
-    def get_formatted_date(self, item):
+    def get_formatted_date(self, item, date_field='effective'):
         """
         return a formatted date
         """
-        effective = item.effective
+        # effective = item.effective
+        if hasattr(item, date_field):
+            effective = getattr(item, date_field)
+            if isinstance(effective, datetime):
+                effective = DateTime(effective)
+            else:
+                effective = item.effective
+
         if effective.year() == 1969:
             # not yet published
             return {}
@@ -101,7 +110,7 @@ class HelpersView(BrowserView):
 
     def getSlidesToShow(self,):
         return self.data.slidesToShow()
-        
+
 
 @implementer(ICollectionTileRenderer)
 class SightsView(BrowserView):
@@ -170,15 +179,14 @@ class OnlineServicesView(BrowserView):
     display_name = _('Layout servizi online')
 
 
-
 class ICollectionTileDataSlide(ICollectionTileData):
     slidesToShow = schema.Choice(
-        title=_("num_slides_to_show", u"Numero slide da mostrare (1-4)"), 
+        title=_("num_slides_to_show", u"Numero slide da mostrare (1-4)"),
         required=False,
         default=4,
-        values= [1,2,4]
+        values=[1, 2, 4]
     )
-    
+
     renderer = schema.Choice(
         title=_c("collection_tile_renderer", u"Renderer"),
         description=_c(
@@ -188,8 +196,8 @@ class ICollectionTileDataSlide(ICollectionTileData):
         vocabulary="collective.tiles.collection.vocabulary.renderers",
         required=True,
         default="sights_renderer",
-    )    
-    
+    )
+
     css_class = schema.TextLine(
         title=_c("collection_tile_css_class", u"CSS class"),
         description=_c(
@@ -198,4 +206,4 @@ class ICollectionTileDataSlide(ICollectionTileData):
         ),
         required=False,
         default=u"carousel",
-    )    
+    )

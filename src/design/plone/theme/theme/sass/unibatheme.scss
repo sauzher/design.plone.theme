@@ -533,20 +533,27 @@ span.linkSitoUniba {
 #creditsDipartimento {
     background-color: $uniba-gray;
     text-align: left;
-    padding-left: 1em;
+    padding: 0.7em 0 0.7em 1em;
     border-radius: 0 1em 1em 0;
-    @media (max-width: 1269px) {
-        border-radius: 1em;
-    }
-}
-#creditsDipartimento dettaglio {
-    font-variant: small-caps;
-    font-size: 1.5em;
+    flex-grow: 2;
+    font-family: &dtml-headingFontFamily;
     line-height: 1.2em;
     margin-bottom: 0.5em;
-    font-family: &dtml-headingFontFamily;
     flex-grow: 2;
+    @media (max-width: $screen-md) {
+        border-radius: 1em;
+    }
+
+    span {
+        font-variant: small-caps;
+        font-size: 1em;
+    }
+    #dettaglio {
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
 }
+
 #hpDipartimentoText {
 }
 #hpDipartimentoEvidenza {
@@ -558,12 +565,18 @@ span.linkSitoUniba {
     align-items: stretch;
 }
 #hpDipartimentoEvidenza div.evidenza {
-    // display: flex;
     flex: 1;
     flex-basis: 50%;
 }
 #hpDipartimentoEvidenza span.ev-date {
-    font-size: -0.8em;
+    font-size: smaller;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+#hpDipartimentoEvidenza li.item {
+    border-bottom: 2px solid $uniba-nav-box-shadow;
 }
 
 #hpDipartimentoEvidenza.conTesto {
