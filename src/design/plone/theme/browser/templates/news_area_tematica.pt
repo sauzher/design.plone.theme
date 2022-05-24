@@ -30,7 +30,7 @@
                                 item_type_class python:'contenttype-' + plone_view.normalizeString(item_type);"
                     tal:attributes="class python:oddrow and 'collectionItem even' or 'collectionItem odd'">
                       <div class="newsDate"
-                          tal:define="date python:helper_view.get_formatted_date(obj)"
+                          tal:define="date python:helper_view.get_formatted_date(obj,'start')"
                           tal:condition="python:view.data.get('show_dates', False)"
                           i18n:domain="plonelocales">
                           <div class="newsDateMonth">
