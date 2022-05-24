@@ -525,10 +525,13 @@ span.linkSitoUniba {
     flex-wrap: wrap;
     margin: 0 0 1em 0;
     padding: 0;
-    align-items: stretch;
+    align-items: center;
 }
 #headerDipartimento img {
-    flex-grow: 1;
+    @media (max-width: $screen-xs) {
+        width: 100%;
+        height: 100%;
+    }
 }
 #creditsDipartimento {
     background-color: $uniba-gray;
