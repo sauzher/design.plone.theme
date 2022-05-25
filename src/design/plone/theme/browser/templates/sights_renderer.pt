@@ -41,7 +41,7 @@
             <li class="collectionItem colonna-1-di-4"
               tal:define="obj brain/getObject;
                 is_external_link python: helper_view.is_external_link(brain);
-                image_tag python:helper_view.get_image_tag(obj, imageformat, 'down');
+                image_tag python:helper_view.get_image_tag(obj, imageformat, 'keep');
                 title brain/Title;
                 description brain/Description">
               <div class="collectionItemWrapper">
