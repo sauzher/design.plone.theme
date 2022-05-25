@@ -109,6 +109,9 @@ class HelpersView(BrowserView):
 
     def getSlidesToShow(self,):
         return self.data.slidesToShow()
+    
+    def getImageFormat(self,):
+        return self.data.scalaImmagini()
 
 
 @implementer(ICollectionTileRenderer)
@@ -184,6 +187,15 @@ class ICollectionTileDataSlide(ICollectionTileData):
         required=False,
         default=4,
         values=[1, 2, 4]
+    )
+    
+    scalaImmagini = schema.Choice(
+        title=_('portlet.rapporto_forma_label' , 'Rapporto di forma'),
+        description=_('portlet.rapporto_forma_description,',
+                      'Scegli il rapporto di forma che verra applicato (crop) a tutte le immagini'
+                      ' dello slideshow (default: 1920*800)'),
+        vocabulary='plone.app.vocabularies.ImagesScales',
+        default='unibaslidehomepage',
     )
 
     renderer = schema.Choice(
