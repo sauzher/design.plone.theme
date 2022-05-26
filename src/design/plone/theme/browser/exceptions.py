@@ -15,13 +15,26 @@ class ExceptionView(base_ExceptionView):
         
         return super(ExceptionView, self).__call__()
          
+    def get_path_info(self, portalid):
+        if 'VIRTUAL_URL_PARTS' in self.request:
+            path_info = '/'+'/'.join(self.request.VIRTUAL_URL_PARTS[1:])
+            
+        else:
+            path_info = self.request.PATH_INFO
+            if path_info.startswith('/{}'.format(portalid)):
+                path_info = path_info.replace('/{}'.format(portalid),'')
+        
+        return path_info
+    
     def immediate_redirect(self,):
         portal = api.portal.get()
         
-        path_info = self.request.PATH_INFO
+        path_info = self.get_path_info(portalid = portal.getId())
         if path_info.startswith('/it/') or \
            path_info.startswith('/en/'):
             return
+        
+        #if path_info.split('/')[0]==portal.getId()
         
         languages = ['it', 'en']
         for lang in languages:
@@ -31,5 +44,3 @@ class ExceptionView(base_ExceptionView):
                 return '{}/{}'.format(portal.absolute_url(), newpath)
             except:
                 pass
-        
-  
