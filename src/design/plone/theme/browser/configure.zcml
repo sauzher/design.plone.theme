@@ -326,7 +326,18 @@
             />
   </browser:pages>
 
+
+  <browser:page
+      name="index.html"
+      for="Exception"
+      class=".exceptions.ExceptionView"
+      template="templates/error_message.pt"
+      permission="zope.Public"
+      layer="design.plone.theme.interfaces.IDesignPloneThemeLayer"
+      />
+
       
 </configure>
+
 
 
