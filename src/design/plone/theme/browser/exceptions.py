@@ -23,17 +23,13 @@ class ExceptionView(base_ExceptionView):
            path_info.startswith('/en/'):
             return
         
-        try:
-            newpath = 'it{}'.format(path_info)
-            obj = portal.restrictedTraverse(newpath)
-            return obj.absolute_url()
-        except:
-            pass
+        languages = ['it', 'en']
+        for lang in languages:
+            try:
+                newpath = '{}{}'.format(lang, path_info)
+                obj = portal.restrictedTraverse(newpath)
+                return '{}/{}'.format(portal.absolute_url(), newpath)
+            except:
+                pass
         
-        try:
-            newpath = 'en{}'.format(path_info)
-            obj = portal.restrictedTraverse(newpath)
-            return obj.absolute_url()
-        except:
-            pass        
-        
+  
