@@ -525,14 +525,15 @@ span.linkSitoUniba {
     flex-wrap: wrap;
     margin: 0 0 1em 0;
     padding: 0;
-    align-items: center;
-}
-#headerDipartimento img {
-    @media (max-width: $screen-xs) {
-        width: 100%;
-        height: 100%;
+    align-items: stretch;
+    img {
+        @media (max-width: $screen-xs) {
+            width: 100%;
+            height: 100%;
+        }
     }
 }
+
 #creditsDipartimento {
     background-color: $uniba-gray;
     text-align: left;
@@ -541,10 +542,10 @@ span.linkSitoUniba {
     flex-grow: 2;
     font-family: &dtml-headingFontFamily;
     line-height: 1.2em;
-    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
     flex-grow: 2;
     @media (max-width: $screen-md) {
-        border-radius: 1em;
+        border-radius: 0 0 1em 1em;
     }
 
     span {
@@ -557,8 +558,6 @@ span.linkSitoUniba {
     }
 }
 
-#hpDipartimentoText {
-}
 #hpDipartimentoEvidenza {
     display: flex;
     flex-direction: row;
@@ -566,38 +565,44 @@ span.linkSitoUniba {
     margin: 0 0 1em 0;
     padding: 0;
     align-items: stretch;
-}
-#hpDipartimentoEvidenza div.evidenza {
-    flex: 1;
-    flex-basis: 50%;
-}
-#hpDipartimentoEvidenza span.ev-date {
-    font-size: smaller;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-grow: 1;
-}
-#hpDipartimentoEvidenza li.item {
-    border-bottom: 1px solid #4a4a4a;
-}
-
-#hpDipartimentoEvidenza.conTesto {
-    width: 21em;
-}
-
-#hpDipartimentoEvidenza a {
-    border-bottom: none !important;
-}
-#hpDipartimentoEvidenza h5 {
-    font-size: 1.3em;
-    border-bottom: 1px dotted &dtml-coloreTerziario;
-    margin-bottom: 0.5em;
-    padding-bottom: 0;
-    font-variant: small-caps;
-}
-#hpDipartimentoEvidenza h5 img {
-    margin-top: 4px;
+    gap: 1em;
+    &.conTesto {
+        width: 21em;
+    }
+    div.evidenza {
+        flex-grow: 1;
+        flex-basis: 45%;
+        @media (max-width: $screen-md) {
+            flex-basis: 100%;
+        }
+        ul {
+            list-style: none;
+            padding-left: inherit;
+        }
+    }
+    span.ev-date {
+        font-size: smaller;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+    li.item {
+        border-bottom: 1px solid #a1a8b7;
+        img {
+            margin-top: 4px;
+        }
+    }
+    a {
+        border-bottom: none !important;
+    }
+    h5 {
+        font-size: 1.3em;
+        border-bottom: 1px dotted &dtml-coloreTerziario;
+        margin-bottom: 0.5em;
+        padding-bottom: 0;
+        font-variant: small-caps;
+    }
 }
 
 .datiDipartimento {
@@ -606,13 +611,15 @@ span.linkSitoUniba {
 .datiDipartimento h3 {
     font-size: 14px;
     text-transform: uppercase;
-    color: #004071;
+    color: $uniba;
 }
 .datiDipartimento .datiDipartimento_text {
-    color: #004071;
+    color: $uniba;
 }
 .datiDipartimento hr {
     border: 1px solid #a1a8b7;
     border-bottom: none;
     margin-bottom: 10px;
 }
+
+/*-- DIPARTIMENTO END --*/
