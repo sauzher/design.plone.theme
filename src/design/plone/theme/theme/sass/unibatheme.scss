@@ -579,7 +579,7 @@ span.linkSitoUniba {
     flex-grow: 1;
 }
 #hpDipartimentoEvidenza li.item {
-    border-bottom: 2px solid $uniba-nav-box-shadow;
+    border-bottom: 1px solid #4a4a4a;
 }
 
 #hpDipartimentoEvidenza.conTesto {
@@ -594,6 +594,7 @@ span.linkSitoUniba {
     border-bottom: 1px dotted &dtml-coloreTerziario;
     margin-bottom: 0.5em;
     padding-bottom: 0;
+    font-variant: small-caps;
 }
 #hpDipartimentoEvidenza h5 img {
     margin-top: 4px;
