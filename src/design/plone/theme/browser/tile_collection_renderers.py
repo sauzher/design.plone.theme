@@ -53,6 +53,7 @@ class HelpersView(BrowserView):
         """
         return a formatted date
         """
+        # effective = item.effective
         if hasattr(item, date_field):
             effective = getattr(item, date_field)
             if isinstance(effective, datetime):

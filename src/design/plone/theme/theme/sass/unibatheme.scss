@@ -518,3 +518,111 @@ span.linkSitoUniba {
 div.spazietto {
     font-size: 10%;
 }
+
+/*-- DIPARTIMENTO --*/
+#headerDipartimento {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0 1em 0;
+    padding: 0;
+    align-items: stretch;
+    img {
+        @media (max-width: $screen-xs) {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+#creditsDipartimento {
+    background-color: $uniba-gray;
+    text-align: left;
+    padding: 0.7em 0 0.7em 1em;
+    border-radius: 0 1em 1em 0;
+    flex-grow: 2;
+    font-family: &dtml-headingFontFamily;
+    line-height: 1.2em;
+    padding-bottom: 0.5em;
+    flex-grow: 2;
+    @media (max-width: $screen-md) {
+        border-radius: 0 0 1em 1em;
+    }
+
+    span {
+        font-variant: small-caps;
+        font-size: 1em;
+    }
+    #dettaglio {
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+}
+
+#hpDipartimentoEvidenza {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0 1em 0;
+    padding: 0;
+    align-items: stretch;
+    gap: 1em;
+    &.conTesto {
+        width: 21em;
+    }
+    div.evidenza {
+        flex-grow: 1;
+        flex-basis: 45%;
+        @media (max-width: $screen-md) {
+            flex-basis: 100%;
+        }
+        ul {
+            list-style: none;
+            padding-left: inherit;
+        }
+    }
+    span.ev-date {
+        font-size: smaller;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+    li.item {
+        border-bottom: 1px solid #a1a8b7;
+        img {
+            margin-top: 4px;
+        }
+    }
+    a {
+        border-bottom: none !important;
+    }
+    h5 {
+        font-size: 1.3em;
+        border-bottom: 1px dotted &dtml-coloreTerziario;
+        margin-bottom: 0.5em;
+        padding-bottom: 0;
+        font-variant: small-caps;
+    }
+}
+
+.datiDipartimento {
+    margin-top: 15px;
+}
+.datiDipartimento h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $uniba;
+}
+.datiDipartimento .datiDipartimento_text {
+    color: $uniba;
+}
+.datiDipartimento hr {
+    border: 1px solid #a1a8b7;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+/*-- DIPARTIMENTO END --*/
