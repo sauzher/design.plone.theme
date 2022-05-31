@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-31 14:35+0000\n"
+"POT-Creation-Date: 2022-05-31 15:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -138,7 +138,6 @@ msgstr ""
 msgid "box_published_on"
 msgstr ""
 
-#. Default: "[contenuto di archivio]"
 #: ../browser/templates/expired_tabular.pt:86
 msgid "content_expired"
 msgstr ""
@@ -165,10 +164,6 @@ msgstr ""
 
 #: ../behaviors/configure.zcml:13
 msgid "design.plone.theme: Class on View behavior"
-msgstr ""
-
-#: ../browser/templates/expired_tabular.pt:86
-msgid "expired"
 msgstr ""
 
 #. Default: "Follow us on"
