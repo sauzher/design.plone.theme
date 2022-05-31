@@ -324,7 +324,15 @@
             menu="plone_displayviews"
             title="block view"
             />
-  </browser:pages>
+    </browser:pages>
+    <browser:page
+        name="expired_view"
+        template="templates/expired_tabular.pt"
+        menu="plone_displayviews"
+        title="vista archivio"
+        class=".views.CollectionExpiredView"
+        permission="zope2.View"
+        />
 
 
   <browser:page

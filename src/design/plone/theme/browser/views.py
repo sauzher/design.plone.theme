@@ -6,13 +6,13 @@ from logging import getLogger
 from lxml import etree
 from lxml import objectify
 from plone import api
+from plone.app.contenttypes.browser.collection import CollectionView
 from plone.memoize import ram
 from plone.memoize.view import memoize
 from plone.protect.interfaces import IDisableCSRFProtection
 from six.moves import StringIO
 from time import time
 import requests
-
 
 try:
     from plone.app.multilingual.interfaces import ITranslationManager
@@ -185,3 +185,10 @@ class Footer(ServiziOnline):
             pass
 
         return info
+
+class CollectionExpiredView(CollectionView):
+    
+    def batch(self):
+        extra = {'show_all':True, 'show_inactive':True}
+        self.request.set('contentFilter', extra)
+        return self.results()

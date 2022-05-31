@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-19 12:37+0000\n"
+"POT-Creation-Date: 2022-05-31 14:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Futuri studenti"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:160
+#: ../browser/tile_collection_renderers.py:172
 msgid "Gallery layout"
 msgstr ""
 
@@ -53,27 +53,27 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:170
+#: ../browser/tile_collection_renderers.py:182
 msgid "Layout servizi online"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:165
+#: ../browser/tile_collection_renderers.py:177
 msgid "Link aree tematiche"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:121
+#: ../browser/tile_collection_renderers.py:133
 msgid "News highlight"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:137
+#: ../browser/tile_collection_renderers.py:149
 msgid "News in area tematica"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:150
+#: ../browser/tile_collection_renderers.py:162
 msgid "News layout with image"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:129
+#: ../browser/tile_collection_renderers.py:141
 msgid "News with big photo"
 msgstr ""
 
@@ -85,11 +85,11 @@ msgstr ""
 msgid "Reindicizza"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:145
+#: ../browser/tile_collection_renderers.py:157
 msgid "Servizi in area tematica"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:112
+#: ../browser/tile_collection_renderers.py:124
 msgid "Sights layout"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "UniBa Tema: Italia Design Plone Theme"
 msgstr ""
 
-#: ../browser/tile_collection_renderers.py:155
+#: ../browser/tile_collection_renderers.py:167
 msgid "Video layout"
 msgstr ""
 
@@ -136,6 +136,11 @@ msgstr ""
 #. Default: "published on"
 #: ../browser/templates/document_by_line.pt:30
 msgid "box_published_on"
+msgstr ""
+
+#. Default: "[contenuto di archivio]"
+#: ../browser/templates/expired_tabular.pt:86
+msgid "content_expired"
 msgstr ""
 
 #. Default: "List of content-types that can be enable for social sharing."
@@ -160,6 +165,10 @@ msgstr ""
 
 #: ../behaviors/configure.zcml:13
 msgid "design.plone.theme: Class on View behavior"
+msgstr ""
+
+#: ../browser/templates/expired_tabular.pt:86
+msgid "expired"
 msgstr ""
 
 #. Default: "Follow us on"
@@ -313,14 +322,24 @@ msgid "menu_servizi_online_topbar"
 msgstr ""
 
 #. Default: "More…"
-#: ../browser/templates/sights_renderer.pt:59
+#: ../browser/templates/sights_renderer.pt:68
 #: ../browser/templates/video_renderer.pt:80
 msgid "more_url"
 msgstr ""
 
 #. Default: "Numero slide da mostrare (1-4)"
-#: ../browser/tile_collection_renderers.py:176
+#: ../browser/tile_collection_renderers.py:187
 msgid "num_slides_to_show"
+msgstr ""
+
+#. Default: "Scegli il rapporto di forma che verra applicato (crop) a tutte le immagini dello slideshow (default: 1920*800)"
+#: ../browser/tile_collection_renderers.py:195
+msgid "portlet.rapporto_forma_description,"
+msgstr ""
+
+#. Default: "Rapporto di forma"
+#: ../browser/tile_collection_renderers.py:194
+msgid "portlet.rapporto_forma_label"
 msgstr ""
 
 #. Default: "Ricerca docente per cognome"
@@ -381,11 +400,15 @@ msgstr ""
 #. Default: "No results found"
 #: ../browser/templates/news_big_photo_renderer.pt:21
 #: ../browser/templates/news_highlight_renderer.pt:17
-#: ../browser/templates/sights_renderer.pt:20
+#: ../browser/templates/sights_renderer.pt:22
 msgid "tiles_collection_noresults"
 msgstr ""
 
 #. Default: "Toggle share"
 #: ../browser/templates/social_viewlet.pt:38
 msgid "toggle_share"
+msgstr ""
+
+#: ../browser/configure.zcml:335
+msgid "vista archivio"
 msgstr ""

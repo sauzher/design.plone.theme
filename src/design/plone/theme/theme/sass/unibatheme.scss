@@ -496,6 +496,10 @@ body {
         }
     }
 }
+
+span.state-expired {
+    color: red !important;
+}
 /*-- stilizzazione del "torna al portale Uniba.it" presente nelle Zone --*/
 span.linkSitoUniba {
     background-color: $uniba-light-2;
