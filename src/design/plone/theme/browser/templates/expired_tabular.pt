@@ -87,7 +87,9 @@
                             i18n:domain="design.plone.theme"
                             i18n:attributes="title"
                             title="content_expired"
-                            i18n:translate="content_expired">[contenuto di archivio]</span>
+                            i18n:translate="content_expired"
+                            tal:condition="python:item.expires.isPast()"
+                            tal:on-error="nothing">[contenuto di archivio]</span>
                     </td>
                     <td tal:condition="python:field == 'Creator'"
                         tal:define="author python:view.pas_member.info(item_creator);
