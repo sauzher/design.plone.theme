@@ -70,7 +70,7 @@
                 }
             }
         }
-        @media (max-width: $screen-lg-narrow) {
+        @media (max-width: $screen-sm) {
             display: inline-block;
         }
     }
@@ -137,7 +137,7 @@
                 text-decoration: none !important;
                 display: block;
                 font-size: 1.4rem;
-                @media (max-width: $screen-lg-narrow) {
+                @media (max-width: $screen-sm) {
                     /* A */
                     border-top: 1px solid $uniba;
                     border-left: none;
@@ -150,15 +150,16 @@
                 }
             }
 
-            @media (max-width: $screen-lg-narrow) {
+            @media (max-width: $screen-sm) {
                 /* LI */
 
                 display: block;
             }
         }
 
-        @media (max-width: $screen-lg-narrow) {
+        @media (max-width: $screen-sm) {
             /* __list */
+
             display: none;
             margin-top: 1em;
             margin-bottom: 1em;
