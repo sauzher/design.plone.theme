@@ -13,7 +13,12 @@
 }
 /* Mixins */
 
-/* Image responsive */
+/* Image responsive 
+Supporto al croping. E' possibile ritagliare l'immagine nel caso ci sia una headline
+prevalente da rendere piu' evidente su mobile.
+ - impostare l'altezza height="XXpx" sul tag IMG
+ - aggiungere le classi `crop` e `[crop-left|crop-center|crop-right]` al tag IMG
+*/
 
 #visual-portal-wrapper img.image-responsive {
     width: 100%;
