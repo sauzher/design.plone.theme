@@ -101,13 +101,13 @@ class LogoViewlet(base.ViewletBase):
         portal = api.portal.get()
         if portal == nav_root:
             return
-        
+
         if nav_root.portal_type != 'Zona':
             return
 
         src = nav_root.absolute_url()+'/@@images/logo'
         return src
-            
+
     def update(self):
 
         self.portal_state = getMultiAdapter(
@@ -119,7 +119,9 @@ class LogoViewlet(base.ViewletBase):
 
         zona_src = self.getZonaImage()
         self.logo_title = self.site_title
-        self.img_src = zona_src or getSiteLogo()
+        site_logo = getSiteLogo()
+        site_logo = site_logo if not site_logo.endswith('logo.png') else ''
+        self.img_src = zona_src or site_logo
         self.navigation_root_title = self.portal_state.navigation_root().title
 
 
