@@ -20,31 +20,32 @@
   <metal:listingmacro define-macro="listing"
       tal:define="portal context/@@plone_portal_state/portal;
                   image_scale portal/@@image_scale">
- 
-    <tal:images tal:repeat="image batch">
+
+    <tal:images tal:repeat="item batch">
       <div class="photoAlbumEntry"
-           tal:define="scale python:image_scale.tag(image, 'image', scale='thumb', direction='down')">
+           tal:define="scale python:image_scale.tag(item, 'image', scale='thumb', direction='down')">
         <div class="boxnotizia-dettagli">
-          <span class="boxnotizia-data pat-moment" data-pat-moment="format:LL">${image/effective}</span>
+          <span class="boxnotizia-data pat-moment"
+                data-pat-moment="format:LL">${item/effective/ISO|item/modified/ISO}</span>
         </div>
         <div class="boxnotizia-corpo">
-          <a tal:attributes="href string:${image/getURL}/view;
-                             title image/Description">
+          <a tal:attributes="href string:${item/getURL}/view;
+                             title item/Description">
             <span class="photoAlbumEntryWrapper">
               <img tal:condition="scale" tal:replace="structure scale" />
-              <img tal:condition="not: scale" 
-                   src="" 
+              <img tal:condition="not: scale"
+                   src=""
                    tal:attributes="src string:${portal_url}/++theme++design.plone.theme/images/boxnotizia-segnaposto.png"/>
             </span>
           </a>
           <div class="boxnotizia-testo">
-            <a tal:attributes="href string:${image/getURL}/view;
-                             title image/Description">
-              <h4 class="photoAlbumEntryTitle h4" tal:content="image/Title">
+            <a tal:attributes="href string:${item/getURL}/view;
+                             title item/Description">
+              <h4 class="photoAlbumEntryTitle h4" tal:content="item/Title">
                   Title
               </h4>
             </a>
-            <div class="boxnotixia-descrizione" tal:content="image/Description">
+            <div class="boxnotixia-descrizione" tal:content="item/Description">
                 Description
             </div>
           </div>
@@ -54,7 +55,7 @@
 
   <div class="visualClear"><!-- --></div>
 
- 
+
   <div metal:use-macro="context/batch_macros/macros/navigation" />
 
   <metal:empty metal:define-slot="no_items_in_listing">
