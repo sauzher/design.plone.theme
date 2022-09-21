@@ -99,7 +99,7 @@ class ServiziOnline(BrowserView):
 
             response = requests.get(url,
                                     auth=auth,
-                                    timeout=10)
+                                    timeout=5)
             logger.debug(response)
             if response.status_code != 200:
                 raise Exception('errore nel recuperare la sorgente remota')
