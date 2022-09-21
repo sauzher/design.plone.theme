@@ -37,21 +37,21 @@ except:
 logger = getLogger('uniba.utils')
 
 class UnibaUtils(BrowserView):
-    
-    
+
+
     def inZona(self, context=None, request={}):
         """Vedi interfaces"""
         context = aq_inner(self.context)
         portal = api.portal.get()
         root = api.portal.get_navigation_root(context)
         obj = context
-        
+
 
         while obj is not root and aq_base(obj) is not aq_base(
             portal
             ):
             obj = utils.parent(obj)
-            
+
         if obj is root and aq_base(obj) is not aq_base(portal):
             return obj.getId()
         else:
@@ -72,7 +72,7 @@ class UnibaUtils(BrowserView):
             return context.unrestrictedTraverse(css)(context, request)
         else:
             return ""
-        
+
     def solrReindexUIDs(self,):
         alsoProvides(self.request, IDisableCSRFProtection)
         host = api.portal.get_registry_record(name="collective.solr.host")
@@ -85,13 +85,13 @@ class UnibaUtils(BrowserView):
                                                          query=query)
         import json
         from urllib.request import urlopen
-        
+
         def get(url, object_hook=None):
             with urlopen(url) as resource:  # 'with' is important to close the resource after use
                 return json.load(resource, object_hook=object_hook)
-        
+
         data = get(url)
-        
+
         done = 0
         # prendiamo solo i documenti senza 'modified'
         docs = [doc for doc in data['response']['docs'] if 'modified' not in doc]
@@ -103,13 +103,15 @@ class UnibaUtils(BrowserView):
             if obj is not None:
                 obj.reindexObject()
                 done += 1
+
             if i and not i%100:
                 logger.info('reindicizzati {} elementi ({:.2f})'.format(i, float(i)/n_docs*100))
                 logger.info("last UID: {}".format(uid))
                 commit()
-                
+
         msg = "reindicizzati {} elementi".format(done)
         logger.info(msg)
+        commit()
         return msg
 
     def localReindex(self, idxs=[], recursive=True, context=None, force=False):
@@ -189,4 +191,4 @@ class UnibaUtils(BrowserView):
             if "proxy" not in k.lower() + str(v).lower():
                 continue
             stream += "%s: %s\n" % (k, v)
-        return stream    
+        return stream

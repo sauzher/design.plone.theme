@@ -98,7 +98,8 @@ class ServiziOnline(BrowserView):
                 auth = requests.auth.HTTPBasicAuth(username, password)
 
             response = requests.get(url,
-                                    auth=auth)
+                                    auth=auth,
+                                    timeout=10)
             logger.debug(response)
             if response.status_code != 200:
                 raise Exception('errore nel recuperare la sorgente remota')
@@ -187,7 +188,7 @@ class Footer(ServiziOnline):
         return info
 
 class CollectionExpiredView(CollectionView):
-    
+
     def batch(self):
         extra = {'show_all':True, 'show_inactive':True}
         self.request.set('contentFilter', extra)

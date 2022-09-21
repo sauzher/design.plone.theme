@@ -40,4 +40,17 @@
             <permission>cmf.ManagePortal</permission>
     </configlet>
 
+    <configlet
+        title="UniBa - Reindicizzazione SolrUID malformati"
+        action_id="uniba-reindex-solr-uid-controlpanel"
+        appId="design.plone.theme"
+        category="Products"
+        condition_expr=""
+        icon_expr=""
+        url_expr="string:${portal_url}/@@manage_solrReindexUID"
+        visible="True"
+        i18n:attributes="title">
+            <permission>cmf.ManagePortal</permission>
+    </configlet>
+
 </object>
