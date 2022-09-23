@@ -41,7 +41,7 @@
              tal:condition="view/login_button_visible"
              tal:define="isAnon context/@@plone_portal_state/anonymous">
           <a href="${context/portal_url}/login" tal:condition="isAnon">
-            <span i18n:translate="login">Login</span>
+            <span i18n:translate="login">Login UniBa staff</span>
           </a>
           <tal:logged tal:condition="not: isAnon">
             <a href="${context/portal_url}/@@personal-information"

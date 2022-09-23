@@ -43,7 +43,8 @@
             href="{$portal_url}/++theme++design.plone.theme/favicon.ico" />
       <link rel="stylesheet" href="{$portal_url}/++theme++design.plone.theme/barceloneta/barceloneta-backend.css" />
 
-      <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet"/>
+      <link href="{$portal_url}/++plone++design.plone.theme/fonts/titillium-font.css" rel="stylesheet"/>
+
     </after>
 
     <rules css:if-content="#portal-top">
@@ -192,12 +193,12 @@
   <drop css:content=".portal-footer .rerPortletAdvancedStatic.valuta-sito" />
 
   <!-- sposto portalMessage sotto le breadcrumbs -->
-  <drop css:content="#content div.portalMessage" /> 
+  <drop css:content="#content div.portalMessage" />
 
   <before css:content="#content" css:if-content="#content div.portalMessage">
     <xsl:copy-of css:select="#content div.portalMessage" />
-  </before> 
-  
+  </before>
+
   <!-- <replace content="//div[@class[contains(., 'portalMessage')]]">
     <xsl:variable name="status">
       <xsl:if test="@class[contains(., 'info')]">status</xsl:if>

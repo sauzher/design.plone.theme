@@ -295,7 +295,7 @@ msgstr ""
 #. Default: "Login"
 #: ../browser/templates/header_banner.pt:44
 msgid "login"
-msgstr ""
+msgstr "Login UniBa staff"
 
 #. Default: "Show login button"
 #: ../controlpanel/interfaces.py:93

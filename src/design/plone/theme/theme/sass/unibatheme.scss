@@ -13,6 +13,31 @@
 }
 /* Mixins */
 
+/* Image responsive
+Supporto al croping. E' possibile ritagliare l'immagine nel caso ci sia una headline
+prevalente da rendere piu' evidente su mobile.
+ - impostare l'altezza height="XXpx" sul tag IMG
+ - aggiungere le classi `crop` e `[crop-left|crop-center|crop-right]` al tag IMG
+*/
+
+#visual-portal-wrapper img.image-responsive {
+    width: 100%;
+    &.crop {
+        object-fit: cover;
+        &.crop-left {
+            object-position: 0% 0%;
+        }
+        &.crop-center {
+            object-position: 50% 0%;
+        }
+        &.crop-right {
+            object-position: 100% 0%;
+        }
+    }
+}
+
+/*image responsive*/
+
 /*  Main header */
 .main-header_uniba {
     border-right: 1px solid $uniba-light-2;
