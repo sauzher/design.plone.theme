@@ -502,6 +502,15 @@ span.state-expired {
     color: red !important;
 }
 
+/*padding del calendar a 0*/
+
+.ploneCalendar {
+    td,
+    th {
+        padding: 2px;
+    }
+}
+
 /* PORTLET INIZIO*/
 
 .portletWrapper h3 {
