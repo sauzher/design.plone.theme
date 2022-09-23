@@ -293,7 +293,7 @@ msgstr "Vai alla navigazione del sito"
 #. Default: "Login"
 #: ../browser/templates/header_banner.pt:44
 msgid "login"
-msgstr "Accedi"
+msgstr "Login personale UniBa"
 
 #. Default: "Show login button"
 #: ../controlpanel/interfaces.py:93
